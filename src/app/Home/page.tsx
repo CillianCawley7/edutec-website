@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Navbar from '../components/NavBar';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 
 import * as React from 'react';
 
