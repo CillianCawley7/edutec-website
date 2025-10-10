@@ -1,0 +1,13 @@
+<svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="120" fill="#212721"/>
+  <text x="20" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#666">Our Tech Community</text>
+  <text x="20" y="45" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#00b2e3">CELEBRATING</text>
+  <text x="20" y="65" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#666">2000 - 2025</text>
+  
+  <!-- Large 25 -->
+  <text x="180" y="85" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#33c1e8">2</text>
+  <text x="240" y="85" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#0099c7">5</text>
+  
+  <!-- YEARS text inside the 2 -->
+  <text x="200" y="50" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#00b2e3">YEARS</text>
+</svg>
