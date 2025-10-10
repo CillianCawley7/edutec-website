@@ -10,7 +10,7 @@ export default function PathwaysPage() {
       <Navbar />
       <main className="pt-24 min-h-screen bg-white text-gray-800">
         {/* Hero */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+        <section className="text-white py-12" style={{background: 'linear-gradient(to right, #00b2e3, #0099c7)'}}>
           <div className="max-w-6xl mx-auto px-6">
             <h1 className="text-4xl md:text-5xl font-bold">Pathways</h1>
             <p className="text-blue-100 mt-3 max-w-3xl">

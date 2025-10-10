@@ -33,7 +33,8 @@ export default function CareerCard({ title, description, imagePlaceholder, id }:
         <p className="text-gray-600 text-sm mb-4">{description}</p>
         <Link 
           href={careerUrl}
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm transition"
+          className="inline-block text-white px-4 py-2 rounded hover:opacity-90 text-sm transition"
+          style={{backgroundColor: '#00b2e3'}}
         >
           Learn More
         </Link>

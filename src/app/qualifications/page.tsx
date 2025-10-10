@@ -42,7 +42,7 @@ export default function QualificationsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 px-6 py-14 font-sans bg-gray-50 text-gray-800">
+      <main className="pt-0 px-6 py-14 font-sans bg-gray-50 text-gray-800">
         <div className="max-w-7xl mx-auto">
           {/* Controls */}
           <section className="bg-white p-4 rounded-xl shadow mb-8">

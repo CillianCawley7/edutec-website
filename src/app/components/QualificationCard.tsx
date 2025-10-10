@@ -56,13 +56,15 @@ export default function QualificationCard({ qualification }: Props) {
       <div className="flex gap-2 mt-2">
         <Link
           href={`/qualifications/${id}`}
-          className="inline-block text-white bg-blue-600 hover:bg-blue-700 transition px-4 py-2 rounded text-sm font-medium"
+          className="inline-block text-white px-4 py-2 rounded text-sm font-medium hover:opacity-90 transition"
+          style={{backgroundColor: '#00b2e3'}}
         >
           View Programme
         </Link>
         <Link
           href={`/careers`}
-          className="inline-block text-blue-700 bg-blue-50 hover:bg-blue-100 transition px-4 py-2 rounded text-sm font-medium"
+          className="inline-block px-4 py-2 rounded text-sm font-medium transition"
+          style={{color: '#00b2e3', backgroundColor: '#e6f7ff'}}
         >
           Related Careers
         </Link>

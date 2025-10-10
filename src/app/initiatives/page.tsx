@@ -9,10 +9,14 @@ export default function InitiativesPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 min-h-screen bg-white text-gray-800">
+      <main className="pt-0 min-h-screen bg-white text-gray-800">
+        <section className="text-white py-12" style={{background: 'linear-gradient(to right, #00b2e3, #0099c7)'}}>
+          <div className="max-w-6xl mx-auto px-6">
+            <h1 className="text-4xl md:text-5xl font-bold">Initiatives</h1>
+            <p className="text-blue-100 mt-3 max-w-3xl">Explore our programmes connecting schools, students, and industry.</p>
+          </div>
+        </section>
         <section className="max-w-6xl mx-auto px-6 py-12">
-          <h1 className="text-4xl font-bold mb-6">Initiatives</h1>
-          <p className="text-lg text-gray-700 mb-8">Explore our programmes connecting schools, students, and industry. Content placeholders below.</p>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/initiatives/pathways" className="p-6 bg-gray-50 rounded-lg hover:shadow">Pathways</Link>
             <Link href="/initiatives/adopt-a-school" className="p-6 bg-gray-50 rounded-lg hover:shadow">Adopt a School</Link>
