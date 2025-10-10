@@ -12,7 +12,7 @@ export default function SoftwareDeveloperPage() {
       
       <main className="min-h-screen text-gray-800 font-sans">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 pt-24">
+        <section className="text-white py-16 pt-24" style={{background: 'linear-gradient(to right, #00b2e3, #0099c7)'}}>
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex items-center mb-4">
               <Link href="/careers" className="text-blue-200 hover:text-white mr-2">
