@@ -8,9 +8,13 @@ type CareerCardProps = {
   description: string;
   imagePlaceholder?: string;
   id?: number;
+  index?: number;
 };
 
-export default function CareerCard({ title, description, imagePlaceholder, id }: CareerCardProps) {
+export default function CareerCard({ title, description, imagePlaceholder, id, index = 0 }: CareerCardProps) {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const cardRef = React.useRef<HTMLDivElement>(null);
+
   // Create URL-friendly slug from title
   const createSlug = (title: string) => {
     return title.toLowerCase().replace(/\s+/g, '-');
@@ -19,24 +23,59 @@ export default function CareerCard({ title, description, imagePlaceholder, id }:
   const careerSlug = createSlug(title);
   const careerUrl = `/careers/${careerSlug}`;
 
+  // Intersection Observer for scroll animations
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-      <div className="h-40 w-full overflow-hidden">
+    <div 
+      ref={cardRef}
+      className={`bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+      style={{ 
+        transitionDelay: `${index * 50}ms`,
+      }}
+    >
+      <div className="h-48 w-full overflow-hidden relative">
         <img
-            src={imagePlaceholder}
-            alt={title}
-            className="object-cover w-full h-full"
+          src={imagePlaceholder}
+          alt={title}
+          className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
         />
-        </div>
-      <div className="p-5">
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
-        <p className="text-gray-600 text-sm mb-4">{description}</p>
+        {/* Gradient overlay on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+      <div className="p-6">
+        <h2 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors duration-300">
+          {title}
+        </h2>
+        <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed">
+          {description}
+        </p>
         <Link 
           href={careerUrl}
-          className="inline-block text-white px-4 py-2 rounded hover:opacity-90 text-sm transition"
+          className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full hover:scale-105 hover:shadow-lg text-sm transition-all duration-300 font-medium"
           style={{backgroundColor: '#00b2e3'}}
         >
           Learn More
+          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
         </Link>
       </div>
     </div>

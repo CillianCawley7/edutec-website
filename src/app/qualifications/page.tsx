@@ -48,11 +48,18 @@ export default function QualificationsPage() {
       <Navbar />
       <main className="pt-0 min-h-screen bg-white text-gray-800">
         
-        {/* Hero Section */}
-        <section className="text-white py-16" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
-          <div className="max-w-6xl mx-auto px-6">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Tech Qualifications</h1>
-            <p className="text-xl md:text-2xl max-w-4xl text-blue-100">
+        {/* Hero Section with animations */}
+        <section className="text-white py-16 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
+          {/* Animated background shapes */}
+          <div className="absolute inset-0 overflow-hidden opacity-10">
+            <div className="absolute top-10 right-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Tech Qualifications</h1>
+            <p className="text-xl md:text-2xl max-w-4xl text-blue-100 animate-fade-in-delay">
               Discover comprehensive tech education pathways across Ireland's leading universities and institutions. 
               From Computer Science to AI, find the perfect qualification to launch your tech career.
             </p>
@@ -249,10 +256,10 @@ export default function QualificationsPage() {
               </div>
             </div>
 
-            {/* Results */}
+            {/* Results with staggered animations */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((q) => (
-                <QualificationCard key={q.id} qualification={q} />
+              {filtered.map((q, index) => (
+                <QualificationCard key={q.id} qualification={q} index={index} />
               ))}
               {filtered.length === 0 && (
                 <div className="col-span-full text-center py-12">
@@ -297,6 +304,29 @@ export default function QualificationsPage() {
 
       </main>
       <Footer />
+
+      {/* Add custom CSS for animations */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-delay {
+          opacity: 0;
+          animation: fadeIn 0.8s ease-out 0.2s forwards;
+        }
+      `}</style>
     </>
   );
 }

@@ -33,11 +33,17 @@ export default function CareersPage() {
       
       <main className="pt-0 min-h-screen bg-white text-gray-800">
         
-        {/* Hero Section */}
-        <section className="text-white py-16" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
-          <div className="max-w-6xl mx-auto px-6">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Explore Tech Careers</h1>
-            <p className="text-xl md:text-2xl max-w-4xl text-blue-100">
+        {/* Hero Section with animation */}
+        <section className="text-white py-16 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
+          {/* Animated background shapes */}
+          <div className="absolute inset-0 overflow-hidden opacity-10">
+            <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">Explore Tech Careers</h1>
+            <p className="text-xl md:text-2xl max-w-4xl text-blue-100 animate-fade-in-delay">
               Discover exciting career opportunities in Ireland's thriving tech sector. 
               From software development to AI, find your path to success.
             </p>
@@ -132,15 +138,16 @@ export default function CareersPage() {
               </p>
             </div>
 
-            {/* Career Grid */}
+            {/* Career Grid with staggered animations */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {filteredCareers.length > 0 ? (
-                filteredCareers.map((career) => (
+                filteredCareers.map((career, index) => (
                   <CareerCard
                     key={career.id}
                     title={career.title}
                     description={career.description}
                     imagePlaceholder={career.imagePlaceholder}
+                    index={index}
                   />
                 ))
               ) : (
@@ -186,6 +193,29 @@ export default function CareersPage() {
 
       </main>
       <Footer />
+
+      {/* Add custom CSS for animations */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-delay {
+          opacity: 0;
+          animation: fadeIn 0.8s ease-out 0.2s forwards;
+        }
+      `}</style>
     </>
   );
 }
