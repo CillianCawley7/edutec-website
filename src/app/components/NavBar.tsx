@@ -12,17 +12,16 @@ export default function Navbar() {
           <span className="text-xl font-bold text-white">EdUTec Careers</span>
         </Link>
         <ul className="flex space-x-6 text-sm font-bold items-center">
-          <li><a href="/about" className="text-white hover:text-gray-200">About</a></li>
-          <li><a href="/careers" className="text-white hover:text-gray-200">Explore Careers</a></li>
-          <li><a href="/qualifications" className="text-white hover:text-gray-200">Qualifications</a></li>
-          <li><a href="/resources" className="text-white hover:text-gray-200">Edutec Resources</a></li>
+          <li><Link href="/about" className="text-white hover:text-gray-200">About</Link></li>
+          <li><Link href="/initiatives/pathways" className="text-white hover:text-gray-200">Pathways</Link></li>
+          <li><Link href="/initiatives/adopt-a-school" className="text-white hover:text-gray-200">Adopt a School</Link></li>
+          <li><Link href="/initiatives/mentoring" className="text-white hover:text-gray-200">Mentoring</Link></li>
           <li className="relative group">
-            <a href="/initiatives" className="text-white hover:text-gray-200">Initiatives</a>
+            <Link href="/careers" className="text-white hover:text-gray-200">Careers</Link>
             <div className="absolute left-0 mt-2 hidden group-hover:block">
               <ul className="bg-white text-gray-800 rounded shadow-lg min-w-[180px] py-2">
-                <li><Link href="/initiatives/pathways" className="block px-4 py-2 hover:bg-gray-100">Pathways</Link></li>
-                <li><Link href="/initiatives/adopt-a-school" className="block px-4 py-2 hover:bg-gray-100">Adopt a School</Link></li>
-                <li><Link href="/initiatives/mentoring" className="block px-4 py-2 hover:bg-gray-100">Mentoring</Link></li>
+                <li><Link href="/careers" className="block px-4 py-2 hover:bg-gray-100">Explore Careers</Link></li>
+                <li><Link href="/qualifications" className="block px-4 py-2 hover:bg-gray-100">Qualifications</Link></li>
               </ul>
             </div>
           </li>
