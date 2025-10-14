@@ -29,30 +29,26 @@ export default function EventsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-0 min-h-screen" style={{backgroundColor: '#1a1d1f'}}>
+      <main className="pt-0 min-h-screen bg-gray-50">
         
         {/* Hero Section */}
-        <section className="text-white py-16 relative" style={{backgroundColor: '#212721', borderBottom: '1px solid rgba(0, 178, 227, 0.1)'}}>
+        <section className="text-white py-16 relative" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
           <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{color: '#ffffff'}}>
-                  Events Calendar
-                </h1>
-                <p className="text-lg text-gray-400">
-                  {events.length} upcoming events
-                </p>
-              </div>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+              Events Calendar
+            </h1>
+            <p className="text-lg text-blue-100">
+              {events.length} upcoming events
+            </p>
           </div>
         </section>
 
         {/* Calendar Section */}
-        <section className="py-8 px-6">
+        <section className="py-12 px-6">
           {loading ? (
             <div className="max-w-7xl mx-auto text-center py-20">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 mb-6" style={{borderColor: '#00b2e3'}}></div>
-              <p className="text-lg text-gray-400">Loading events...</p>
+              <p className="text-lg text-gray-600">Loading events...</p>
             </div>
           ) : (
             <EventCalendar events={events} />
@@ -60,12 +56,12 @@ export default function EventsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 px-6 mt-8" style={{backgroundColor: '#212721', borderTop: '1px solid rgba(0, 178, 227, 0.1)'}}>
+        <section className="py-16 px-6 mt-8" style={{background: 'linear-gradient(135deg, #212721 0%, #3a403a 100%)'}}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Want to Host an Event?
             </h2>
-            <p className="text-lg mb-8 text-gray-400">
+            <p className="text-lg mb-8 text-gray-300">
               Partner with EdUTec to host workshops, career fairs, or networking events for Ireland's tech community.
             </p>
             <Link
