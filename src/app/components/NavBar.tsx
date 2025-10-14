@@ -19,8 +19,8 @@ export default function Navbar() {
           <li className="relative group">
             <Link href="/careers" className="text-white hover:text-gray-200">Careers</Link>
             {/* Invisible buffer zone to prevent dropdown from disappearing */}
-            <div className="absolute right-0 top-full w-full h-2"></div>
-            <div className="absolute right-0 mt-1 hidden group-hover:block hover:block">
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-full h-2"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 hidden group-hover:block hover:block">
               <div className="bg-white rounded-lg shadow-xl border border-gray-200 min-w-[200px] py-2 overflow-hidden">
                 <Link href="/careers" className="block px-6 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 font-medium">
                   Explore Careers
