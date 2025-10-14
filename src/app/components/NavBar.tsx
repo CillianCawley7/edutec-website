@@ -18,11 +18,17 @@ export default function Navbar() {
           <li><Link href="/initiatives/mentoring" className="text-white hover:text-gray-200">Mentoring</Link></li>
           <li className="relative group">
             <Link href="/careers" className="text-white hover:text-gray-200">Careers</Link>
-            <div className="absolute right-0 mt-2 hidden group-hover:block">
-              <ul className="bg-white text-gray-800 rounded shadow-lg min-w-[180px] py-2">
-                <li><Link href="/careers" className="block px-4 py-2 hover:bg-gray-100">Explore Careers</Link></li>
-                <li><Link href="/qualifications" className="block px-4 py-2 hover:bg-gray-100">Qualifications</Link></li>
-              </ul>
+            {/* Invisible buffer zone to prevent dropdown from disappearing */}
+            <div className="absolute right-0 top-full w-full h-2"></div>
+            <div className="absolute right-0 mt-1 hidden group-hover:block hover:block">
+              <div className="bg-white rounded-lg shadow-xl border border-gray-200 min-w-[200px] py-2 overflow-hidden">
+                <Link href="/careers" className="block px-6 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 font-medium">
+                  Explore Careers
+                </Link>
+                <Link href="/qualifications" className="block px-6 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 font-medium">
+                  Qualifications
+                </Link>
+              </div>
             </div>
           </li>
         </ul>
