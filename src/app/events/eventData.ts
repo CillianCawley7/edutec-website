@@ -64,11 +64,19 @@ function parseItagRSS(xmlText: string): Event[] {
         const content = extractTag(item, 'content:encoded') || description;
         
         // Extract event-specific metadata
+        const hasExplicitDate = /(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{4})/i.test(content);
         const eventDate = extractEventDate(content, pubDate);
         const eventTime = extractEventTime(content);
         const eventLocation = extractEventLocation(content);
         
         if (title && eventDate) {
+          let desc = cleanHTML(description || '').substring(0, 200);
+          
+          // Add note if date is estimated
+          if (!hasExplicitDate && !eventTime) {
+            desc = desc || 'Check event page for exact date and time.';
+          }
+          
           events.push({
             id: `itag-${index + 1}`,
             title: cleanHTML(title),
@@ -76,7 +84,7 @@ function parseItagRSS(xmlText: string): Event[] {
             time: eventTime || 'TBA',
             location: eventLocation || 'TBA',
             type: categorizeEvent(title),
-            description: cleanHTML(description || '').substring(0, 200),
+            description: desc,
             registrationUrl: link,
             source: 'itag',
           });
@@ -115,11 +123,12 @@ function extractTag(xml: string, tagName: string): string {
  * Extract event date from content or pubDate
  */
 function extractEventDate(content: string, pubDate: string): string {
-  // Try to find date patterns in content
+  // Try to find date patterns in content first
   const datePatterns = [
+    /(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})/i,
+    /(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{4})/i,
     /(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/,  // DD/MM/YYYY or DD-MM-YYYY
     /(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})/,  // YYYY/MM/DD or YYYY-MM-DD
-    /(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{4})/i,
   ];
   
   for (const pattern of datePatterns) {
@@ -129,7 +138,8 @@ function extractEventDate(content: string, pubDate: string): string {
         // Try to parse the matched date
         const dateStr = match[0];
         const date = new Date(dateStr);
-        if (!isNaN(date.getTime())) {
+        if (!isNaN(date.getTime()) && date.getFullYear() >= 2025) {
+          console.log(`Found event date in content: ${dateStr} -> ${date.toISOString().split('T')[0]}`);
           return date.toISOString().split('T')[0];
         }
       } catch (e) {
@@ -138,11 +148,34 @@ function extractEventDate(content: string, pubDate: string): string {
     }
   }
   
-  // Fallback to pubDate
+  // If no date found in content, use pubDate as a fallback
+  // But assume the event is upcoming (not in the past)
   try {
-    const date = new Date(pubDate);
-    if (!isNaN(date.getTime())) {
-      return date.toISOString().split('T')[0];
+    const pubDateObj = new Date(pubDate);
+    if (!isNaN(pubDateObj.getTime())) {
+      const today = new Date();
+      
+      // If pubDate is in the past, assume event is upcoming
+      // Use pubDate but ensure it's in the future
+      if (pubDateObj < today) {
+        // For events without explicit dates, assume they're scheduled
+        // within the next 3 months from publication
+        const futureDate = new Date(pubDateObj);
+        futureDate.setMonth(futureDate.getMonth() + 1); // Add 1 month buffer
+        
+        // If still in past, use today + 1 week
+        if (futureDate < today) {
+          const weekFromNow = new Date(today);
+          weekFromNow.setDate(weekFromNow.getDate() + 7);
+          console.log(`No date found, using pubDate + buffer: ${weekFromNow.toISOString().split('T')[0]}`);
+          return weekFromNow.toISOString().split('T')[0];
+        }
+        
+        console.log(`Using pubDate + 1 month: ${futureDate.toISOString().split('T')[0]}`);
+        return futureDate.toISOString().split('T')[0];
+      }
+      
+      return pubDateObj.toISOString().split('T')[0];
     }
   } catch (e) {
     // Return today's date as last resort
