@@ -114,29 +114,29 @@ export default function EventCalendar({ events }: CalendarProps) {
   return (
     <div className="max-w-7xl mx-auto">
       {/* Header Controls */}
-      <div className="bg-white rounded-2xl shadow-xl p-6 mb-6">
+      <div className="rounded-xl p-6 mb-6" style={{backgroundColor: '#212721', border: '1px solid rgba(0, 178, 227, 0.2)'}}>
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
             <button
               onClick={prevMonth}
-              className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-50 transition-all duration-300 hover:scale-110"
-              style={{color: '#00b2e3'}}
+              className="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-opacity-10 transition-colors duration-200"
+              style={{color: '#00b2e3', backgroundColor: 'rgba(0, 178, 227, 0.1)'}}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             
-            <h2 className="text-3xl font-bold" style={{color: '#212721'}}>
+            <h2 className="text-2xl font-semibold text-white">
               {MONTHS[month]} {year}
             </h2>
             
             <button
               onClick={nextMonth}
-              className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-50 transition-all duration-300 hover:scale-110"
-              style={{color: '#00b2e3'}}
+              className="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-opacity-10 transition-colors duration-200"
+              style={{color: '#00b2e3', backgroundColor: 'rgba(0, 178, 227, 0.1)'}}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -145,11 +145,11 @@ export default function EventCalendar({ events }: CalendarProps) {
           <div className="flex gap-3">
             <button
               onClick={goToToday}
-              className="px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="px-5 py-2 rounded-lg font-medium transition-opacity duration-200 hover:opacity-80"
               style={{
-                backgroundColor: viewMode === 'month' ? '#e6f7ff' : 'white',
+                backgroundColor: 'rgba(0, 178, 227, 0.1)',
                 color: '#00b2e3',
-                border: '2px solid #00b2e3'
+                border: '1px solid rgba(0, 178, 227, 0.3)'
               }}
             >
               Today
@@ -157,10 +157,10 @@ export default function EventCalendar({ events }: CalendarProps) {
             
             <button
               onClick={() => setViewMode(viewMode === 'month' ? 'list' : 'month')}
-              className="px-6 py-2 rounded-full font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="px-5 py-2 rounded-lg font-medium text-white transition-opacity duration-200 hover:opacity-90"
               style={{backgroundColor: '#00b2e3'}}
             >
-              {viewMode === 'month' ? '📋 List View' : '📅 Calendar View'}
+              {viewMode === 'month' ? 'List View' : 'Calendar View'}
             </button>
           </div>
         </div>
@@ -170,14 +170,13 @@ export default function EventCalendar({ events }: CalendarProps) {
         {/* Calendar Grid */}
         <div className="lg:col-span-2">
           {viewMode === 'month' ? (
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="rounded-xl overflow-hidden" style={{backgroundColor: '#1a1d1f', border: '1px solid rgba(0, 178, 227, 0.1)'}}>
               {/* Day Headers */}
-              <div className="grid grid-cols-7 bg-gradient-to-r from-blue-50 to-blue-100 border-b-2 border-blue-200">
+              <div className="grid grid-cols-7" style={{backgroundColor: '#212721', borderBottom: '1px solid rgba(0, 178, 227, 0.2)'}}>
                 {DAYS.map(day => (
                   <div
                     key={day}
-                    className="p-4 text-center font-bold text-sm"
-                    style={{color: '#212721'}}
+                    className="p-3 text-center font-semibold text-sm text-gray-400"
                   >
                     {day}
                   </div>
@@ -205,9 +204,8 @@ export default function EventCalendar({ events }: CalendarProps) {
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Upcoming Events */}
-          <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{color: '#212721'}}>
-              <span className="text-2xl"></span>
+          <div className="rounded-xl p-6" style={{backgroundColor: '#212721', border: '1px solid rgba(0, 178, 227, 0.2)'}}>
+            <h3 className="text-lg font-semibold mb-4 text-white">
               Coming Up Next
             </h3>
             <div className="space-y-3">
@@ -223,28 +221,25 @@ export default function EventCalendar({ events }: CalendarProps) {
           </div>
 
           {/* Stats */}
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-xl font-bold mb-4" style={{color: '#212721'}}>
-              📊 Event Stats
+          <div className="rounded-xl p-6" style={{backgroundColor: '#212721', border: '1px solid rgba(0, 178, 227, 0.2)'}}>
+            <h3 className="text-lg font-semibold mb-4 text-white">
+              Event Stats
             </h3>
             <div className="space-y-3">
               <StatItem
                 label="Total Events"
                 value={events.length}
                 color="#00b2e3"
-                icon="📅"
               />
               <StatItem
                 label="This Month"
                 value={calendarDays.filter(d => d.isCurrentMonth && d.events.length > 0).length}
-                color="#52c41a"
-                icon="📆"
+                color="#00b2e3"
               />
               <StatItem
                 label="itag Events"
                 value={events.filter(e => e.source === 'itag').length}
-                color="#0099c7"
-                icon="🏢"
+                color="#00b2e3"
               />
             </div>
           </div>
@@ -276,11 +271,17 @@ function CalendarDayCell({
   return (
     <div
       className={`
-        min-h-[140px] border border-gray-100 p-2 transition-all duration-300 relative group
-        ${!day.isCurrentMonth ? 'bg-gray-50 opacity-50' : 'bg-white'}
-        ${day.isToday ? 'ring-2 ring-blue-500 ring-inset' : ''}
-        ${hasEvents ? 'cursor-pointer hover:bg-blue-50 hover:shadow-lg hover:scale-105 hover:z-10' : ''}
+        min-h-[140px] p-2 transition-colors duration-200 relative
+        ${!day.isCurrentMonth ? 'opacity-40' : ''}
+        ${day.isToday ? 'ring-2 ring-inset' : ''}
+        ${hasEvents ? 'cursor-pointer' : ''}
       `}
+      style={{
+        backgroundColor: !day.isCurrentMonth ? '#1a1d1f' : hasEvents && isHovered ? 'rgba(0, 178, 227, 0.05)' : '#1a1d1f',
+        borderRight: '1px solid rgba(0, 178, 227, 0.1)',
+        borderBottom: '1px solid rgba(0, 178, 227, 0.1)',
+        ...(day.isToday && { borderColor: '#00b2e3' })
+      }}
       onMouseEnter={() => hasEvents && onHover(day.dateStr)}
       onMouseLeave={() => onHover(null)}
     >
@@ -289,14 +290,15 @@ function CalendarDayCell({
         <span
           className={`
             text-sm font-semibold w-7 h-7 flex items-center justify-center rounded-full
-            ${day.isToday ? 'bg-blue-500 text-white' : ''}
-            ${!day.isToday && day.isCurrentMonth ? 'text-gray-700' : 'text-gray-400'}
+            ${day.isToday ? 'text-white' : ''}
+            ${!day.isToday && day.isCurrentMonth ? 'text-gray-300' : 'text-gray-600'}
           `}
+          style={day.isToday ? {backgroundColor: '#00b2e3'} : {}}
         >
           {dayNum}
         </span>
         {hasEvents && (
-          <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 animate-pulse">
+          <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{backgroundColor: 'rgba(0, 178, 227, 0.15)', color: '#00b2e3'}}>
             {day.events.length}
           </span>
         )}
@@ -308,12 +310,11 @@ function CalendarDayCell({
           <button
             key={event.id}
             onClick={() => onEventClick(event)}
-            className="w-full text-left text-xs px-2 py-1 rounded transition-all duration-200 hover:scale-105 line-clamp-2"
+            className="w-full text-left text-xs px-2 py-1 rounded transition-opacity duration-150 hover:opacity-80 line-clamp-2"
             style={{
-              backgroundColor: event.source === 'itag' ? '#e6f7ff' : '#f0f9ff',
+              backgroundColor: 'rgba(0, 178, 227, 0.15)',
               color: '#00b2e3',
-              border: '1px solid #00b2e3',
-              opacity: isHovered ? 1 : 0.9,
+              border: '1px solid rgba(0, 178, 227, 0.3)',
             }}
             title={event.title}
           >
@@ -323,7 +324,8 @@ function CalendarDayCell({
         {day.events.length > 2 && (
           <button
             onClick={() => onEventClick(day.events[2])}
-            className="text-xs text-blue-600 font-semibold text-center w-full hover:underline"
+            className="text-xs font-semibold text-center w-full hover:underline"
+            style={{color: '#00b2e3'}}
             title={`View ${day.events.length - 2} more events`}
           >
             +{day.events.length - 2} more
@@ -331,10 +333,6 @@ function CalendarDayCell({
         )}
       </div>
 
-      {/* Hover Effect */}
-      {hasEvents && (
-        <div className="absolute inset-0 border-2 border-blue-400 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-      )}
     </div>
   );
 }
@@ -355,21 +353,21 @@ function UpcomingEventCard({
   return (
     <button
       onClick={onClick}
-      className="w-full text-left bg-white rounded-xl p-3 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 opacity-0 animate-fade-in"
-      style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+      className="w-full text-left rounded-lg p-3 hover:bg-opacity-80 transition-opacity duration-200"
+      style={{backgroundColor: '#1a1d1f', border: '1px solid rgba(0, 178, 227, 0.2)'}}
     >
       <div className="flex gap-3">
-        <div className="flex-shrink-0 w-12 h-12 rounded-lg flex flex-col items-center justify-center text-white" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
+        <div className="flex-shrink-0 w-10 h-10 rounded-lg flex flex-col items-center justify-center text-white" style={{backgroundColor: '#00b2e3'}}>
           <div className="text-xs font-semibold">{month}</div>
-          <div className="text-lg font-bold">{day}</div>
+          <div className="text-sm font-bold">{day}</div>
         </div>
         <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-sm truncate" style={{color: '#212721'}}>
+          <h4 className="font-medium text-sm truncate text-gray-200">
             {event.title}
           </h4>
-          <p className="text-xs text-gray-600 truncate">{event.time}</p>
+          <p className="text-xs text-gray-400 truncate">{event.time}</p>
           {event.source === 'itag' && (
-            <span className="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">
+            <span className="inline-block mt-1 text-xs px-2 py-0.5 rounded-full" style={{backgroundColor: 'rgba(0, 178, 227, 0.15)', color: '#00b2e3'}}>
               itag
             </span>
           )}
@@ -383,20 +381,15 @@ function StatItem({
   label,
   value,
   color,
-  icon,
 }: {
   label: string;
   value: number;
   color: string;
-  icon: string;
 }) {
   return (
-    <div className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-      <div className="flex items-center gap-2">
-        <span className="text-xl">{icon}</span>
-        <span className="text-sm text-gray-600">{label}</span>
-      </div>
-      <span className="text-2xl font-bold" style={{ color }}>
+    <div className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: '#1a1d1f', border: '1px solid rgba(0, 178, 227, 0.15)'}}>
+      <span className="text-sm text-gray-400">{label}</span>
+      <span className="text-xl font-bold" style={{ color }}>
         {value}
       </span>
     </div>
@@ -426,15 +419,14 @@ function ListView({
   }, [sortedEvents]);
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-6 space-y-6">
+    <div className="rounded-xl p-6 space-y-6" style={{backgroundColor: '#1a1d1f', border: '1px solid rgba(0, 178, 227, 0.1)'}}>
       {Object.entries(groupedByMonth).map(([key, monthEvents]) => {
         const [year, month] = key.split('-').map(Number);
         const monthName = MONTHS[month];
         
         return (
           <div key={key}>
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{color: '#212721'}}>
-              <span className="text-2xl">📅</span>
+            <h3 className="text-xl font-semibold mb-4 text-white">
               {monthName} {year}
             </h3>
             <div className="space-y-3">
@@ -470,28 +462,29 @@ function ListEventCard({
   return (
     <button
       onClick={onClick}
-      className="w-full text-left bg-gray-50 rounded-xl p-4 hover:bg-blue-50 transition-all duration-300 hover:shadow-lg hover:-translate-x-2 opacity-0 animate-fade-in"
-      style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'forwards' }}
+      className="w-full text-left rounded-xl p-4 hover:bg-opacity-80 transition-opacity duration-200"
+      style={{backgroundColor: '#212721', border: '1px solid rgba(0, 178, 227, 0.2)'}}
     >
       <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 h-16 rounded-xl flex flex-col items-center justify-center text-white" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
+        <div className="flex-shrink-0 w-14 h-14 rounded-lg flex flex-col items-center justify-center text-white" style={{backgroundColor: '#00b2e3'}}>
           <div className="text-xs font-semibold">{dayName}</div>
-          <div className="text-2xl font-bold">{day}</div>
+          <div className="text-xl font-bold">{day}</div>
         </div>
         <div className="flex-1">
-          <h4 className="font-bold text-lg mb-1" style={{color: '#212721'}}>
+          <h4 className="font-semibold text-base mb-1 text-white">
             {event.title}
           </h4>
-          <div className="flex flex-wrap gap-2 mb-2">
-            <span className="text-sm text-gray-600">🕐 {event.time}</span>
-            <span className="text-sm text-gray-600">📍 {event.location}</span>
+          <div className="flex flex-wrap gap-2 mb-2 text-sm text-gray-400">
+            <span>{event.time}</span>
+            <span>•</span>
+            <span>{event.location}</span>
           </div>
           <div className="flex gap-2">
-            <span className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-700">
+            <span className="text-xs px-2 py-1 rounded-full" style={{backgroundColor: 'rgba(0, 178, 227, 0.15)', color: '#00b2e3'}}>
               {event.type}
             </span>
             {event.source === 'itag' && (
-              <span className="text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+              <span className="text-xs px-2 py-1 rounded-full" style={{backgroundColor: 'rgba(0, 178, 227, 0.1)', color: '#00b2e3', border: '1px solid rgba(0, 178, 227, 0.3)'}}>
                 itag Event
               </span>
             )}
@@ -513,11 +506,11 @@ function EventModal({ event, onClose }: { event: Event; onClose: () => void }) {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 animate-fade-in"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-scale-in"
+        className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -578,7 +571,9 @@ function EventModal({ event, onClose }: { event: Event; onClose: () => void }) {
           {event.registrationUrl && (
             <Link
               href={event.registrationUrl}
-              className="block w-full text-center py-4 rounded-xl text-white font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center py-4 rounded-xl text-white font-bold text-lg hover:opacity-90 transition-opacity duration-200 shadow-lg"
               style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}
             >
               View Event Details →
@@ -587,31 +582,6 @@ function EventModal({ event, onClose }: { event: Event; onClose: () => void }) {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        
-        @keyframes scale-in {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 0.3s ease-out forwards;
-        }
-        
-        .animate-scale-in {
-          animation: scale-in 0.3s ease-out forwards;
-        }
-      `}</style>
     </div>
   );
 }

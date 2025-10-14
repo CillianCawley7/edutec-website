@@ -45,7 +45,7 @@ export default function QualificationsPage() {
 
   return (
     <>
-      <Navbar />
+    <Navbar />
       <main className="pt-0 min-h-screen bg-white text-gray-800">
         
         {/* Hero Section with animations */}
@@ -55,8 +55,8 @@ export default function QualificationsPage() {
             <div className="absolute top-10 right-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
             <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
-          </div>
-          
+            </div>
+
           <div className="max-w-6xl mx-auto px-6 relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Tech Qualifications</h1>
             <p className="text-xl md:text-2xl max-w-4xl text-blue-100 animate-fade-in-delay">
@@ -70,7 +70,7 @@ export default function QualificationsPage() {
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+                    <div>
                 <h2 className="text-3xl font-bold mb-6" style={{color: '#212721'}}>
                   Your Tech Education Journey Starts Here
                 </h2>
@@ -115,7 +115,7 @@ export default function QualificationsPage() {
                   <div className="text-center">
                     <div className="text-3xl font-bold mb-2" style={{color: '#00b2e3'}}>7</div>
                     <div className="text-sm text-gray-600">Career Pathways</div>
-                  </div>
+                    </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold mb-2" style={{color: '#00b2e3'}}>NFQ 6-9</div>
                     <div className="text-sm text-gray-600">Levels Covered</div>
@@ -269,8 +269,8 @@ export default function QualificationsPage() {
                 </div>
               )}
             </div>
-          </div>
-        </section>
+            </div>
+          </section>
 
         {/* Call to Action */}
         <section className="py-16 px-6" style={{background: 'linear-gradient(135deg, #212721 0%, #3a403a 100%)'}}>
@@ -299,10 +299,10 @@ export default function QualificationsPage() {
             <p className="text-sm text-gray-400 mt-6">
               Powered by <strong className="text-white">itag Skillnet Ireland</strong> | Celebrating 25 Years of Tech Excellence
             </p>
-          </div>
+      </div>
         </section>
 
-      </main>
+    </main>
       <Footer />
 
       {/* Add custom CSS for animations */}

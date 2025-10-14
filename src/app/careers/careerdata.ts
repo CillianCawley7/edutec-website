@@ -13,7 +13,7 @@ export const careerData: Career[] = [
   // Software Development Careers
   {
     id: 'software-developer',
-    title: 'Software Developer',
+      title: 'Software Developer',
     description: 'Design, code, test, and maintain software applications. Work in teams to build apps, games, platforms, and enterprise systems used across industries.',
     imagePlaceholder: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&auto=format&fit=crop&q=60',
     category: 'Software Development',
@@ -78,7 +78,7 @@ export const careerData: Career[] = [
   // Data & AI Careers
   {
     id: 'data-scientist',
-    title: 'Data Scientist',
+      title: 'Data Scientist',
     description: 'Analyze large datasets to extract insights, create predictive models, and guide business decisions. Use machine learning, statistics, and data visualization.',
     imagePlaceholder: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60',
     category: 'Data & AI',
@@ -309,4 +309,5 @@ export const careerData: Career[] = [
     averageSalary: '€45,000 - €80,000',
     skills: ['Leadership', 'IT Strategy', 'Budget Management', 'Team Building'],
   },
-];
+  ];
+  
