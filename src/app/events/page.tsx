@@ -4,116 +4,46 @@ import * as React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+import { type Event, getUpcomingEvents } from './eventData';
 
-type Event = {
-  id: string;
-  title: string;
-  date: string;
-  time: string;
-  location: string;
-  type: 'Workshop' | 'Career Fair' | 'Webinar' | 'Networking' | 'Conference';
-  description: string;
-  registrationUrl?: string;
-  featured?: boolean;
-};
-
-const upcomingEvents: Event[] = [
-  {
-    id: '1',
-    title: 'Pathways 2025 - Tech Career Fair',
-    date: '2025-11-06',
-    time: '10:00 AM - 4:00 PM',
-    location: 'Galway, Ireland',
-    type: 'Career Fair',
-    description: 'Ireland\'s premier tech career event. Meet universities, employers, and discover your future in technology.',
-    registrationUrl: '/initiatives/pathways',
-    featured: true,
-  },
-  {
-    id: '2',
-    title: 'AI & Machine Learning Workshop',
-    date: '2025-11-15',
-    time: '2:00 PM - 5:00 PM',
-    location: 'Online',
-    type: 'Workshop',
-    description: 'Hands-on workshop exploring the fundamentals of AI and machine learning. Perfect for beginners and intermediate learners.',
-  },
-  {
-    id: '3',
-    title: 'Women in Tech Networking Evening',
-    date: '2025-11-22',
-    time: '6:00 PM - 9:00 PM',
-    location: 'Limerick, Ireland',
-    type: 'Networking',
-    description: 'Connect with female tech professionals, share experiences, and build your network in a supportive environment.',
-  },
-  {
-    id: '4',
-    title: 'Cyber Security Essentials Webinar',
-    date: '2025-12-03',
-    time: '1:00 PM - 2:30 PM',
-    location: 'Online',
-    type: 'Webinar',
-    description: 'Learn the basics of cyber security, threat detection, and how to protect digital assets in today\'s connected world.',
-  },
-  {
-    id: '5',
-    title: 'University Open Day - Tech Programmes',
-    date: '2025-12-10',
-    time: '9:00 AM - 3:00 PM',
-    location: 'Multiple Locations',
-    type: 'Conference',
-    description: 'Visit university campuses across Ireland to explore tech programmes, meet faculty, and tour facilities.',
-  },
-  {
-    id: '6',
-    title: 'Full-Stack Development Bootcamp',
-    date: '2026-01-15',
-    time: '10:00 AM - 4:00 PM',
-    location: 'Dublin, Ireland',
-    type: 'Workshop',
-    description: 'Intensive one-day bootcamp covering modern web development with React, Node.js, and databases.',
-  },
-  {
-    id: '7',
-    title: 'Tech Mentoring Speed Dating',
-    date: '2026-01-20',
-    time: '5:00 PM - 7:00 PM',
-    location: 'Galway, Ireland',
-    type: 'Networking',
-    description: 'Meet potential mentors in quick 10-minute sessions. Find the perfect match for your career development journey.',
-  },
-  {
-    id: '8',
-    title: 'Data Science Career Panel',
-    date: '2026-02-05',
-    time: '3:00 PM - 5:00 PM',
-    location: 'Online',
-    type: 'Webinar',
-    description: 'Hear from industry data scientists about career paths, required skills, and breaking into the field.',
-  },
-];
-
-const typeColors = {
+const typeColors: Record<Event['type'], { bg: string; text: string; border: string }> = {
   'Workshop': { bg: '#e6f7ff', text: '#00b2e3', border: '#00b2e3' },
   'Career Fair': { bg: '#f0f9ff', text: '#0099c7', border: '#0099c7' },
   'Webinar': { bg: '#f5f5f5', text: '#666', border: '#999' },
   'Networking': { bg: '#fff0f6', text: '#eb2f96', border: '#eb2f96' },
   'Conference': { bg: '#f6ffed', text: '#52c41a', border: '#52c41a' },
+  'Other': { bg: '#f0f0f0', text: '#666', border: '#999' },
 };
 
 export default function EventsPage() {
   const [selectedType, setSelectedType] = React.useState<string>('all');
   const [searchTerm, setSearchTerm] = React.useState('');
+  const [events, setEvents] = React.useState<Event[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
-  const filteredEvents = upcomingEvents.filter((event) => {
+  // Fetch events on mount
+  React.useEffect(() => {
+    async function loadEvents() {
+      try {
+        const upcomingEvents = await getUpcomingEvents();
+        setEvents(upcomingEvents);
+      } catch (error) {
+        console.error('Error loading events:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadEvents();
+  }, []);
+
+  const filteredEvents = events.filter((event) => {
     const matchesType = selectedType === 'all' || event.type === selectedType;
     const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           event.description.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesType && matchesSearch;
   });
 
-  const eventTypes = ['all', 'Workshop', 'Career Fair', 'Webinar', 'Networking', 'Conference'];
+  const eventTypes = ['all', 'Workshop', 'Career Fair', 'Webinar', 'Networking', 'Conference', 'Other'];
 
   return (
     <>
@@ -176,18 +106,27 @@ export default function EventsPage() {
         {/* Events Grid */}
         <section className="py-12 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <div className="grid gap-6 md:grid-cols-2">
-              {filteredEvents.map((event, index) => (
-                <EventCard key={event.id} event={event} index={index} />
-              ))}
-            </div>
-
-            {filteredEvents.length === 0 && (
+            {loading ? (
               <div className="text-center py-12">
-                <div className="text-gray-400 text-6xl mb-4">📅</div>
-                <h3 className="text-xl font-semibold text-gray-600 mb-2">No events found</h3>
-                <p className="text-gray-500">Try adjusting your search criteria.</p>
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mb-4"></div>
+                <p className="text-gray-600">Loading events...</p>
               </div>
+            ) : (
+              <>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {filteredEvents.map((event, index) => (
+                    <EventCard key={event.id} event={event} index={index} />
+                  ))}
+                </div>
+
+                {filteredEvents.length === 0 && !loading && (
+                  <div className="text-center py-12">
+                    <div className="text-gray-400 text-6xl mb-4">📅</div>
+                    <h3 className="text-xl font-semibold text-gray-600 mb-2">No events found</h3>
+                    <p className="text-gray-500">Try adjusting your search criteria.</p>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </section>
