@@ -126,6 +126,98 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Upcoming Events Preview */}
+        <section className="py-16 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex justify-between items-center mb-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{color: '#212721'}}>
+                  Upcoming Events
+                </h2>
+                <p className="text-gray-600">Join us for workshops, career fairs, and networking opportunities</p>
+              </div>
+              <Link
+                href="/events"
+                className="hidden md:inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300"
+                style={{backgroundColor: '#00b2e3'}}
+              >
+                View All Events
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Featured Event - Pathways 2025 */}
+              <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-2 border-blue-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style={{backgroundColor: '#e6f7ff'}}>
+                    🎓
+                  </div>
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
+                    ⭐ Featured
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2" style={{color: '#212721'}}>Pathways 2025</h3>
+                <p className="text-sm text-gray-600 mb-3">Nov 6, 2025 • Galway</p>
+                <p className="text-gray-600 mb-4 text-sm">Ireland's premier tech career fair. Meet universities and employers.</p>
+                <Link
+                  href="/initiatives/pathways"
+                  className="inline-flex items-center gap-2 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300"
+                  style={{backgroundColor: '#00b2e3'}}
+                >
+                  Learn More →
+                </Link>
+              </div>
+
+              {/* Event 2 */}
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl mb-4" style={{backgroundColor: '#e6f7ff'}}>
+                  💻
+                </div>
+                <h3 className="text-xl font-semibold mb-2" style={{color: '#212721'}}>AI Workshop</h3>
+                <p className="text-sm text-gray-600 mb-3">Nov 15, 2025 • Online</p>
+                <p className="text-gray-600 mb-4 text-sm">Hands-on workshop exploring AI and machine learning fundamentals.</p>
+                <Link
+                  href="/events"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300"
+                  style={{backgroundColor: '#e6f7ff', color: '#00b2e3'}}
+                >
+                  View Details →
+                </Link>
+              </div>
+
+              {/* Event 3 */}
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl mb-4" style={{backgroundColor: '#fff0f6'}}>
+                  🤝
+                </div>
+                <h3 className="text-xl font-semibold mb-2" style={{color: '#212721'}}>Women in Tech</h3>
+                <p className="text-sm text-gray-600 mb-3">Nov 22, 2025 • Limerick</p>
+                <p className="text-gray-600 mb-4 text-sm">Networking evening for female tech professionals.</p>
+                <Link
+                  href="/events"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300"
+                  style={{backgroundColor: '#e6f7ff', color: '#00b2e3'}}
+                >
+                  View Details →
+                </Link>
+              </div>
+            </div>
+
+            <div className="text-center mt-8 md:hidden">
+              <Link
+                href="/events"
+                className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300"
+                style={{backgroundColor: '#00b2e3'}}
+              >
+                View All Events →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Trending Skills Section */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-6xl mx-auto">

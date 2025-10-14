@@ -15,6 +15,7 @@ export default function Navbar() {
           <li><Link href="/initiatives/pathways" className="text-white hover:text-gray-200">Pathways</Link></li>
           <li><Link href="/initiatives/adopt-a-school" className="text-white hover:text-gray-200">Adopt a School</Link></li>
           <li><Link href="/initiatives/mentoring" className="text-white hover:text-gray-200">Mentoring</Link></li>
+          <li><Link href="/events" className="text-white hover:text-gray-200">Events</Link></li>
           <li className="relative group">
             <Link href="/careers" className="text-white hover:text-gray-200 flex items-center gap-1">
               Careers
