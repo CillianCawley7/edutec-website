@@ -265,6 +265,236 @@ function categorizeEvent(title: string, category?: string): Event['type'] {
 }
 
 /**
+ * Manually curated itag events from their calendar (October 2025)
+ * Source: https://itag.ie/calendar/
+ */
+export const itagCalendarEvents: Event[] = [
+  // October 1
+  {
+    id: 'itag-oct-1-1',
+    title: 'itag\'s AI Forum Meeting',
+    date: '2025-10-01',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly AI Forum meeting to discuss latest trends and innovations in artificial intelligence.',
+    registrationUrl: 'https://itag.ie/events/itags-cyber-forum-meeting-2/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-oct-1-2',
+    title: 'itag\'s Cyber Forum Meeting',
+    date: '2025-10-01',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly Cyber Security Forum meeting for cybersecurity professionals.',
+    registrationUrl: 'https://itag.ie/events/itags-cyber-forum-meeting/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-oct-1-3',
+    title: 'ISTQB Foundation in Software Testing',
+    date: '2025-10-01',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'ISTQB Foundation certification training for software testing professionals.',
+    registrationUrl: 'https://itag.ie/events/istqb-foundation-in-software-testing-3/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-oct-1-4',
+    title: 'Digital Women\'s Leadership Program – Module 6',
+    date: '2025-10-01',
+    time: '9:30 AM',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Module 6 of the Digital Women\'s Executive Leadership Program.',
+    registrationUrl: 'https://itag.ie/events/digital-womens-executive-leadership-program-day-6-2-2/',
+    source: 'itag',
+  },
+  // October 2
+  {
+    id: 'itag-oct-2-1',
+    title: 'ISTQB Foundation in Software Testing',
+    date: '2025-10-02',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'ISTQB Foundation certification training - Day 2.',
+    registrationUrl: 'https://itag.ie/events/istqb-foundation-in-software-testing-3/',
+    source: 'itag',
+  },
+  // October 3
+  {
+    id: 'itag-oct-3-1',
+    title: 'ISTQB Foundation in Software Testing',
+    date: '2025-10-03',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'ISTQB Foundation certification training - Day 3.',
+    registrationUrl: 'https://itag.ie/events/istqb-foundation-in-software-testing-3/',
+    source: 'itag',
+  },
+  // October 6
+  {
+    id: 'itag-oct-6-1',
+    title: 'The Accelerated Senior Leadership Development Program Coaching Session 5',
+    date: '2025-10-06',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Coaching session 5 for the Accelerated Senior Leadership Development Program.',
+    registrationUrl: 'https://itag.ie/events/the-accelerated-senior-leadership-development-program-module-1-2-2-2-2-2-2-2-2/',
+    source: 'itag',
+  },
+  // October 9
+  {
+    id: 'itag-oct-9-1',
+    title: 'Cyber Ireland National Conference 2025',
+    date: '2025-10-09',
+    time: 'TBA',
+    location: 'Dublin',
+    type: 'Conference',
+    description: 'National conference on cybersecurity trends, threats, and solutions.',
+    registrationUrl: 'https://itag.ie/events/cyber-ireland-national-conference-2025/',
+    source: 'itag',
+  },
+  // October 10
+  {
+    id: 'itag-oct-10-1',
+    title: 'itag\'s Advisory Board Meeting',
+    date: '2025-10-10',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly Advisory Board meeting for itag members.',
+    registrationUrl: 'https://itag.ie/events/itags-advisory-board-meeting-2/',
+    source: 'itag',
+  },
+  // October 13
+  {
+    id: 'itag-oct-13-1',
+    title: 'itag\'s AI Forum Event – Data Lies, AI Amplifies: The Critical Skills Gap Blocking AI Success',
+    date: '2025-10-13',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'AI Forum event exploring the critical skills gap in AI implementation and success.',
+    registrationUrl: 'https://itag.ie/events/itags-ai-forum-event-data-lies-ai-amplifies-the-critical-skills-gap-blocking-ai-success/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-oct-13-2',
+    title: 'AI Critical Thinking for Smarter AI Engagement with Edmund Sutcliffe',
+    date: '2025-10-13',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'Training on critical thinking skills for effective AI engagement.',
+    registrationUrl: 'https://itag.ie/events/ai-critical-thinking-for-smarter-ai-engagement-with-edmund-sutcliffe/',
+    source: 'itag',
+  },
+  // October 14
+  {
+    id: 'itag-oct-14-1',
+    title: 'The Senior Accelerated Leadership Program – Workshop #2',
+    date: '2025-10-14',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Workshop 2 of the Senior Accelerated Leadership Program.',
+    registrationUrl: 'https://itag.ie/events/the-public-mindful-leader-program-program-launch-2-2/',
+    source: 'itag',
+  },
+  // October 15
+  {
+    id: 'itag-oct-15-1',
+    title: 'itag\'s Agile Forum Event – Charting New Territory: Agile Careers in an AI-Driven World',
+    date: '2025-10-15',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Agile Forum event exploring career opportunities in an AI-driven world.',
+    registrationUrl: 'https://itag.ie/events/itags-agile-forum-event-charting-new-territory-agile-careers-in-an-ai-driven-world/',
+    source: 'itag',
+  },
+  // October 20-22
+  {
+    id: 'itag-oct-20-1',
+    title: 'PMI/Project Management Professional – Day 1 – 3',
+    date: '2025-10-20',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'PMI Project Management Professional certification training - Days 1-3.',
+    registrationUrl: 'https://itag.ie/events/pmi-project-management-professional-day-1-3/',
+    source: 'itag',
+  },
+  // October 21
+  {
+    id: 'itag-oct-21-1',
+    title: 'Digital Women\'s Leadership Programme – Module 2',
+    date: '2025-10-21',
+    time: '9:30 AM',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Module 2 of the Digital Women\'s Leadership Programme.',
+    registrationUrl: 'https://itag.ie/events/digital-womens-leadership-programme-module-1-2/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-oct-21-2',
+    title: 'Certified ScrumMaster with Nigel Baker',
+    date: '2025-10-21',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'Certified ScrumMaster training with Nigel Baker - 3 day course.',
+    registrationUrl: 'https://itag.ie/events/certified-scrummaster-5-4-2/',
+    source: 'itag',
+    featured: true,
+  },
+  // October 22
+  {
+    id: 'itag-oct-22-1',
+    title: 'PMI/Project Management Professional – Day 1 – 3',
+    date: '2025-10-22',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'PMI Project Management Professional certification training - Day 2.',
+    registrationUrl: 'https://itag.ie/events/pmi-project-management-professional-day-1-3/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-oct-22-2',
+    title: 'Certified ScrumMaster with Nigel Baker',
+    date: '2025-10-22',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'Certified ScrumMaster training - Day 2.',
+    registrationUrl: 'https://itag.ie/events/certified-scrummaster-5-4-2/',
+    source: 'itag',
+  },
+  // October 23
+  {
+    id: 'itag-oct-23-1',
+    title: 'Certified ScrumMaster with Nigel Baker',
+    date: '2025-10-23',
+    time: 'TBA',
+    location: 'Online',
+    type: 'Workshop',
+    description: 'Certified ScrumMaster training - Day 3.',
+    registrationUrl: 'https://itag.ie/events/certified-scrummaster-5-4-2/',
+    source: 'itag',
+  },
+];
+
+/**
  * Placeholder/fallback events for EdUTec
  */
 export const edutecEvents: Event[] = [
@@ -320,44 +550,14 @@ export const edutecEvents: Event[] = [
     description: 'Visit university campuses across Ireland to explore tech programmes, meet faculty, and tour facilities.',
     source: 'edutec',
   },
-  {
-    id: 'edutec-6',
-    title: 'Full-Stack Development Bootcamp',
-    date: '2026-01-15',
-    time: '10:00 AM - 4:00 PM',
-    location: 'Dublin, Ireland',
-    type: 'Workshop',
-    description: 'Intensive one-day bootcamp covering modern web development with React, Node.js, and databases.',
-    source: 'edutec',
-  },
-  {
-    id: 'edutec-7',
-    title: 'Tech Mentoring Speed Dating',
-    date: '2026-01-20',
-    time: '5:00 PM - 7:00 PM',
-    location: 'Galway, Ireland',
-    type: 'Networking',
-    description: 'Meet potential mentors in quick 10-minute sessions. Find the perfect match for your career development journey.',
-    source: 'edutec',
-  },
-  {
-    id: 'edutec-8',
-    title: 'Data Science Career Panel',
-    date: '2026-02-05',
-    time: '3:00 PM - 5:00 PM',
-    location: 'Online',
-    type: 'Webinar',
-    description: 'Hear from industry data scientists about career paths, required skills, and breaking into the field.',
-    source: 'edutec',
-  },
 ];
 
 /**
- * Get all events (itag + edutec), sorted by date
+ * Get all events (itag calendar + edutec), sorted by date
  */
 export async function getAllEvents(): Promise<Event[]> {
-  const itagEvents = await fetchItagEvents();
-  const allEvents = [...itagEvents, ...edutecEvents];
+  // Use manually curated itag calendar events + EdUTec events
+  const allEvents = [...itagCalendarEvents, ...edutecEvents];
   
   // Sort by date (earliest first)
   return allEvents.sort((a, b) => {
