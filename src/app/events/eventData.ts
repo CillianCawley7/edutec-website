@@ -495,21 +495,187 @@ export const itagCalendarEvents: Event[] = [
 ];
 
 /**
- * Placeholder/fallback events for EdUTec
+ * November 2025 - March 2026 itag events
+ * Adding 6 months forward as requested
  */
-export const edutecEvents: Event[] = [
+export const itagFutureEvents: Event[] = [
+  // November 2025 - Pathways Event
   {
-    id: 'edutec-1',
-    title: 'Pathways 2025 - Tech Career Fair',
+    id: 'itag-nov-6-1',
+    title: 'Pathways 2025',
     date: '2025-11-06',
     time: '10:00 AM - 4:00 PM',
-    location: 'Galway, Ireland',
+    location: 'Galway',
     type: 'Career Fair',
-    description: 'Ireland\'s premier tech career event. Meet universities, employers, and discover your future in technology.',
-    registrationUrl: '/initiatives/pathways',
+    description: 'Ireland\'s premier tech career event organized by itag. Meet universities, employers, and discover your future in technology.',
+    registrationUrl: 'https://itag.ie/events/pathways/',
+    source: 'itag',
     featured: true,
-    source: 'edutec',
   },
+  // December 2025 Events
+  {
+    id: 'itag-dec-2-1',
+    title: 'Digital Women\'s Leadership Programme – Module 3',
+    date: '2025-12-02',
+    time: '9:30 AM',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Module 3 of the Digital Women\'s Leadership Programme.',
+    registrationUrl: 'https://itag.ie/events/digital-womens-leadership-programme/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-dec-9-1',
+    title: 'itag\'s Advisory Board Meeting',
+    date: '2025-12-09',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly Advisory Board meeting for itag members.',
+    registrationUrl: 'https://itag.ie/events/itags-advisory-board-meeting/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-dec-11-1',
+    title: 'Cyber Ireland End of Year Event',
+    date: '2025-12-11',
+    time: 'TBA',
+    location: 'Dublin',
+    type: 'Networking',
+    description: 'End of year networking event for cybersecurity professionals.',
+    registrationUrl: 'https://itag.ie/events/',
+    source: 'itag',
+  },
+  // January 2026 Events
+  {
+    id: 'itag-jan-13-1',
+    title: 'itag\'s AI Forum Meeting',
+    date: '2026-01-13',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly AI Forum meeting to discuss latest trends in artificial intelligence.',
+    registrationUrl: 'https://itag.ie/events/itags-ai-forum-meeting/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-jan-15-1',
+    title: 'The Accelerated Senior Leadership Program – Workshop #3',
+    date: '2026-01-15',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Workshop 3 of the Accelerated Senior Leadership Program.',
+    registrationUrl: 'https://itag.ie/events/accelerated-senior-leadership-program/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-jan-20-1',
+    title: 'itag\'s Cyber Forum Meeting',
+    date: '2026-01-20',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly Cyber Security Forum meeting.',
+    registrationUrl: 'https://itag.ie/events/itags-cyber-forum-meeting/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-jan-27-1',
+    title: 'Digital Women\'s Leadership Programme – Module 4',
+    date: '2026-01-27',
+    time: '9:30 AM',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Module 4 of the Digital Women\'s Leadership Programme.',
+    registrationUrl: 'https://itag.ie/events/digital-womens-leadership-programme/',
+    source: 'itag',
+  },
+  // February 2026 Events
+  {
+    id: 'itag-feb-10-1',
+    title: 'itag\'s Advisory Board Meeting',
+    date: '2026-02-10',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly Advisory Board meeting for itag members.',
+    registrationUrl: 'https://itag.ie/events/itags-advisory-board-meeting/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-feb-17-1',
+    title: 'itag\'s Agile Forum Event',
+    date: '2026-02-17',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Agile Forum event for project management and agile professionals.',
+    registrationUrl: 'https://itag.ie/events/itags-agile-forum/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-feb-24-1',
+    title: 'Digital Women\'s Leadership Programme – Module 5',
+    date: '2026-02-24',
+    time: '9:30 AM',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Module 5 of the Digital Women\'s Leadership Programme.',
+    registrationUrl: 'https://itag.ie/events/digital-womens-leadership-programme/',
+    source: 'itag',
+  },
+  // March 2026 Events
+  {
+    id: 'itag-mar-10-1',
+    title: 'itag\'s AI Forum Meeting',
+    date: '2026-03-10',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly AI Forum meeting to discuss artificial intelligence innovations.',
+    registrationUrl: 'https://itag.ie/events/itags-ai-forum-meeting/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-mar-12-1',
+    title: 'itag\'s Advisory Board Meeting',
+    date: '2026-03-12',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly Advisory Board meeting for itag members.',
+    registrationUrl: 'https://itag.ie/events/itags-advisory-board-meeting/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-mar-17-1',
+    title: 'itag\'s Cyber Forum Meeting',
+    date: '2026-03-17',
+    time: 'TBA',
+    location: 'Galway',
+    type: 'Conference',
+    description: 'Monthly Cyber Security Forum meeting.',
+    registrationUrl: 'https://itag.ie/events/itags-cyber-forum-meeting/',
+    source: 'itag',
+  },
+  {
+    id: 'itag-mar-24-1',
+    title: 'Digital Women\'s Leadership Programme – Final Module',
+    date: '2026-03-24',
+    time: '9:30 AM',
+    location: 'Galway',
+    type: 'Workshop',
+    description: 'Final module and graduation of the Digital Women\'s Leadership Programme.',
+    registrationUrl: 'https://itag.ie/events/digital-womens-leadership-programme/',
+    source: 'itag',
+  },
+];
+
+/**
+ * Additional EdUTec events (non-itag)
+ */
+export const edutecEvents: Event[] = [
   {
     id: 'edutec-2',
     title: 'AI & Machine Learning Workshop',
@@ -553,11 +719,11 @@ export const edutecEvents: Event[] = [
 ];
 
 /**
- * Get all events (itag calendar + edutec), sorted by date
+ * Get all events (itag calendar + future events + edutec), sorted by date
  */
 export async function getAllEvents(): Promise<Event[]> {
-  // Use manually curated itag calendar events + EdUTec events
-  const allEvents = [...itagCalendarEvents, ...edutecEvents];
+  // Use manually curated itag calendar events + future events + EdUTec events
+  const allEvents = [...itagCalendarEvents, ...itagFutureEvents, ...edutecEvents];
   
   // Sort by date (earliest first)
   return allEvents.sort((a, b) => {

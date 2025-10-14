@@ -207,7 +207,7 @@ export default function EventCalendar({ events }: CalendarProps) {
           {/* Upcoming Events */}
           <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-xl p-6">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{color: '#212721'}}>
-              <span className="text-2xl">🔥</span>
+              <span className="text-2xl"></span>
               Coming Up Next
             </h3>
             <div className="space-y-3">
