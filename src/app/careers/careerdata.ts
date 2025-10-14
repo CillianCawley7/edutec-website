@@ -1,39 +1,312 @@
-export const careerData = [
-    {
-      id: 1,
-      title: 'Software Developer',
-      description: 'Designs, codes, tests, and maintains software applications. Works in teams to build apps, games, or platforms used in education and beyond.',
-      imagePlaceholder: 'https://images.unsplash.com/photo-1580894908361-967195033215?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c29mdHdhcmUlMjBlbmdpbmVlcnxlbnwwfHwwfHx8MA%3D%3D'
-    },
-    {
-      id: 2,
-      title: 'Data Scientist',
-      description: 'Analyzes large sets of data to extract insights, create predictions, and guide decisions. Uses machine learning and data visualization tools.',
-      imagePlaceholder: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGF0YSUyMHNjaWVudGlzdHxlbnwwfHwwfHx8MA%3D%3D'
-    },
-    {
-      id: 3,
-      title: 'Cybersecurity Specialist',
-      description: 'Protects systems and networks from threats. Involves ethical hacking, cryptography, threat detection, and digital forensics.',
-      imagePlaceholder: 'https://plus.unsplash.com/premium_photo-1674669009418-2643aa58b11b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3liZXIlMjBzZWN1cml0eXxlbnwwfHwwfHx8MA%3D%3D'
-    },
-    {
-      id: 4,
-      title: 'Artificial Intelligence Engineer',
-      description: 'Creates systems that mimic human intelligence, like chatbots, recommendation engines, and robotics. Focuses on machine learning and NLP.',
-      imagePlaceholder: 'https://images.unsplash.com/photo-1737641624486-7846df8528dc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QUklMjBlbmdpbmVlcnxlbnwwfHwwfHx8MA%3D%3D'
-    },
-    {
-      id: 5,
-      title: 'Information Systems Analyst',
-      description: 'Manages and improves digital tools that businesses use to store and analyze information. Combines IT, business, and communication skills.',
-      imagePlaceholder: 'https://media.istockphoto.com/id/2183086913/photo/chart-scheme-hierarchy-management-of-corporate-digital-technology-of-business-process-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=MvrYJ6paBWq7DLDwmXCN--O_RHD-IQd-6qXpILw3AII='
-    },
-    {
-      id: 6,
-      title: 'Instructional Technologist',
-      description: 'Designs and implements digital learning tools, online courses, and education software to improve teaching and learning experiences.',
-      imagePlaceholder: 'https://plus.unsplash.com/premium_photo-1663090752502-1f38cea3be4e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwZWR1Y2F0aW9ufGVufDB8fDB8fHww'
-    }
-  ];
-  
+export type Career = {
+  id: string;
+  title: string;
+  description: string;
+  imagePlaceholder: string;
+  category: 'Software Development' | 'Data & AI' | 'Cyber Security' | 'Engineering' | 'IT & Systems' | 'Business & Management';
+  averageSalary?: string;
+  skills?: string[];
+  relatedQualifications?: string[];
+};
+
+export const careerData: Career[] = [
+  // Software Development Careers
+  {
+    id: 'software-developer',
+    title: 'Software Developer',
+    description: 'Design, code, test, and maintain software applications. Work in teams to build apps, games, platforms, and enterprise systems used across industries.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&auto=format&fit=crop&q=60',
+    category: 'Software Development',
+    averageSalary: '€35,000 - €65,000',
+    skills: ['Programming', 'Problem Solving', 'Version Control', 'Testing'],
+  },
+  {
+    id: 'web-developer',
+    title: 'Web Developer',
+    description: 'Build and maintain websites and web applications. Create responsive, user-friendly interfaces and work with databases, APIs, and modern frameworks.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=60',
+    category: 'Software Development',
+    averageSalary: '€32,000 - €55,000',
+    skills: ['HTML/CSS', 'JavaScript', 'React', 'Node.js'],
+  },
+  {
+    id: 'application-developer',
+    title: 'Application Developer',
+    description: 'Create software applications for specific platforms including mobile, desktop, and web. Focus on user experience and functionality.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=60',
+    category: 'Software Development',
+    averageSalary: '€36,000 - €60,000',
+    skills: ['Mobile Development', 'UI/UX', 'API Integration', 'Testing'],
+  },
+  {
+    id: 'junior-developer',
+    title: 'Junior Developer',
+    description: 'Entry-level software development role focusing on learning programming fundamentals, working on smaller features, and growing technical skills.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=60',
+    category: 'Software Development',
+    averageSalary: '€28,000 - €40,000',
+    skills: ['Basic Programming', 'Git', 'Debugging', 'Learning Mindset'],
+  },
+  {
+    id: 'software-engineer',
+    title: 'Software Engineer',
+    description: 'Apply engineering principles to software development. Design scalable systems, optimize performance, and implement best practices in code architecture.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1580894908361-967195033215?w=800&auto=format&fit=crop&q=60',
+    category: 'Software Development',
+    averageSalary: '€40,000 - €75,000',
+    skills: ['System Design', 'Algorithms', 'Software Architecture', 'DevOps'],
+  },
+  {
+    id: 'devops-engineer',
+    title: 'DevOps Engineer',
+    description: 'Bridge development and operations teams. Automate deployments, manage infrastructure, monitor systems, and ensure continuous integration and delivery.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&auto=format&fit=crop&q=60',
+    category: 'Software Development',
+    averageSalary: '€45,000 - €80,000',
+    skills: ['CI/CD', 'Docker', 'Kubernetes', 'Cloud Platforms'],
+  },
+  {
+    id: 'cloud-engineer',
+    title: 'Cloud Engineer',
+    description: 'Design, implement, and manage cloud-based infrastructure and services. Work with AWS, Azure, or Google Cloud to build scalable solutions.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60',
+    category: 'Software Development',
+    averageSalary: '€45,000 - €85,000',
+    skills: ['AWS/Azure', 'Cloud Architecture', 'Networking', 'Security'],
+  },
+
+  // Data & AI Careers
+  {
+    id: 'data-scientist',
+    title: 'Data Scientist',
+    description: 'Analyze large datasets to extract insights, create predictive models, and guide business decisions. Use machine learning, statistics, and data visualization.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60',
+    category: 'Data & AI',
+    averageSalary: '€40,000 - €75,000',
+    skills: ['Python', 'Machine Learning', 'Statistics', 'Data Visualization'],
+  },
+  {
+    id: 'data-analyst',
+    title: 'Data Analyst',
+    description: 'Collect, process, and analyze data to help organizations make informed decisions. Create reports, dashboards, and visualizations.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60',
+    category: 'Data & AI',
+    averageSalary: '€32,000 - €55,000',
+    skills: ['SQL', 'Excel', 'Tableau', 'Data Analysis'],
+  },
+  {
+    id: 'ai-engineer',
+    title: 'AI Engineer',
+    description: 'Develop artificial intelligence systems including machine learning models, neural networks, and intelligent automation solutions.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=60',
+    category: 'Data & AI',
+    averageSalary: '€45,000 - €90,000',
+    skills: ['Deep Learning', 'TensorFlow', 'PyTorch', 'AI/ML'],
+  },
+  {
+    id: 'machine-learning-engineer',
+    title: 'Machine Learning Engineer',
+    description: 'Build and deploy machine learning models at scale. Focus on model optimization, training pipelines, and production ML systems.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&auto=format&fit=crop&q=60',
+    category: 'Data & AI',
+    averageSalary: '€50,000 - €95,000',
+    skills: ['ML Algorithms', 'Python', 'Model Deployment', 'MLOps'],
+  },
+  {
+    id: 'ai-researcher',
+    title: 'AI Researcher',
+    description: 'Conduct cutting-edge research in artificial intelligence. Develop new algorithms, publish papers, and advance the field of AI.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?w=800&auto=format&fit=crop&q=60',
+    category: 'Data & AI',
+    averageSalary: '€45,000 - €100,000',
+    skills: ['Research', 'Mathematics', 'Deep Learning', 'Academic Writing'],
+  },
+
+  // Cyber Security Careers
+  {
+    id: 'cyber-security-analyst',
+    title: 'Cyber Security Analyst',
+    description: 'Protect systems and networks from cyber threats. Monitor security systems, investigate incidents, and implement security measures.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=60',
+    category: 'Cyber Security',
+    averageSalary: '€38,000 - €70,000',
+    skills: ['Security Tools', 'Threat Analysis', 'Incident Response', 'SIEM'],
+  },
+  {
+    id: 'cyber-security-engineer',
+    title: 'Cyber Security Engineer',
+    description: 'Design and implement security architectures. Build defensive systems, conduct penetration testing, and ensure infrastructure security.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60',
+    category: 'Cyber Security',
+    averageSalary: '€42,000 - €80,000',
+    skills: ['Network Security', 'Penetration Testing', 'Encryption', 'Firewalls'],
+  },
+  {
+    id: 'digital-forensics-specialist',
+    title: 'Digital Forensics Specialist',
+    description: 'Investigate cybercrimes and security breaches. Recover and analyze digital evidence, prepare reports for legal proceedings.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=60',
+    category: 'Cyber Security',
+    averageSalary: '€40,000 - €75,000',
+    skills: ['Forensic Tools', 'Investigation', 'Evidence Collection', 'Legal Knowledge'],
+  },
+  {
+    id: 'network-security-engineer',
+    title: 'Network Security Engineer',
+    description: 'Secure network infrastructure and communications. Design firewalls, VPNs, and intrusion detection systems.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=60',
+    category: 'Cyber Security',
+    averageSalary: '€40,000 - €75,000',
+    skills: ['Network Protocols', 'Firewalls', 'VPN', 'IDS/IPS'],
+  },
+  {
+    id: 'it-security-specialist',
+    title: 'IT Security Specialist',
+    description: 'Implement and maintain security policies and procedures. Conduct security audits, manage access controls, and ensure compliance.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&fit=crop&q=60',
+    category: 'Cyber Security',
+    averageSalary: '€36,000 - €65,000',
+    skills: ['Security Policies', 'Compliance', 'Risk Assessment', 'Access Control'],
+  },
+  {
+    id: 'cyber-security-manager',
+    title: 'Cyber Security Manager',
+    description: 'Lead security teams and strategy. Manage security budgets, coordinate incident response, and communicate with stakeholders.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=60',
+    category: 'Cyber Security',
+    averageSalary: '€50,000 - €90,000',
+    skills: ['Leadership', 'Strategy', 'Risk Management', 'Team Management'],
+  },
+  {
+    id: 'cyber-security-technician',
+    title: 'Cyber Security Technician',
+    description: 'Support security operations through monitoring, maintenance, and technical support. Entry to mid-level security role.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=60',
+    category: 'Cyber Security',
+    averageSalary: '€28,000 - €45,000',
+    skills: ['Monitoring', 'Technical Support', 'Security Tools', 'Documentation'],
+  },
+  {
+    id: 'network-engineer',
+    title: 'Network Engineer',
+    description: 'Design, implement, and maintain computer networks. Ensure network performance, reliability, and security.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=60',
+    category: 'Cyber Security',
+    averageSalary: '€38,000 - €70,000',
+    skills: ['Networking', 'Routers/Switches', 'TCP/IP', 'Network Design'],
+  },
+
+  // Engineering Careers
+  {
+    id: 'electronic-engineer',
+    title: 'Electronic Engineer',
+    description: 'Design and develop electronic systems and components. Work on circuits, embedded systems, and electronic devices.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&auto=format&fit=crop&q=60',
+    category: 'Engineering',
+    averageSalary: '€35,000 - €65,000',
+    skills: ['Circuit Design', 'Embedded Systems', 'Electronics', 'Testing'],
+  },
+  {
+    id: 'computer-engineer',
+    title: 'Computer Engineer',
+    description: 'Combine electrical engineering and computer science. Design computer hardware, embedded systems, and IoT devices.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60',
+    category: 'Engineering',
+    averageSalary: '€38,000 - €70,000',
+    skills: ['Hardware Design', 'Embedded Programming', 'Computer Architecture', 'FPGA'],
+  },
+  {
+    id: 'electrical-engineer',
+    title: 'Electrical Engineer',
+    description: 'Design and test electrical systems and equipment. Work on power systems, electronics, and electrical infrastructure.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1581092918484-8313e1b6eb3d?w=800&auto=format&fit=crop&q=60',
+    category: 'Engineering',
+    averageSalary: '€36,000 - €68,000',
+    skills: ['Electrical Systems', 'Power Engineering', 'CAD', 'Testing'],
+  },
+
+  // IT & Systems Careers
+  {
+    id: 'systems-analyst',
+    title: 'Systems Analyst',
+    description: 'Analyze and improve IT systems. Bridge the gap between business needs and technology solutions.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60',
+    category: 'IT & Systems',
+    averageSalary: '€35,000 - €60,000',
+    skills: ['Systems Analysis', 'Requirements Gathering', 'Process Improvement', 'Documentation'],
+  },
+  {
+    id: 'computer-systems-analyst',
+    title: 'Computer Systems Analyst',
+    description: 'Evaluate computer systems and procedures. Design solutions to help organizations operate more efficiently.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=60',
+    category: 'IT & Systems',
+    averageSalary: '€36,000 - €62,000',
+    skills: ['System Design', 'Analysis', 'Problem Solving', 'Technical Writing'],
+  },
+  {
+    id: 'systems-administrator',
+    title: 'Systems Administrator',
+    description: 'Maintain and configure computer systems and servers. Ensure system reliability, performance, and security.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&auto=format&fit=crop&q=60',
+    category: 'IT & Systems',
+    averageSalary: '€32,000 - €58,000',
+    skills: ['Linux/Windows Server', 'Networking', 'Scripting', 'Troubleshooting'],
+  },
+  {
+    id: 'it-specialist',
+    title: 'IT Specialist',
+    description: 'Provide technical support and maintain IT infrastructure. Handle hardware, software, and network issues.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop&q=60',
+    category: 'IT & Systems',
+    averageSalary: '€28,000 - €48,000',
+    skills: ['Technical Support', 'Hardware/Software', 'Troubleshooting', 'Customer Service'],
+  },
+  {
+    id: 'computer-scientist',
+    title: 'Computer Scientist',
+    description: 'Conduct research and develop new computing technologies. Work on algorithms, programming languages, and theoretical computer science.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=60',
+    category: 'IT & Systems',
+    averageSalary: '€40,000 - €80,000',
+    skills: ['Research', 'Algorithms', 'Theory', 'Programming'],
+  },
+
+  // Business & Management Careers
+  {
+    id: 'it-consultant',
+    title: 'IT Consultant',
+    description: 'Advise organizations on technology strategies and solutions. Help businesses improve IT infrastructure and processes.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&auto=format&fit=crop&q=60',
+    category: 'Business & Management',
+    averageSalary: '€38,000 - €75,000',
+    skills: ['Consulting', 'Communication', 'Technology Strategy', 'Client Management'],
+  },
+  {
+    id: 'business-analyst',
+    title: 'Business Analyst',
+    description: 'Analyze business processes and identify technology solutions. Bridge business stakeholders and technical teams.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60',
+    category: 'Business & Management',
+    averageSalary: '€35,000 - €65,000',
+    skills: ['Business Analysis', 'Requirements', 'Process Modeling', 'Communication'],
+  },
+  {
+    id: 'project-manager',
+    title: 'Project Manager',
+    description: 'Plan, execute, and oversee technology projects. Coordinate teams, manage budgets, and ensure project success.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=60',
+    category: 'Business & Management',
+    averageSalary: '€40,000 - €75,000',
+    skills: ['Project Management', 'Leadership', 'Agile/Scrum', 'Stakeholder Management'],
+  },
+  {
+    id: 'it-manager',
+    title: 'IT Manager',
+    description: 'Oversee IT department operations. Manage IT staff, budgets, strategy, and ensure technology supports business goals.',
+    imagePlaceholder: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=60',
+    category: 'Business & Management',
+    averageSalary: '€45,000 - €80,000',
+    skills: ['Leadership', 'IT Strategy', 'Budget Management', 'Team Building'],
+  },
+];

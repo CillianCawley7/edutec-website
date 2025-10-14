@@ -8,7 +8,7 @@ export default function PathwaysPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 min-h-screen bg-white text-gray-800">
+      <main className="pt-0 min-h-screen bg-white text-gray-800">
         {/* Hero */}
         <section className="text-white py-12" style={{background: 'linear-gradient(to right, #00b2e3, #0099c7)'}}>
           <div className="max-w-6xl mx-auto px-6">
