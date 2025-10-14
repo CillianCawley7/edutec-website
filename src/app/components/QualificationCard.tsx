@@ -31,7 +31,7 @@ export default function QualificationCard({ qualification }: Props) {
         </div>
         {providerLogo && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={providerLogo} alt="Provider Logo" className="w-10 h-10 object-contain" />
+          <img src={providerLogo} alt={`${provider} Logo`} className="w-16 h-16 object-contain flex-shrink-0" />
         )}
       </div>
 

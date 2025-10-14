@@ -23,7 +23,7 @@ export default function QualificationDetailPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 min-h-screen bg-white text-gray-800">
+      <main className="pt-0 min-h-screen bg-white text-gray-800">
         <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
           <div className="max-w-6xl mx-auto px-6">
             <Link href="/qualifications" className="text-blue-100 hover:text-white">← Back to Qualifications</Link>
