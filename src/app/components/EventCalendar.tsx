@@ -276,7 +276,7 @@ function CalendarDayCell({
   return (
     <div
       className={`
-        min-h-[120px] border border-gray-100 p-2 transition-all duration-300 relative group
+        min-h-[140px] border border-gray-100 p-2 transition-all duration-300 relative group
         ${!day.isCurrentMonth ? 'bg-gray-50 opacity-50' : 'bg-white'}
         ${day.isToday ? 'ring-2 ring-blue-500 ring-inset' : ''}
         ${hasEvents ? 'cursor-pointer hover:bg-blue-50 hover:shadow-lg hover:scale-105 hover:z-10' : ''}
@@ -304,25 +304,30 @@ function CalendarDayCell({
 
       {/* Event Dots/Pills */}
       <div className="space-y-1">
-        {day.events.slice(0, 3).map((event, idx) => (
+        {day.events.slice(0, 2).map((event, idx) => (
           <button
             key={event.id}
             onClick={() => onEventClick(event)}
-            className="w-full text-left text-xs px-2 py-1 rounded truncate transition-all duration-200 hover:scale-105"
+            className="w-full text-left text-xs px-2 py-1 rounded transition-all duration-200 hover:scale-105 line-clamp-2"
             style={{
               backgroundColor: event.source === 'itag' ? '#e6f7ff' : '#f0f9ff',
               color: '#00b2e3',
               border: '1px solid #00b2e3',
               opacity: isHovered ? 1 : 0.9,
             }}
+            title={event.title}
           >
-            {event.title.length > 15 ? event.title.substring(0, 15) + '...' : event.title}
+            {event.title}
           </button>
         ))}
-        {day.events.length > 3 && (
-          <div className="text-xs text-gray-500 text-center">
-            +{day.events.length - 3} more
-          </div>
+        {day.events.length > 2 && (
+          <button
+            onClick={() => onEventClick(day.events[2])}
+            className="text-xs text-blue-600 font-semibold text-center w-full hover:underline"
+            title={`View ${day.events.length - 2} more events`}
+          >
+            +{day.events.length - 2} more
+          </button>
         )}
       </div>
 
