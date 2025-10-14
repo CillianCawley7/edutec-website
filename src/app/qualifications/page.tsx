@@ -2,6 +2,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import Navbar from '../components/NavBar';
 import QualificationCard from '../components/QualificationCard';
 import Footer from '../components/Footer';
@@ -12,6 +13,7 @@ type Filters = {
   level: string; // 'all' | '6' | '7' | '8' | '9'
   pathway: string; // 'all' | 'University' | 'Apprenticeship' | 'Further Education' | 'Bootcamp'
   delivery: string; // 'all' | 'On-campus' | 'Online' | 'Hybrid'
+  category: string; // 'all' | 'Computer Science' | 'Engineering' | 'Information Science' | 'Data Science' | 'AI' | 'Software Development' | 'Cyber Security'
 };
 
 function filterQualifications(items: Qualification[], filters: Filters) {
@@ -25,7 +27,8 @@ function filterQualifications(items: Qualification[], filters: Filters) {
     const matchesLevel = filters.level === 'all' ? true : String(item.nfqLevel || '') === filters.level;
     const matchesPathway = filters.pathway === 'all' ? true : item.pathway === (filters.pathway as any);
     const matchesDelivery = filters.delivery === 'all' ? true : item.delivery === (filters.delivery as any);
-    return matchesQuery && matchesLevel && matchesPathway && matchesDelivery;
+    const matchesCategory = filters.category === 'all' ? true : item.category === (filters.category as any);
+    return matchesQuery && matchesLevel && matchesPathway && matchesDelivery && matchesCategory;
   });
 }
 
@@ -35,6 +38,7 @@ export default function QualificationsPage() {
     level: 'all',
     pathway: 'all',
     delivery: 'all',
+    category: 'all',
   });
 
   const filtered = React.useMemo(() => filterQualifications(qualifications, filters), [filters]);
@@ -42,74 +46,252 @@ export default function QualificationsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-0 px-6 py-14 font-sans bg-gray-50 text-gray-800">
-        <div className="max-w-7xl mx-auto">
-          {/* Controls */}
-          <section className="bg-white p-4 rounded-xl shadow mb-8">
-            <div className="flex flex-col md:flex-row gap-4 md:items-end">
-              <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Search</label>
-                <input
-                  value={filters.q}
-                  onChange={(e) => setFilters((f) => ({ ...f, q: e.target.value }))}
-                  placeholder="Search by title, provider, or career"
-                  className="w-full border rounded-md px-3 py-2"
-                />
-              </div>
+      <main className="pt-0 min-h-screen bg-white text-gray-800">
+        
+        {/* Hero Section */}
+        <section className="text-white py-16" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
+          <div className="max-w-6xl mx-auto px-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Tech Qualifications</h1>
+            <p className="text-xl md:text-2xl max-w-4xl text-blue-100">
+              Discover comprehensive tech education pathways across Ireland's leading universities and institutions. 
+              From Computer Science to AI, find the perfect qualification to launch your tech career.
+            </p>
+          </div>
+        </section>
+
+        {/* Intro Section */}
+        <section className="py-16 px-6 bg-gray-50">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">NFQ Level</label>
-                <select
-                  value={filters.level}
-                  onChange={(e) => setFilters((f) => ({ ...f, level: e.target.value }))}
-                  className="border rounded-md px-3 py-2"
-                >
-                  <option value="all">All</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                </select>
+                <h2 className="text-3xl font-bold mb-6" style={{color: '#212721'}}>
+                  Your Tech Education Journey Starts Here
+                </h2>
+                <p className="text-lg text-gray-700 mb-6">
+                  Ireland's tech sector is booming, and our universities offer world-class qualifications 
+                  that prepare you for exciting careers in technology. Whether you're interested in 
+                  software development, data science, cybersecurity, or AI, there's a pathway for you.
+                </p>
+                <p className="text-lg text-gray-700 mb-8">
+                  Our comprehensive database includes courses from leading institutions like University of Galway, 
+                  University of Limerick, ATU, and many more. Each qualification is designed to give you the 
+                  skills and knowledge needed to succeed in today's digital economy.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="#courses"
+                    className="inline-block text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition"
+                    style={{backgroundColor: '#00b2e3'}}
+                  >
+                    Browse Courses
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className="inline-block px-6 py-3 rounded-full font-semibold hover:opacity-90 transition border-2"
+                    style={{color: '#00b2e3', borderColor: '#00b2e3'}}
+                  >
+                    Explore Careers
+                  </Link>
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Pathway</label>
-                <select
-                  value={filters.pathway}
-                  onChange={(e) => setFilters((f) => ({ ...f, pathway: e.target.value }))}
-                  className="border rounded-md px-3 py-2"
-                >
-                  <option value="all">All</option>
-                  <option value="University">University</option>
-                  <option value="Apprenticeship">Apprenticeship</option>
-                  <option value="Further Education">Further Education</option>
-                  <option value="Bootcamp">Bootcamp</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Delivery</label>
-                <select
-                  value={filters.delivery}
-                  onChange={(e) => setFilters((f) => ({ ...f, delivery: e.target.value }))}
-                  className="border rounded-md px-3 py-2"
-                >
-                  <option value="all">All</option>
-                  <option value="On-campus">On-campus</option>
-                  <option value="Online">Online</option>
-                  <option value="Hybrid">Hybrid</option>
-                </select>
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <h3 className="text-xl font-semibold mb-4" style={{color: '#212721'}}>Quick Stats</h3>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold mb-2" style={{color: '#00b2e3'}}>50+</div>
+                    <div className="text-sm text-gray-600">Courses Available</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold mb-2" style={{color: '#00b2e3'}}>15+</div>
+                    <div className="text-sm text-gray-600">Universities</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold mb-2" style={{color: '#00b2e3'}}>7</div>
+                    <div className="text-sm text-gray-600">Career Pathways</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold mb-2" style={{color: '#00b2e3'}}>NFQ 6-9</div>
+                    <div className="text-sm text-gray-600">Levels Covered</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Results */}
-          <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((q) => (
-              <QualificationCard key={q.id} qualification={q} />
-            ))}
-            {filtered.length === 0 && (
-              <p className="col-span-full text-center text-gray-500">No programmes match your filters.</p>
-            )}
-          </section>
-        </div>
+        {/* Career Pathways */}
+        <section className="py-16 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center" style={{color: '#212721'}}>
+              Explore Career Pathways
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style={{backgroundColor: '#e6f7ff'}}>
+                  <span className="text-2xl">💻</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3" style={{color: '#212721'}}>Computer Science</h3>
+                <p className="text-gray-600 mb-4">Core programming, algorithms, and computer systems fundamentals.</p>
+                <Link href="#courses" className="text-sm font-medium" style={{color: '#00b2e3'}}>View Courses →</Link>
+              </div>
+
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style={{backgroundColor: '#e6f7ff'}}>
+                  <span className="text-2xl">⚙️</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3" style={{color: '#212721'}}>Engineering</h3>
+                <p className="text-gray-600 mb-4">Electronic, computer, and software engineering specializations.</p>
+                <Link href="#courses" className="text-sm font-medium" style={{color: '#00b2e3'}}>View Courses →</Link>
+              </div>
+
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style={{backgroundColor: '#e6f7ff'}}>
+                  <span className="text-2xl">📊</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3" style={{color: '#212721'}}>Data Science</h3>
+                <p className="text-gray-600 mb-4">Data analysis, machine learning, and statistical modeling.</p>
+                <Link href="#courses" className="text-sm font-medium" style={{color: '#00b2e3'}}>View Courses →</Link>
+              </div>
+
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style={{backgroundColor: '#e6f7ff'}}>
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3" style={{color: '#212721'}}>Artificial Intelligence</h3>
+                <p className="text-gray-600 mb-4">AI systems, machine learning, and intelligent automation.</p>
+                <Link href="#courses" className="text-sm font-medium" style={{color: '#00b2e3'}}>View Courses →</Link>
+              </div>
+
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style={{backgroundColor: '#e6f7ff'}}>
+                  <span className="text-2xl">🔧</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3" style={{color: '#212721'}}>Software Development</h3>
+                <p className="text-gray-600 mb-4">Programming, web development, and software engineering.</p>
+                <Link href="#courses" className="text-sm font-medium" style={{color: '#00b2e3'}}>View Courses →</Link>
+              </div>
+
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style={{backgroundColor: '#e6f7ff'}}>
+                  <span className="text-2xl">🔒</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3" style={{color: '#212721'}}>Cyber Security</h3>
+                <p className="text-gray-600 mb-4">Digital forensics, network security, and threat protection.</p>
+                <Link href="#courses" className="text-sm font-medium" style={{color: '#00b2e3'}}>View Courses →</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Search and Filters */}
+        <section id="courses" className="py-16 px-6 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center" style={{color: '#212721'}}>
+              Find Your Perfect Course
+            </h2>
+            
+            {/* Controls */}
+            <div className="bg-white p-6 rounded-xl shadow mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div className="lg:col-span-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Search Courses</label>
+                  <input
+                    value={filters.q}
+                    onChange={(e) => setFilters((f) => ({ ...f, q: e.target.value }))}
+                    placeholder="Search by title, provider, or career..."
+                    className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                  <select
+                    value={filters.category}
+                    onChange={(e) => setFilters((f) => ({ ...f, category: e.target.value }))}
+                    className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option value="all">All Categories</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Information Science">Information Science</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="AI">Artificial Intelligence</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">NFQ Level</label>
+                  <select
+                    value={filters.level}
+                    onChange={(e) => setFilters((f) => ({ ...f, level: e.target.value }))}
+                    className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option value="all">All Levels</option>
+                    <option value="6">Level 6</option>
+                    <option value="7">Level 7</option>
+                    <option value="8">Level 8</option>
+                    <option value="9">Level 9</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Delivery</label>
+                  <select
+                    value={filters.delivery}
+                    onChange={(e) => setFilters((f) => ({ ...f, delivery: e.target.value }))}
+                    className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option value="all">All Delivery</option>
+                    <option value="On-campus">On-campus</option>
+                    <option value="Online">Online</option>
+                    <option value="Hybrid">Hybrid</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Results */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {filtered.map((q) => (
+                <QualificationCard key={q.id} qualification={q} />
+              ))}
+              {filtered.length === 0 && (
+                <div className="col-span-full text-center py-12">
+                  <div className="text-gray-400 text-6xl mb-4">🔍</div>
+                  <h3 className="text-xl font-semibold text-gray-600 mb-2">No courses found</h3>
+                  <p className="text-gray-500">Try adjusting your search criteria or browse all courses.</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="py-16 px-6" style={{background: 'linear-gradient(135deg, #212721 0%, #3a403a 100%)'}}>
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Start Your Tech Journey?
+            </h2>
+            <p className="text-xl mb-8 text-gray-300">
+              Connect with our team to learn more about these qualifications and get guidance 
+              on choosing the right path for your career goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="mailto:info@edutec.ie"
+                className="inline-block bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:opacity-90 transition text-lg"
+              >
+                Get Guidance
+              </Link>
+              <Link
+                href="/initiatives/pathways"
+                className="inline-block border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-800 transition text-lg"
+              >
+                Attend Pathways 2025
+              </Link>
+            </div>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </>
