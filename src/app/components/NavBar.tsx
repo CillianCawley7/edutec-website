@@ -10,7 +10,7 @@ export default function Navbar() {
         <Link href="/Home" className="flex items-center gap-3">
           <Image src="/logos/EdUTec_logo_white.png" alt="Edutec Careers logo" width={100} height={100} priority />
         </Link>
-        <ul className="flex space-x-6 text-sm font-bold items-center">
+        <ul className="flex space-x-8 text-base font-bold items-center">
           <li><Link href="/about" className="text-white hover:text-gray-200">About</Link></li>
           <li><Link href="/initiatives/pathways" className="text-white hover:text-gray-200">Pathways</Link></li>
           <li><Link href="/initiatives/adopt-a-school" className="text-white hover:text-gray-200">Adopt a School</Link></li>

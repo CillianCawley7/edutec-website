@@ -61,30 +61,50 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Supported by itag Section */}
-      <div className="max-w-7xl mx-auto py-6 px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="flex items-center gap-4">
-          <Image
-            src="/itag-supported-logo.svg"
-            alt="Supported by itag"
-            width={200}
-            height={60}
-            className="object-contain"
-          />
-        </div>
-        <div className="flex items-center gap-4">
-          <Image
-            src="/itag-25-years-logo.svg"
-            alt="itag 25 Years Celebration"
-            width={300}
-            height={120}
-            className="object-contain"
-          />
+      {/* Supported by itag & Skillnet Section */}
+      <div className="border-t" style={{borderColor: '#3a403a'}}>
+        <div className="max-w-7xl mx-auto py-8 px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            {/* Supported by itag */}
+            <div className="flex flex-col items-center md:items-start gap-3">
+              <p className="text-sm text-gray-400">Proudly supported by</p>
+              <Image
+                src="/itag/itag logo.png"
+                alt="itag - Irish Technology Association Galway"
+                width={140}
+                height={50}
+                className="object-contain"
+              />
+            </div>
+
+            {/* 25 Years Celebration */}
+            <div className="flex items-center">
+              <Image
+                src="/itag/Itag 25 Years Logo Rgb (1).png"
+                alt="itag 25 Years Celebration"
+                width={200}
+                height={80}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Skillnet Partnership */}
+            <div className="flex flex-col items-center md:items-end gap-3">
+              <p className="text-sm text-gray-400">In partnership with</p>
+              <Image
+                src="/itag/Itag-25-years.png"
+                alt="itag Skillnet Ireland"
+                width={180}
+                height={50}
+                className="object-contain"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="text-center text-xs py-4" style={{color: '#999'}}>
+      <div className="text-center text-xs py-4 border-t" style={{color: '#999', borderColor: '#3a403a'}}>
         © {new Date().getFullYear()} EduTec Careers. Built with ❤️ in Ireland.
       </div>
     </footer>
