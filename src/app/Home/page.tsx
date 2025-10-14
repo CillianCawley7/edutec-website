@@ -44,8 +44,23 @@ export default function Home() {
       <Navbar />
       <main className="min-h-screen bg-white text-gray-800 font-sans">
         
-        {/* Hero Section with animated gradient */}
-        <section className="px-8 py-20 text-center relative overflow-hidden" style={{background: 'linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%)'}}>
+        {/* Hero Section with video background */}
+        <section className="px-8 py-20 text-center relative overflow-hidden">
+          {/* Video Background */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute w-full h-full object-cover opacity-20"
+            >
+              <source src="https://cdn.coverr.co/videos/coverr-coding-on-a-laptop-5307/1080p.mp4" type="video/mp4" />
+            </video>
+            {/* Gradient overlay */}
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(230, 247, 255, 0.95) 0%, rgba(240, 249, 255, 0.95) 100%)'}}></div>
+          </div>
+          
           <div className="max-w-6xl mx-auto relative z-10">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in" style={{color: '#212721'}}>
               Tech Careers Start Here
