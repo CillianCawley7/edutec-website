@@ -19,30 +19,24 @@ export type Event = {
 };
 
 /**
- * Fetch events from itag website
- * TODO: Implement actual API/scraping logic once we know the itag calendar structure
+ * Fetch events from itag website RSS feed
  */
 export async function fetchItagEvents(): Promise<Event[]> {
   try {
-    // Option 1: If itag has a public API endpoint
-    // const response = await fetch('https://itag.ie/api/events');
-    // const data = await response.json();
-    // return transformItagEvents(data);
-
-    // Option 2: If they have an RSS feed
-    // const response = await fetch('https://itag.ie/events/feed');
-    // const feed = await parseRSS(response);
-    // return transformRSSEvents(feed);
-
-    // Option 3: If we need to scrape their calendar page
-    // This would require server-side implementation
-    // const response = await fetch('https://itag.ie/events');
-    // const html = await response.text();
-    // return scrapeEvents(html);
-
-    // For now, return empty array - will be replaced with actual implementation
-    console.log('itag event fetching not yet implemented');
-    return [];
+    // Fetch the RSS feed from itag
+    const response = await fetch('https://itag.ie/events/feed/', {
+      next: { revalidate: 300 }, // Cache for 5 minutes
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch itag events: ${response.status}`);
+    }
+    
+    const xmlText = await response.text();
+    const events = parseItagRSS(xmlText);
+    
+    console.log(`✅ Fetched ${events.length} events from itag`);
+    return events;
   } catch (error) {
     console.error('Error fetching itag events:', error);
     return [];
@@ -50,21 +44,175 @@ export async function fetchItagEvents(): Promise<Event[]> {
 }
 
 /**
- * Transform itag event data to our Event format
- * Adjust this based on actual itag data structure
+ * Parse itag RSS feed XML
  */
-function transformItagEvents(itagData: any[]): Event[] {
-  return itagData.map((event, index) => ({
-    id: `itag-${event.id || index}`,
-    title: event.title || event.name,
-    date: formatDate(event.date || event.start_date),
-    time: event.time || 'TBA',
-    location: event.location || event.venue || 'TBA',
-    type: categorizeEvent(event.title, event.category),
-    description: event.description || event.summary || '',
-    registrationUrl: event.registration_url || event.url,
-    source: 'itag',
-  }));
+function parseItagRSS(xmlText: string): Event[] {
+  const events: Event[] = [];
+  
+  try {
+    // Extract all <item> elements
+    const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+    const items = xmlText.match(itemRegex) || [];
+    
+    items.forEach((item, index) => {
+      try {
+        // Extract fields from each item
+        const title = extractTag(item, 'title');
+        const link = extractTag(item, 'link');
+        const description = extractTag(item, 'description');
+        const pubDate = extractTag(item, 'pubDate');
+        const content = extractTag(item, 'content:encoded') || description;
+        
+        // Extract event-specific metadata
+        const eventDate = extractEventDate(content, pubDate);
+        const eventTime = extractEventTime(content);
+        const eventLocation = extractEventLocation(content);
+        
+        if (title && eventDate) {
+          events.push({
+            id: `itag-${index + 1}`,
+            title: cleanHTML(title),
+            date: eventDate,
+            time: eventTime || 'TBA',
+            location: eventLocation || 'TBA',
+            type: categorizeEvent(title),
+            description: cleanHTML(description || '').substring(0, 200),
+            registrationUrl: link,
+            source: 'itag',
+          });
+        }
+      } catch (err) {
+        console.warn('Error parsing itag event item:', err);
+      }
+    });
+  } catch (error) {
+    console.error('Error parsing itag RSS:', error);
+  }
+  
+  return events;
+}
+
+/**
+ * Extract content from XML tag (handles CDATA)
+ */
+function extractTag(xml: string, tagName: string): string {
+  const regex = new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\/${tagName}>`, 'i');
+  const match = xml.match(regex);
+  if (!match) return '';
+  
+  let content = match[1].trim();
+  
+  // Handle CDATA sections
+  const cdataMatch = content.match(/<!\[CDATA\[([\s\S]*?)\]\]>/);
+  if (cdataMatch) {
+    content = cdataMatch[1];
+  }
+  
+  return content.trim();
+}
+
+/**
+ * Extract event date from content or pubDate
+ */
+function extractEventDate(content: string, pubDate: string): string {
+  // Try to find date patterns in content
+  const datePatterns = [
+    /(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/,  // DD/MM/YYYY or DD-MM-YYYY
+    /(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})/,  // YYYY/MM/DD or YYYY-MM-DD
+    /(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{4})/i,
+  ];
+  
+  for (const pattern of datePatterns) {
+    const match = content.match(pattern);
+    if (match) {
+      try {
+        // Try to parse the matched date
+        const dateStr = match[0];
+        const date = new Date(dateStr);
+        if (!isNaN(date.getTime())) {
+          return date.toISOString().split('T')[0];
+        }
+      } catch (e) {
+        // Continue to next pattern
+      }
+    }
+  }
+  
+  // Fallback to pubDate
+  try {
+    const date = new Date(pubDate);
+    if (!isNaN(date.getTime())) {
+      return date.toISOString().split('T')[0];
+    }
+  } catch (e) {
+    // Return today's date as last resort
+  }
+  
+  return new Date().toISOString().split('T')[0];
+}
+
+/**
+ * Extract event time from content
+ */
+function extractEventTime(content: string): string | undefined {
+  const timePatterns = [
+    /(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))/,
+    /(\d{1,2}:\d{2})/,
+  ];
+  
+  for (const pattern of timePatterns) {
+    const match = content.match(pattern);
+    if (match) {
+      return match[1];
+    }
+  }
+  
+  return undefined;
+}
+
+/**
+ * Extract event location from content
+ */
+function extractEventLocation(content: string): string | undefined {
+  // Look for common location indicators
+  const locationPatterns = [
+    /Location:\s*([^<\n]+)/i,
+    /Venue:\s*([^<\n]+)/i,
+    /(?:at|@)\s+([A-Z][^<\n,]{5,50})/,
+  ];
+  
+  for (const pattern of locationPatterns) {
+    const match = content.match(pattern);
+    if (match) {
+      return match[1].trim();
+    }
+  }
+  
+  // Check for common Irish cities
+  const cities = ['Galway', 'Dublin', 'Cork', 'Limerick', 'Online', 'Virtual'];
+  for (const city of cities) {
+    if (content.includes(city)) {
+      return city;
+    }
+  }
+  
+  return undefined;
+}
+
+/**
+ * Clean HTML tags and entities from text
+ */
+function cleanHTML(text: string): string {
+  return text
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 /**
@@ -75,24 +223,12 @@ function categorizeEvent(title: string, category?: string): Event['type'] {
   const categoryLower = category?.toLowerCase() || '';
   
   if (titleLower.includes('workshop') || categoryLower.includes('workshop')) return 'Workshop';
-  if (titleLower.includes('career') || titleLower.includes('job fair')) return 'Career Fair';
+  if (titleLower.includes('career') || titleLower.includes('job fair') || titleLower.includes('pathways')) return 'Career Fair';
   if (titleLower.includes('webinar') || categoryLower.includes('webinar')) return 'Webinar';
-  if (titleLower.includes('networking') || categoryLower.includes('networking')) return 'Networking';
-  if (titleLower.includes('conference') || categoryLower.includes('conference')) return 'Conference';
+  if (titleLower.includes('networking') || categoryLower.includes('networking') || titleLower.includes('meetup')) return 'Networking';
+  if (titleLower.includes('conference') || categoryLower.includes('conference') || titleLower.includes('summit')) return 'Conference';
   
   return 'Other';
-}
-
-/**
- * Format date to ISO format
- */
-function formatDate(dateString: string): string {
-  try {
-    const date = new Date(dateString);
-    return date.toISOString().split('T')[0];
-  } catch {
-    return new Date().toISOString().split('T')[0];
-  }
 }
 
 /**

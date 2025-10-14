@@ -212,23 +212,30 @@ function EventCard({ event, index }: { event: Event; index: number }) {
         {/* Content */}
         <div className="flex-1 p-6">
           <div className="flex items-start justify-between mb-3">
-            <div>
+            <div className="flex-1">
               <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                 {event.title}
               </h3>
-              <span
-                className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
-                style={{
-                  backgroundColor: colors.bg,
-                  color: colors.text,
-                  border: `1px solid ${colors.border}`,
-                }}
-              >
-                {event.type}
-              </span>
+              <div className="flex gap-2 flex-wrap">
+                <span
+                  className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
+                  style={{
+                    backgroundColor: colors.bg,
+                    color: colors.text,
+                    border: `1px solid ${colors.border}`,
+                  }}
+                >
+                  {event.type}
+                </span>
+                {event.source === 'itag' && (
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+                    itag Event
+                  </span>
+                )}
+              </div>
             </div>
             {event.featured && (
-              <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
+              <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full flex-shrink-0">
                 ⭐ Featured
               </span>
             )}
