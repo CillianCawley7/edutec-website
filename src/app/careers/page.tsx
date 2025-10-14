@@ -164,7 +164,7 @@ export default function CareersPage() {
               Explore our qualifications to find the educational pathway that's right for you, 
               or join us at Pathways 2025 to meet employers and universities in person.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
                 href="/qualifications"
                 className="inline-block bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:opacity-90 transition text-lg"
@@ -178,6 +178,9 @@ export default function CareersPage() {
                 Attend Pathways 2025
               </Link>
             </div>
+            <p className="text-sm text-gray-400 mt-6">
+              Powered by <strong className="text-white">itag Skillnet Ireland</strong> | Celebrating 25 Years of Tech Excellence
+            </p>
           </div>
         </section>
 

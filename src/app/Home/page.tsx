@@ -146,6 +146,54 @@ export default function Home() {
           </div>
         </section>
 
+        {/* itag Partnership Section */}
+        <section className="py-16 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 md:p-12 shadow-lg">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#212721'}}>
+                    Powered by itag Skillnet
+                  </h2>
+                  <p className="text-lg text-gray-700 mb-6">
+                    EdUTec Careers is proudly supported by itag (Irish Technology Association Galway) 
+                    and itag Skillnet Ireland, bringing together industry expertise, educational institutions, 
+                    and emerging talent to shape Ireland's tech future.
+                  </p>
+                  <p className="text-gray-600 mb-6">
+                    As part of itag's 25th anniversary celebration, we're committed to empowering the next 
+                    generation of tech professionals through innovative programmes, industry partnerships, 
+                    and real career pathways.
+                  </p>
+                  <Link
+                    href="/about"
+                    className="inline-block text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition"
+                    style={{backgroundColor: '#00b2e3'}}
+                  >
+                    Learn More About Us
+                  </Link>
+                </div>
+                <div className="flex flex-col gap-6 items-center">
+                  <Image
+                    src="/itag/itag Skillnet-Masthead-Full-colour.png"
+                    alt="itag Skillnet Ireland"
+                    width={300}
+                    height={100}
+                    className="object-contain"
+                  />
+                  <Image
+                    src="/itag/Itag 25 Years Logo Rgb (1).png"
+                    alt="itag 25 Years Celebration"
+                    width={250}
+                    height={100}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="py-20 px-6" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
           <div className="max-w-4xl mx-auto text-center text-white">

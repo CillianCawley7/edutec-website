@@ -275,7 +275,7 @@ export default function QualificationsPage() {
               Connect with our team to learn more about these qualifications and get guidance 
               on choosing the right path for your career goals.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
                 href="mailto:info@edutec.ie"
                 className="inline-block bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:opacity-90 transition text-lg"
@@ -289,6 +289,9 @@ export default function QualificationsPage() {
                 Attend Pathways 2025
               </Link>
             </div>
+            <p className="text-sm text-gray-400 mt-6">
+              Powered by <strong className="text-white">itag Skillnet Ireland</strong> | Celebrating 25 Years of Tech Excellence
+            </p>
           </div>
         </section>
 
