@@ -45,9 +45,9 @@ export default function Home() {
     <main className="min-h-screen bg-white text-gray-800 font-sans">
 
         {/* Hero Section with video background */}
-        <section className="px-8 py-20 text-center relative overflow-hidden">
+        <section className="px-6 py-24 md:py-32 text-center relative overflow-hidden" role="banner">
           {/* Video Background */}
-          <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <div className="absolute inset-0 w-full h-full overflow-hidden" aria-hidden="true">
             <video
               autoPlay
               loop
@@ -61,26 +61,26 @@ export default function Home() {
             <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(230, 247, 255, 0.95) 0%, rgba(240, 249, 255, 0.95) 100%)'}}></div>
           </div>
           
-          <div className="max-w-6xl mx-auto relative z-10">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in" style={{color: '#212721'}}>
+          <div className="max-w-6xl mx-auto relative z-10 px-4">
+            <h1 className="heading-1 mb-8 animate-slide-up" style={{color: '#212721'}}>
               Tech Careers Start Here
             </h1>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-8 text-gray-700 animate-fade-in-delay">
+            <p className="body-large max-w-4xl mx-auto mb-10 text-gray-700 animate-fade-in" style={{animationDelay: '0.1s'}}>
               Empowering Ireland's next generation of tech talent through hands-on STEAM experiences, 
               industry partnerships, and real career pathways.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{animationDelay: '0.2s'}}>
               <Link
-          href="/careers"
-                className="inline-block text-white px-8 py-4 rounded-full font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300 text-lg"
-                style={{backgroundColor: '#00b2e3'}}
+                href="/careers"
+                className="btn-primary text-lg"
+                aria-label="Explore tech career opportunities"
               >
                 Explore Careers →
               </Link>
               <Link
                 href="/initiatives/pathways"
-                className="inline-block px-8 py-4 rounded-full font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300 text-lg border-2 bg-white"
-                style={{color: '#00b2e3', borderColor: '#00b2e3'}}
+                className="btn-secondary text-lg"
+                aria-label="Learn about Pathways 2025 event"
               >
                 Pathways 2025 🎓
               </Link>
@@ -92,12 +92,12 @@ export default function Home() {
         <ImpactStatistics stats={stats} />
 
         {/* Featured Initiatives with hover effects */}
-        <section className="py-20 px-6 bg-white">
+        <section className="py-24 px-6 bg-white" aria-labelledby="initiatives-heading">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center" style={{color: '#212721'}}>
+            <h2 id="initiatives-heading" className="heading-2 mb-6 text-center" style={{color: '#212721'}}>
               Empowering Through Action
             </h2>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            <p className="body-large text-center text-gray-600 mb-16 max-w-2xl mx-auto">
               Discover our innovative programmes designed to connect students with industry and build real tech careers
             </p>
             <div className="grid md:grid-cols-3 gap-8">
@@ -242,44 +242,44 @@ export default function Home() {
         </section>
 
         {/* University Partners */}
-        <section className="py-16 px-6" style={{backgroundColor: '#f8fafc'}}>
+        <section className="py-20 px-6" style={{backgroundColor: '#f8fafc'}} aria-labelledby="partners-heading">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{color: '#212721'}}>
+            <h2 id="partners-heading" className="heading-2 mb-16" style={{color: '#212721'}}>
               Trusted by Leading Institutions
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-              <div className="text-lg font-semibold text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">University of Galway</div>
-              <div className="text-lg font-semibold text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">University of Limerick</div>
-              <div className="text-lg font-semibold text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">ATU</div>
-              <div className="text-lg font-semibold text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">TUS</div>
-              <div className="text-lg font-semibold text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Skillnet Ireland</div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-10 items-center">
+              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">University of Galway</div>
+              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">University of Limerick</div>
+              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">ATU</div>
+              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">TUS</div>
+              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">Skillnet Ireland</div>
             </div>
         </div>
         </section>
 
         {/* itag Partnership Section */}
-        <section className="py-16 px-6 bg-white">
+        <section className="py-24 px-6 bg-white" aria-labelledby="partnership-heading">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-10 md:p-16 shadow-lg card-hover border border-gray-100">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#212721'}}>
+                  <h2 id="partnership-heading" className="heading-2 mb-6" style={{color: '#212721'}}>
                     Powered by itag Skillnet
                   </h2>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="body-large text-gray-700 mb-6">
                     EdUTec Careers is proudly supported by itag (Irish Technology Association Galway) 
                     and itag Skillnet Ireland, bringing together industry expertise, educational institutions, 
                     and emerging talent to shape Ireland's tech future.
                   </p>
-                  <p className="text-gray-600 mb-6">
+                  <p className="body-normal text-gray-600 mb-8">
                     As part of itag's 25th anniversary celebration, we're committed to empowering the next 
                     generation of tech professionals through innovative programmes, industry partnerships, 
                     and real career pathways.
                   </p>
                   <Link
                     href="/about"
-                    className="inline-block text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition"
-                    style={{backgroundColor: '#00b2e3'}}
+                    className="btn-primary"
+                    aria-label="Learn more about EdUTec and itag partnership"
                   >
                     Learn More About Us
                   </Link>
@@ -308,32 +308,36 @@ export default function Home() {
         {/* Mini Calendar Preview */}
         <MiniCalendarPreview />
 
-        {/* Call to Action with pulse animation */}
-        <section className="py-20 px-6" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
+        {/* Call to Action */}
+        <section className="py-24 px-6" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}} aria-labelledby="cta-heading">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 id="cta-heading" className="heading-2 mb-8 text-white">
               Ready to Shape Ireland's Tech Future?
             </h2>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="body-large mb-12 text-blue-100 max-w-3xl mx-auto">
               Whether you're a student exploring careers, an educator seeking resources, 
               or a company looking to make an impact - we're here to help.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 href="/about"
-                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:scale-105 hover:shadow-2xl transition-all duration-300 text-lg"
+                className="inline-block bg-white px-10 py-4 rounded-lg font-semibold transition-all duration-200 text-lg hover:shadow-xl hover:-translate-y-0.5"
+                style={{color: '#00b2e3'}}
+                aria-label="Learn about EdUTec and our mission"
               >
                 Learn About Us
               </Link>
               <Link
                 href="mailto:info@edutec.ie"
-                className="inline-block border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 hover:scale-105 transition-all duration-300 text-lg"
+                className="inline-block border-2 border-white text-white px-10 py-4 rounded-lg font-semibold hover:bg-white transition-all duration-200 text-lg hover:shadow-xl hover:-translate-y-0.5"
+                style={{'--hover-color': '#00b2e3'} as React.CSSProperties}
+                aria-label="Contact EdUTec via email"
               >
                 Get in Touch
               </Link>
         </div>
         </div>
-      </section>
+        </section>
 
       </main>
       <Footer />
@@ -391,37 +395,56 @@ function MiniCalendarPreview() {
 
   if (loading) {
     return (
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 mb-4" style={{borderColor: '#00b2e3'}}></div>
-          <p className="text-gray-600">Loading events...</p>
+      <section className="py-24 px-6 bg-gray-50" aria-label="Loading upcoming events">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="skeleton h-10 w-64 mx-auto mb-4 rounded"></div>
+            <div className="skeleton h-6 w-96 mx-auto rounded"></div>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                <div className="flex gap-4 mb-4">
+                  <div className="skeleton w-16 h-16 rounded-lg"></div>
+                  <div className="flex-1">
+                    <div className="skeleton h-6 w-full mb-2 rounded"></div>
+                    <div className="skeleton h-4 w-20 rounded"></div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="skeleton h-4 w-full rounded"></div>
+                  <div className="skeleton h-4 w-3/4 rounded"></div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="py-24 px-6 bg-gray-50" aria-labelledby="events-preview-heading">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+        <div className="text-center mb-16">
+          <h2 id="events-preview-heading" className="heading-2 mb-6 text-gray-900">
             Upcoming Events
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="body-large text-gray-600 max-w-3xl mx-auto">
             Join us for workshops, career fairs, and networking opportunities
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {events.map((event, index) => {
             const eventDate = new Date(event.date);
             const day = eventDate.getDate();
             const month = eventDate.toLocaleString('en-US', { month: 'short' });
             
             return (
-              <div
+              <article
                 key={event.id}
-                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300 border border-gray-100"
+                className="card-hover bg-white rounded-xl shadow-md p-6 border border-gray-100"
               >
                 <div className="flex gap-4 mb-4">
                   <div className="flex-shrink-0 w-16 h-16 rounded-lg flex flex-col items-center justify-center text-white" style={{backgroundColor: '#00b2e3'}}>
@@ -429,7 +452,7 @@ function MiniCalendarPreview() {
                     <div className="text-2xl font-bold">{day}</div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-lg text-gray-900 line-clamp-2 mb-1">
+                    <h3 className="heading-3 text-base text-gray-900 line-clamp-2 mb-2">
                       {event.title}
                     </h3>
                     {event.source === 'itag' && (
@@ -439,20 +462,20 @@ function MiniCalendarPreview() {
                     )}
                   </div>
                 </div>
-                <div className="space-y-2 text-sm text-gray-600">
+                <div className="space-y-2 body-normal text-gray-600">
                   <div className="flex items-center gap-2">
-                    <span>🕐</span>
+                    <span role="img" aria-label="Time">🕐</span>
                     <span>{event.time}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span>📍</span>
+                    <span role="img" aria-label="Location">📍</span>
                     <span>{event.location}</span>
                   </div>
                 </div>
-                <p className="text-gray-700 text-sm mt-3 line-clamp-2">
+                <p className="body-normal text-gray-700 mt-4 line-clamp-2">
                   {event.description}
                 </p>
-              </div>
+              </article>
             );
           })}
         </div>
@@ -460,8 +483,8 @@ function MiniCalendarPreview() {
         <div className="text-center">
           <Link
             href="/events"
-            className="inline-block text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-opacity duration-200 shadow-lg text-lg"
-            style={{backgroundColor: '#00b2e3'}}
+            className="btn-primary text-lg"
+            aria-label="View full events calendar"
           >
             View Full Calendar →
           </Link>
@@ -529,24 +552,30 @@ function StatCard({ value, label, suffix, isVisible, delay }: { value: number; l
 // Initiative Card Component
 function InitiativeCard({ icon, title, description, link, color }: { icon: string; title: string; description: string; link: string; color: string }) {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-      <div className="w-16 h-16 rounded-full mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#e6f7ff'}}>
-        <span className="text-3xl">{icon}</span>
+    <article className="card-hover bg-white rounded-xl shadow-md p-8 group border border-gray-100">
+      <div 
+        className="w-16 h-16 rounded-full mb-6 flex items-center justify-center transition-transform duration-200" 
+        style={{backgroundColor: '#e6f7ff'}}
+        aria-hidden="true"
+      >
+        <span className="text-3xl" role="img" aria-label={title}>{icon}</span>
       </div>
-      <h3 className="text-2xl font-semibold mb-4 group-hover:text-blue-600 transition-colors" style={{color: '#212721'}}>{title}</h3>
-      <p className="text-gray-600 mb-6 leading-relaxed">
+      <h3 className="heading-3 mb-4 transition-colors duration-200" style={{color: '#212721'}}>
+        {title}
+      </h3>
+      <p className="body-normal text-gray-600 mb-8 leading-relaxed">
         {description}
       </p>
       <Link
         href={link}
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 text-white"
-        style={{backgroundColor: color}}
+        className="inline-flex items-center gap-2 btn-primary"
+        aria-label={`Learn more about ${title}`}
       >
         Learn More
-        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </Link>
-    </div>
+    </article>
   );
 }
