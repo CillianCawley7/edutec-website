@@ -41,9 +41,9 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen bg-white text-gray-800 font-sans">
-        
+    <Navbar />
+    <main className="min-h-screen bg-white text-gray-800 font-sans">
+
         {/* Hero Section with video background */}
         <section className="px-8 py-20 text-center relative overflow-hidden">
           {/* Video Background */}
@@ -71,7 +71,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
               <Link
-                href="/careers"
+          href="/careers"
                 className="inline-block text-white px-8 py-4 rounded-full font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300 text-lg"
                 style={{backgroundColor: '#00b2e3'}}
               >
@@ -124,13 +124,13 @@ export default function Home() {
               />
             </div>
           </div>
-        </section>
+      </section>
 
         {/* Upcoming Events Preview */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="flex justify-between items-center mb-8">
-              <div>
+        <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{color: '#212721'}}>
                   Upcoming Events
                 </h2>
@@ -254,7 +254,7 @@ export default function Home() {
               <div className="text-lg font-semibold text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">TUS</div>
               <div className="text-lg font-semibold text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Skillnet Ireland</div>
             </div>
-          </div>
+        </div>
         </section>
 
         {/* itag Partnership Section */}
@@ -262,7 +262,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
+        <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#212721'}}>
                     Powered by itag Skillnet
                   </h2>
@@ -305,6 +305,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Mini Calendar Preview */}
+        <MiniCalendarPreview />
+
         {/* Call to Action with pulse animation */}
         <section className="py-20 px-6" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
           <div className="max-w-4xl mx-auto text-center text-white">
@@ -328,9 +331,9 @@ export default function Home() {
               >
                 Get in Touch
               </Link>
-            </div>
-          </div>
-        </section>
+        </div>
+        </div>
+      </section>
 
       </main>
       <Footer />
@@ -363,6 +366,108 @@ export default function Home() {
         }
       `}</style>
     </>
+  );
+}
+
+// Mini Calendar Preview Component
+function MiniCalendarPreview() {
+  const [events, setEvents] = React.useState<any[]>([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    async function loadEvents() {
+      try {
+        const { getUpcomingEvents } = await import('../events/eventData');
+        const upcomingEvents = await getUpcomingEvents();
+        setEvents(upcomingEvents.slice(0, 6)); // Show next 6 events
+      } catch (error) {
+        console.error('Error loading events:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadEvents();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 mb-4" style={{borderColor: '#00b2e3'}}></div>
+          <p className="text-gray-600">Loading events...</p>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-20 px-6 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            Upcoming Events
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Join us for workshops, career fairs, and networking opportunities
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          {events.map((event, index) => {
+            const eventDate = new Date(event.date);
+            const day = eventDate.getDate();
+            const month = eventDate.toLocaleString('en-US', { month: 'short' });
+            
+            return (
+              <div
+                key={event.id}
+                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300 border border-gray-100"
+              >
+                <div className="flex gap-4 mb-4">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-lg flex flex-col items-center justify-center text-white" style={{backgroundColor: '#00b2e3'}}>
+                    <div className="text-xs font-semibold">{month}</div>
+                    <div className="text-2xl font-bold">{day}</div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-lg text-gray-900 line-clamp-2 mb-1">
+                      {event.title}
+                    </h3>
+                    {event.source === 'itag' && (
+                      <span className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">
+                        itag Event
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <span>🕐</span>
+                    <span>{event.time}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>📍</span>
+                    <span>{event.location}</span>
+                  </div>
+                </div>
+                <p className="text-gray-700 text-sm mt-3 line-clamp-2">
+                  {event.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="text-center">
+          <Link
+            href="/events"
+            className="inline-block text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-opacity duration-200 shadow-lg text-lg"
+            style={{backgroundColor: '#00b2e3'}}
+          >
+            View Full Calendar →
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 
