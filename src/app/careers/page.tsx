@@ -33,17 +33,17 @@ export default function CareersPage() {
       
       <main className="pt-0 min-h-screen bg-white text-gray-800">
         
-        {/* Hero Section with animation */}
-        <section className="text-white py-16 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
+        {/* Hero Section */}
+        <section className="text-white py-20 md:py-24 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}} role="banner">
           {/* Animated background shapes */}
-          <div className="absolute inset-0 overflow-hidden opacity-10">
-            <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute inset-0 overflow-hidden opacity-10" aria-hidden="true">
+            <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           </div>
           
           <div className="max-w-6xl mx-auto px-6 relative z-10">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">Explore Tech Careers</h1>
-            <p className="text-xl md:text-2xl max-w-4xl text-blue-100 animate-fade-in-delay">
+            <h1 className="heading-1 mb-8 text-white animate-slide-up">Explore Tech Careers</h1>
+            <p className="body-large max-w-4xl text-blue-100 animate-fade-in" style={{animationDelay: '0.1s'}}>
               Discover exciting career opportunities in Ireland's thriving tech sector. 
               From software development to AI, find your path to success.
             </p>
@@ -51,38 +51,38 @@ export default function CareersPage() {
         </section>
 
         {/* Intro Section */}
-        <section className="py-16 px-6 bg-gray-50">
+        <section className="py-20 px-6 bg-gray-50" aria-labelledby="intro-heading">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6" style={{color: '#212721'}}>
+                <h2 id="intro-heading" className="heading-2 mb-8" style={{color: '#212721'}}>
                   Your Tech Career Awaits
                 </h2>
-                <p className="text-lg text-gray-700 mb-6">
+                <p className="body-large text-gray-700 mb-6">
                   Ireland's tech industry is one of the fastest-growing in Europe, offering 
                   competitive salaries, innovative work environments, and endless opportunities 
                   for growth and learning.
                 </p>
-                <p className="text-lg text-gray-700 mb-8">
+                <p className="body-normal text-gray-700 mb-10">
                   Explore {careerData.length} career pathways below, each with detailed information 
                   about skills needed, salary ranges, and related qualifications to help you 
                   make informed decisions about your future.
                 </p>
                 <Link
                   href="/qualifications"
-                  className="inline-block text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition"
-                  style={{backgroundColor: '#00b2e3'}}
+                  className="btn-primary"
+                  aria-label="View available qualifications and courses"
                 >
                   View Qualifications
                 </Link>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-xl font-semibold mb-6" style={{color: '#212721'}}>Career Categories</h3>
-                <div className="space-y-3">
+              <div className="bg-white rounded-xl shadow-md p-10 border border-gray-100 card-hover">
+                <h3 className="heading-3 mb-8" style={{color: '#212721'}}>Career Categories</h3>
+                <div className="space-y-4">
                   {careersByCategory.map(({ category, count }) => (
-                    <div key={category} className="flex justify-between items-center pb-3 border-b border-gray-100">
-                      <span className="font-medium text-gray-700">{category}</span>
-                      <span className="px-3 py-1 rounded-full text-sm" style={{backgroundColor: '#e6f7ff', color: '#00b2e3'}}>
+                    <div key={category} className="flex justify-between items-center pb-4 border-b border-gray-100 last:border-0">
+                      <span className="body-normal font-medium text-gray-700">{category}</span>
+                      <span className="px-3 py-1 rounded-full text-sm font-semibold" style={{backgroundColor: '#e6f7ff', color: '#00b2e3'}}>
                         {count} roles
                       </span>
                     </div>
@@ -94,31 +94,41 @@ export default function CareersPage() {
         </section>
 
         {/* Search and Filters */}
-        <section id="careers" className="py-16 px-6 bg-white">
+        <section id="careers" className="py-20 px-6 bg-white" aria-labelledby="search-heading">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center" style={{color: '#212721'}}>
+            <h2 id="search-heading" className="heading-2 mb-12 text-center" style={{color: '#212721'}}>
               Find Your Perfect Career
             </h2>
             
             {/* Controls */}
-            <div className="bg-white p-6 rounded-xl shadow mb-8 border border-gray-200">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gray-50 p-8 rounded-xl shadow-sm mb-10 border border-gray-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Search Careers</label>
+                  <label htmlFor="career-search" className="block body-normal font-medium text-gray-700 mb-3">
+                    Search Careers
+                  </label>
                   <input
+                    id="career-search"
                     type="text"
                     placeholder="Search by title or description..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:border-blue-500 transition-all duration-200"
+                    style={{focusRingColor: '#00b2e3'} as React.CSSProperties}
+                    aria-label="Search careers by title or description"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                  <label htmlFor="category-filter" className="block body-normal font-medium text-gray-700 mb-3">
+                    Category
+                  </label>
                   <select
+                    id="category-filter"
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:border-blue-500 transition-all duration-200"
+                    style={{focusRingColor: '#00b2e3'} as React.CSSProperties}
+                    aria-label="Filter careers by category"
                   >
                     {categories.map((category) => (
                       <option key={category} value={category}>
@@ -131,8 +141,8 @@ export default function CareersPage() {
             </div>
 
             {/* Results Count */}
-            <div className="mb-6">
-              <p className="text-gray-600">
+            <div className="mb-8" role="status" aria-live="polite">
+              <p className="body-normal text-gray-600">
                 Showing <span className="font-semibold" style={{color: '#00b2e3'}}>{filteredCareers.length}</span> {filteredCareers.length === 1 ? 'career' : 'careers'}
                 {selectedCategory !== 'all' && ` in ${selectedCategory}`}
               </p>
@@ -162,30 +172,32 @@ export default function CareersPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6" style={{background: 'linear-gradient(135deg, #212721 0%, #3a403a 100%)'}}>
+        <section className="py-24 px-6" style={{background: 'linear-gradient(135deg, #212721 0%, #3a403a 100%)'}} aria-labelledby="cta-heading">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 id="cta-heading" className="heading-2 mb-8 text-white">
               Ready to Start Your Tech Career?
             </h2>
-            <p className="text-xl mb-8 text-gray-300">
+            <p className="body-large mb-12 text-gray-300 max-w-3xl mx-auto">
               Explore our qualifications to find the educational pathway that's right for you, 
               or join us at Pathways 2025 to meet employers and universities in person.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-10">
               <Link
                 href="/qualifications"
-                className="inline-block bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:opacity-90 transition text-lg"
+                className="inline-block bg-white text-gray-800 px-10 py-4 rounded-lg font-semibold hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg"
+                aria-label="Browse available qualifications and courses"
               >
                 Browse Qualifications
               </Link>
               <Link
                 href="/initiatives/pathways"
-                className="inline-block border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-800 transition text-lg"
+                className="inline-block border-2 border-white text-white px-10 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-800 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg"
+                aria-label="Learn about Pathways 2025 event"
               >
                 Attend Pathways 2025
               </Link>
             </div>
-            <p className="text-sm text-gray-400 mt-6">
+            <p className="body-normal text-gray-400 mt-8">
               Powered by <strong className="text-white">itag Skillnet Ireland</strong> | Celebrating 25 Years of Tech Excellence
             </p>
           </div>
