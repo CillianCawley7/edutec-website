@@ -1,5 +1,47 @@
 @import "tailwindcss";
 
+/* Orgon Font Family - Primary (Headings) */
+@font-face {
+  font-family: 'Orgon';
+  src: url('/fonts/Orgon-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orgon';
+  src: url('/fonts/Orgon-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orgon';
+  src: url('/fonts/Orgon-BlackIt.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Fallback: Use Black weight for bold (700) and extra-bold (800) until you add more weights */
+@font-face {
+  font-family: 'Orgon';
+  src: url('/fonts/Orgon-Black.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orgon';
+  src: url('/fonts/Orgon-Black.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,6 +50,10 @@
   --itag-blue-light: #33c1e8;
   --itag-charcoal: #212721;
   --itag-charcoal-light: #3a403a;
+  
+  /* Font families */
+  --font-orgon: 'Orgon', sans-serif;
+  --font-exo: var(--font-exo), sans-serif;
   
   /* Spacing System - 8px base */
   --spacing-xs: 0.5rem;   /* 8px */
@@ -50,8 +96,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -65,16 +109,16 @@
 body {
   background: #ffffff;
   color: var(--foreground);
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-exo), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: var(--line-height-normal);
 }
 
-/* Headings use Orbitron as specified by Sheila */
+/* Headings use Orgon as PRIMARY font (as specified by Sheila) */
 h1, h2, h3, h4, h5, h6,
 .heading-1, .heading-2, .heading-3 {
-  font-family: var(--font-orbitron), sans-serif;
+  font-family: var(--font-orgon);
 }
 
 /* Focus Styles for Accessibility */
