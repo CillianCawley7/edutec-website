@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-6 py-4 shadow-md sticky top-0 z-50" style={{backgroundColor: '#00b2e3'}}>
         <Link href="/Home" className="flex items-center gap-3">
-          <Image src="/logos/EdUTec_logo_white.png" alt="Edutec Careers logo" width={100} height={100} priority />
+          <Image src="/logos/EdUTec_Logo_White.png" alt="EdUTec Careers logo" width={100} height={100} priority />
         </Link>
         <ul className="flex space-x-8 text-base font-bold items-center">
           <li><Link href="/about" className="text-white hover:text-gray-200">About</Link></li>
