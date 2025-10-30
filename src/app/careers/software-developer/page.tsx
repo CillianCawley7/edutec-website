@@ -117,7 +117,7 @@ export default function SoftwareDeveloperPage() {
           
           <div className="bg-green-50 border-l-4 border-green-500 p-8 rounded-lg">
             <h3 className="text-2xl font-semibold mb-4 text-green-800">Average Salary</h3>
-            <p className="text-3xl font-bold text-green-700 mb-4">$120,000 - $150,000</p>
+            <p className="text-3xl font-bold text-green-700 mb-4">€60,000 - €90,000</p>
             <p className="text-lg text-gray-700 mb-4">
               The average pay for software developers in Ireland ranges from €60,000 to €90,000 per year, 
               with senior developers earning significantly more.

@@ -6,59 +6,26 @@ import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 import * as React from 'react';
 
-// Counter animation hook
-function useCountUp(end: number, duration: number = 2000) {
-  const [count, setCount] = React.useState(0);
-  const [hasAnimated, setHasAnimated] = React.useState(false);
-
-  React.useEffect(() => {
-    if (!hasAnimated) return;
-    
-    let startTime: number;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * end));
-      
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    };
-    
-    requestAnimationFrame(step);
-  }, [end, duration, hasAnimated]);
-
-  return { count, setHasAnimated };
-}
-
 export default function Home() {
-  const stats = [
-    { value: 25, label: 'Years of Excellence', suffix: '' },
-    { value: 500, label: 'Students Reached', suffix: '+' },
-    { value: 50, label: 'Industry Partners', suffix: '+' },
-    { value: 15, label: 'Schools Adopted', suffix: '' },
-  ];
-
   return (
     <>
     <Navbar />
     <main className="min-h-screen bg-white text-gray-800 font-sans">
 
-        {/* Hero Section with video background */}
+        {/* Hero Section with image background */}
         <section className="px-6 py-24 md:py-32 text-center relative overflow-hidden" role="banner">
-          {/* Video Background */}
+          {/* Image Background */}
           <div className="absolute inset-0 w-full h-full overflow-hidden" aria-hidden="true">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute w-full h-full object-cover opacity-20"
-            >
-              <source src="https://cdn.coverr.co/videos/coverr-coding-on-a-laptop-5307/1080p.mp4" type="video/mp4" />
-            </video>
-            {/* Gradient overlay */}
-            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(230, 247, 255, 0.95) 0%, rgba(240, 249, 255, 0.95) 100%)'}}></div>
+            <Image
+              src="/potential_hero_backround.jpg"
+              alt=""
+              fill
+              className="object-cover opacity-15"
+              priority
+              quality={90}
+            />
+            {/* Gradient overlay for better text readability */}
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 249, 255, 0.9) 100%)'}}></div>
           </div>
           
           <div className="max-w-6xl mx-auto relative z-10 px-4">
@@ -69,7 +36,7 @@ export default function Home() {
               Empowering Ireland's next generation of tech talent through hands-on STEAM experiences, 
               industry partnerships, and real career pathways.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <div className="flex justify-center animate-fade-in" style={{animationDelay: '0.2s'}}>
               <Link
                 href="/careers"
                 className="btn-primary text-lg"
@@ -77,22 +44,20 @@ export default function Home() {
               >
                 Explore Careers →
               </Link>
-              <Link
-                href="/initiatives/pathways"
-                className="btn-secondary text-lg"
-                aria-label="Learn about Pathways 2025 event"
-              >
-                Pathways 2025 🎓
-              </Link>
             </div>
           </div>
         </section>
 
-        {/* Animated Impact Statistics */}
-        <ImpactStatistics stats={stats} />
+        {/* Wave Divider */}
+        <div className="relative w-full overflow-hidden" style={{height: '100px', backgroundColor: 'white'}}>
+          <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,80 350,0 600,50 C850,100 1050,20 1200,80 L1200,120 L0,120 Z" fill="#f8fafc" opacity="0.5"></path>
+            <path d="M0,20 C200,100 400,20 600,70 C800,120 1000,40 1200,100 L1200,120 L0,120 Z" fill="#f8fafc"></path>
+          </svg>
+        </div>
 
         {/* Featured Initiatives with hover effects */}
-        <section className="py-24 px-6 bg-white" aria-labelledby="initiatives-heading">
+        <section className="py-24 px-6 bg-gray-50 relative" aria-labelledby="initiatives-heading">
           <div className="max-w-6xl mx-auto">
             <h2 id="initiatives-heading" className="heading-2 mb-6 text-center" style={{color: '#212721'}}>
               Empowering Through Action
@@ -126,139 +91,43 @@ export default function Home() {
           </div>
       </section>
 
-        {/* Upcoming Events Preview */}
-        <section className="py-16 px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex justify-between items-center mb-8">
-        <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{color: '#212721'}}>
-                  Upcoming Events
-                </h2>
-                <p className="text-gray-600">Join us for workshops, career fairs, and networking opportunities</p>
-              </div>
-              <Link
-                href="/events"
-                className="hidden md:inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300"
-                style={{backgroundColor: '#00b2e3'}}
-              >
-                View All Events
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Featured Event - Pathways 2025 */}
-              <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-2 border-blue-200">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style={{backgroundColor: '#e6f7ff'}}>
-                    🎓
-                  </div>
-                  <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
-                    ⭐ Featured
-                  </span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2" style={{color: '#212721'}}>Pathways 2025</h3>
-                <p className="text-sm text-gray-600 mb-3">Nov 6, 2025 • Galway</p>
-                <p className="text-gray-600 mb-4 text-sm">Ireland's premier tech career fair. Meet universities and employers.</p>
-                <Link
-                  href="/initiatives/pathways"
-                  className="inline-flex items-center gap-2 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300"
-                  style={{backgroundColor: '#00b2e3'}}
-                >
-                  Learn More →
-                </Link>
-              </div>
-
-              {/* Event 2 */}
-              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl mb-4" style={{backgroundColor: '#e6f7ff'}}>
-                  💻
-                </div>
-                <h3 className="text-xl font-semibold mb-2" style={{color: '#212721'}}>AI Workshop</h3>
-                <p className="text-sm text-gray-600 mb-3">Nov 15, 2025 • Online</p>
-                <p className="text-gray-600 mb-4 text-sm">Hands-on workshop exploring AI and machine learning fundamentals.</p>
-                <Link
-                  href="/events"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300"
-                  style={{backgroundColor: '#e6f7ff', color: '#00b2e3'}}
-                >
-                  View Details →
-                </Link>
-              </div>
-
-              {/* Event 3 */}
-              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl mb-4" style={{backgroundColor: '#fff0f6'}}>
-                  🤝
-                </div>
-                <h3 className="text-xl font-semibold mb-2" style={{color: '#212721'}}>Women in Tech</h3>
-                <p className="text-sm text-gray-600 mb-3">Nov 22, 2025 • Limerick</p>
-                <p className="text-gray-600 mb-4 text-sm">Networking evening for female tech professionals.</p>
-                <Link
-                  href="/events"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300"
-                  style={{backgroundColor: '#e6f7ff', color: '#00b2e3'}}
-                >
-                  View Details →
-                </Link>
-              </div>
-            </div>
-
-            <div className="text-center mt-8 md:hidden">
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300"
-                style={{backgroundColor: '#00b2e3'}}
-              >
-                View All Events →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Trending Skills Section */}
-        <section className="py-16 px-6 bg-gray-50">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center" style={{color: '#212721'}}>
-              In-Demand Tech Skills
-            </h2>
-            <p className="text-center text-gray-600 mb-12">
-              The most sought-after skills in Ireland's tech industry
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['Python', 'JavaScript', 'React', 'Cloud Computing', 'Data Science', 'AI/ML', 'Cyber Security', 'DevOps', 'Java', 'SQL', 'AWS', 'Docker'].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-6 py-3 rounded-full font-semibold text-white hover:scale-110 transition-transform duration-300 cursor-pointer shadow-md"
-                  style={{backgroundColor: '#00b2e3'}}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* University Partners */}
-        <section className="py-20 px-6" style={{backgroundColor: '#f8fafc'}} aria-labelledby="partners-heading">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 id="partners-heading" className="heading-2 mb-16" style={{color: '#212721'}}>
-              Trusted by Leading Institutions
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-10 items-center">
-              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">University of Galway</div>
-              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">University of Limerick</div>
-              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">ATU</div>
-              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">TUS</div>
-              <div className="body-large font-semibold text-gray-600 hover:text-blue-600 transition-colors duration-200">Skillnet Ireland</div>
-            </div>
+        {/* Diagonal Divider */}
+        <div className="relative w-full overflow-hidden" style={{height: '80px'}}>
+          <div className="absolute inset-0 bg-gray-50" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 50%)'}}></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white" style={{clipPath: 'polygon(0 50%, 100% 0, 100% 100%, 0 100%)'}}></div>
         </div>
+
+        {/* Interactive Career Pathways Diagram */}
+        <section className="py-24 px-6 bg-gradient-to-br from-blue-50 to-white relative shadow-inner" aria-labelledby="pathways-heading">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 id="pathways-heading" className="heading-2 mb-6" style={{color: '#212721'}}>
+                Your Tech Career Journey
+              </h2>
+              <p className="body-large text-gray-600 max-w-3xl mx-auto">
+                Discover how to transform your passion for technology into a rewarding career. 
+                Follow the pathway from education to your dream job.
+              </p>
+            </div>
+
+            <CareerPathwaysDiagram />
+          </div>
         </section>
+
+        {/* Curved Divider with Accent */}
+        <div className="relative w-full overflow-hidden" style={{height: '100px'}}>
+          <svg className="absolute top-0 w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 L1200,0 L1200,120 C900,60 600,100 300,80 C150,70 75,85 0,90 Z" fill="white"></path>
+          </svg>
+          {/* Decorative accent line */}
+          <div className="absolute bottom-0 left-0 right-0 h-1" style={{background: 'linear-gradient(90deg, transparent 0%, #00b2e3 50%, transparent 100%)'}}></div>
+        </div>
 
         {/* itag Partnership Section */}
-        <section className="py-24 px-6 bg-white" aria-labelledby="partnership-heading">
+        <section className="py-24 px-6 bg-white relative" aria-labelledby="partnership-heading">
+          {/* Decorative geometric elements */}
+          <div className="absolute top-10 right-10 w-32 h-32 rounded-full opacity-5" style={{background: 'radial-gradient(circle, #00b2e3 0%, transparent 70%)'}}></div>
+          <div className="absolute bottom-20 left-10 w-40 h-40 rounded-full opacity-5" style={{background: 'radial-gradient(circle, #00b2e3 0%, transparent 70%)'}}></div>
           <div className="max-w-6xl mx-auto">
             <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-10 md:p-16 shadow-lg card-hover border border-gray-100">
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -305,11 +174,22 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Wave Transition to Events */}
+        <div className="relative w-full overflow-hidden" style={{height: '80px', backgroundColor: 'white'}}>
+          <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,50 Q300,100 600,50 T1200,50 L1200,120 L0,120 Z" fill="#f9fafb"></path>
+          </svg>
+        </div>
+
         {/* Mini Calendar Preview */}
         <MiniCalendarPreview />
 
         {/* Call to Action */}
-        <section className="py-24 px-6" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}} aria-labelledby="cta-heading">
+        <section className="py-24 px-6 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}} aria-labelledby="cta-heading">
+          {/* Animated geometric background */}
+          <div className="absolute top-10 right-20 w-64 h-64 rounded-full opacity-10 animate-pulse" style={{background: 'radial-gradient(circle, white 0%, transparent 70%)'}}></div>
+          <div className="absolute bottom-10 left-20 w-80 h-80 rounded-full opacity-10" style={{background: 'radial-gradient(circle, white 0%, transparent 70%)', animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full opacity-5 transform -translate-x-1/2 -translate-y-1/2" style={{background: 'radial-gradient(circle, white 0%, transparent 70%)'}}></div>
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 id="cta-heading" className="heading-2 mb-8 text-white">
               Ready to Shape Ireland's Tech Future?
@@ -395,7 +275,7 @@ function MiniCalendarPreview() {
 
   if (loading) {
     return (
-      <section className="py-24 px-6 bg-gray-50" aria-label="Loading upcoming events">
+      <section className="py-24 px-6 bg-gray-50 relative" aria-label="Loading upcoming events">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="skeleton h-10 w-64 mx-auto mb-4 rounded"></div>
@@ -424,7 +304,10 @@ function MiniCalendarPreview() {
   }
 
   return (
-    <section className="py-24 px-6 bg-gray-50" aria-labelledby="events-preview-heading">
+    <section className="py-24 px-6 bg-gray-50 relative" aria-labelledby="events-preview-heading">
+      {/* Decorative corner accents */}
+      <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 rounded-tl-2xl opacity-20" style={{borderColor: '#00b2e3'}}></div>
+      <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 rounded-tr-2xl opacity-20" style={{borderColor: '#00b2e3'}}></div>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 id="events-preview-heading" className="heading-2 mb-6 text-gray-900">
@@ -490,61 +373,448 @@ function MiniCalendarPreview() {
           </Link>
         </div>
       </div>
+
+      {/* Smooth wave to CTA */}
+      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden" style={{height: '100px'}}>
+        <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 L0,80 Q300,100 600,80 T1200,80 L1200,0 Z" fill="white" opacity="0.1"></path>
+        </svg>
+      </div>
     </section>
   );
 }
 
-// Animated Statistics Component
-function ImpactStatistics({ stats }: { stats: Array<{ value: number; label: string; suffix: string }> }) {
-  const [isVisible, setIsVisible] = React.useState(false);
-  const sectionRef = React.useRef<HTMLElement>(null);
+// Career Pathways Diagram Component
+function CareerPathwaysDiagram() {
+  const [selectedPath, setSelectedPath] = React.useState<string | null>(null);
 
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+  const pathways = [
+    {
+      id: 'software',
+      career: 'Software Developer',
+      icon: '💻',
+      color: '#00b2e3',
+      bgColor: '#e6f7ff',
+      duration: '3-4 Years',
+      salaryRange: '€45k - €90k',
+      demandLevel: 'Very High',
+      step1: {
+        title: 'Education Foundation',
+        duration: '3-4 years',
+        options: [
+          { name: 'BSc Computer Science', level: 'NFQ Level 8', provider: 'University' },
+          { name: 'Software Engineering', level: 'NFQ Level 8', provider: 'TU/University' },
+          { name: 'Coding Bootcamp', level: 'Certificate', provider: 'Private Training' }
+        ],
+        description: 'Build fundamental programming and problem-solving skills'
       },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+      step2: {
+        title: 'Skill Development',
+        duration: '1-2 years experience',
+        skills: [
+          { name: 'JavaScript', category: 'Programming' },
+          { name: 'Python', category: 'Programming' },
+          { name: 'React/Vue', category: 'Frameworks' },
+          { name: 'Git/GitHub', category: 'Version Control' },
+          { name: 'SQL', category: 'Databases' },
+          { name: 'REST APIs', category: 'Integration' }
+        ],
+        description: 'Master modern development tools and methodologies'
+      },
+      step3: {
+        title: 'Career Launch',
+        roles: ['Junior Developer', 'Frontend Developer', 'Backend Developer', 'Full Stack Developer'],
+        employers: ['Tech Companies', 'Startups', 'Financial Services', 'Consulting Firms'],
+        growth: 'Senior → Lead → Architect',
+        description: 'Enter the workforce and grow your career'
+      },
+      careerLink: '/careers',
+      qualLink: '/qualifications'
+    },
+    {
+      id: 'data',
+      career: 'Data Scientist',
+      icon: '📊',
+      color: '#7c3aed',
+      bgColor: '#f3e8ff',
+      duration: '4-5 Years',
+      salaryRange: '€50k - €100k',
+      demandLevel: 'High',
+      step1: {
+        title: 'Education Foundation',
+        duration: '4 years',
+        options: [
+          { name: 'BSc Data Science', level: 'NFQ Level 8', provider: 'University' },
+          { name: 'Statistics & Analytics', level: 'NFQ Level 8', provider: 'University' },
+          { name: 'MSc Data Analytics', level: 'NFQ Level 9', provider: 'Postgraduate' }
+        ],
+        description: 'Learn statistical analysis and data manipulation techniques'
+      },
+      step2: {
+        title: 'Skill Development',
+        duration: '1-2 years experience',
+        skills: [
+          { name: 'Python/R', category: 'Programming' },
+          { name: 'SQL', category: 'Databases' },
+          { name: 'Machine Learning', category: 'AI/ML' },
+          { name: 'Pandas/NumPy', category: 'Data Tools' },
+          { name: 'Tableau/PowerBI', category: 'Visualization' },
+          { name: 'Statistics', category: 'Mathematics' }
+        ],
+        description: 'Build expertise in data analysis and predictive modeling'
+      },
+      step3: {
+        title: 'Career Launch',
+        roles: ['Data Analyst', 'Junior Data Scientist', 'ML Engineer', 'Business Intelligence Analyst'],
+        employers: ['Tech Giants', 'Finance', 'Healthcare', 'Research Institutions'],
+        growth: 'Senior → Lead → Chief Data Officer',
+        description: 'Transform data into business insights and value'
+      },
+      careerLink: '/careers',
+      qualLink: '/qualifications'
+    },
+    {
+      id: 'cyber',
+      career: 'Cybersecurity Specialist',
+      icon: '🔒',
+      color: '#dc2626',
+      bgColor: '#fee2e2',
+      duration: '3-4 Years',
+      salaryRange: '€48k - €95k',
+      demandLevel: 'Very High',
+      step1: {
+        title: 'Education Foundation',
+        duration: '3-4 years',
+        options: [
+          { name: 'BSc Cybersecurity', level: 'NFQ Level 8', provider: 'University' },
+          { name: 'Network Security Cert', level: 'NFQ Level 7-8', provider: 'TU/ATU' },
+          { name: 'Ethical Hacking Cert', level: 'Professional Cert', provider: 'Industry' }
+        ],
+        description: 'Master security principles and threat detection'
+      },
+      step2: {
+        title: 'Skill Development',
+        duration: '1-2 years experience',
+        skills: [
+          { name: 'Network Security', category: 'Infrastructure' },
+          { name: 'Penetration Testing', category: 'Offensive Security' },
+          { name: 'SIEM Tools', category: 'Monitoring' },
+          { name: 'Cryptography', category: 'Encryption' },
+          { name: 'Linux/Unix', category: 'Systems' },
+          { name: 'Python', category: 'Scripting' }
+        ],
+        description: 'Develop hands-on security testing and defense skills'
+      },
+      step3: {
+        title: 'Career Launch',
+        roles: ['Security Analyst', 'Penetration Tester', 'SOC Analyst', 'Security Engineer'],
+        employers: ['Tech Companies', 'Banks', 'Government', 'Consulting'],
+        growth: 'Senior → Manager → CISO',
+        description: 'Protect organizations from cyber threats'
+      },
+      careerLink: '/careers',
+      qualLink: '/qualifications'
     }
-
-    return () => observer.disconnect();
-  }, []);
+  ];
 
   return (
-    <section ref={sectionRef} className="py-16 px-6" style={{backgroundColor: '#212721'}}>
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">Our Impact</h2>
-        <div className="grid md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <StatCard key={index} {...stat} isVisible={isVisible} delay={index * 100} />
+    <div className="space-y-8">
+      {/* Mobile View - Detailed Stacked Cards */}
+      <div className="lg:hidden space-y-8">
+        {pathways.map((pathway) => (
+          <article key={pathway.id} className="bg-white rounded-2xl shadow-lg overflow-hidden border-2 hover:shadow-2xl transition-all" style={{borderColor: pathway.color}} aria-label={`${pathway.career} career pathway`}>
+            {/* Header */}
+            <div className="p-6 pb-4" style={{backgroundColor: pathway.bgColor}}>
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-3xl bg-white shadow-md">
+                    {pathway.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">{pathway.career}</h3>
+                    <p className="text-sm font-medium" style={{color: pathway.color}}>{pathway.demandLevel} Demand</p>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-xs">
+                <div className="bg-white rounded-lg px-3 py-2">
+                  <p className="text-gray-500 font-semibold">Duration</p>
+                  <p className="text-gray-900 font-bold">{pathway.duration}</p>
+                </div>
+                <div className="bg-white rounded-lg px-3 py-2">
+                  <p className="text-gray-500 font-semibold">Salary Range</p>
+                  <p className="text-gray-900 font-bold">{pathway.salaryRange}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 space-y-5">
+              {/* Step 1: Education */}
+              <div className="relative">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style={{backgroundColor: pathway.color}}>
+                    1
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-gray-900 mb-1">{pathway.step1.title}</h4>
+                    <p className="text-xs text-gray-500 mb-2">⏱ {pathway.step1.duration}</p>
+                    <p className="text-sm text-gray-600 mb-3 italic">{pathway.step1.description}</p>
+                    <div className="space-y-2">
+                      {pathway.step1.options.map((opt, idx) => (
+                        <div key={idx} className="bg-gray-50 rounded-lg p-2 text-xs">
+                          <p className="font-semibold text-gray-900">{opt.name}</p>
+                          <p className="text-gray-600">{opt.level} • {opt.provider}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Connector */}
+              <div className="flex justify-center">
+                <div className="w-px h-6 bg-gray-300"></div>
+              </div>
+
+              {/* Step 2: Skills */}
+              <div className="relative">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style={{backgroundColor: pathway.color}}>
+                    2
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-gray-900 mb-1">{pathway.step2.title}</h4>
+                    <p className="text-xs text-gray-500 mb-2">⏱ {pathway.step2.duration}</p>
+                    <p className="text-sm text-gray-600 mb-3 italic">{pathway.step2.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {pathway.step2.skills.map((skill, idx) => (
+                        <div key={idx} className="group relative">
+                          <span className="px-3 py-1.5 rounded-lg text-xs font-semibold" style={{backgroundColor: pathway.bgColor, color: pathway.color}}>
+                            {skill.name}
+                          </span>
+                          <span className="absolute hidden group-hover:block bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-gray-900 text-white text-xs rounded whitespace-nowrap">
+                            {skill.category}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Connector */}
+              <div className="flex justify-center">
+                <div className="w-px h-6 bg-gray-300"></div>
+              </div>
+
+              {/* Step 3: Career */}
+              <div className="relative">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style={{backgroundColor: pathway.color}}>
+                    3
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-gray-900 mb-1">{pathway.step3.title}</h4>
+                    <p className="text-sm text-gray-600 mb-3 italic">{pathway.step3.description}</p>
+                    <div className="space-y-3">
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500 mb-2">Entry Roles:</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {pathway.step3.roles.map((role, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
+                              {role}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500 mb-2">Career Growth:</p>
+                        <p className="text-sm font-medium text-gray-900">{pathway.step3.growth}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <Link href={pathway.qualLink} className="block w-full text-center px-4 py-3 rounded-lg text-white font-semibold hover:opacity-90 transition" style={{backgroundColor: pathway.color}}>
+                Explore Qualifications →
+              </Link>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {/* Desktop View - Interactive Flow Diagram */}
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-3 gap-6">
+          {pathways.map((pathway) => (
+            <article
+              key={pathway.id}
+              className="relative"
+              onMouseEnter={() => setSelectedPath(pathway.id)}
+              onMouseLeave={() => setSelectedPath(null)}
+              aria-label={`${pathway.career} career pathway`}
+            >
+              {/* Pathway Container */}
+              <div className={`transition-all duration-300 ${selectedPath === pathway.id ? 'scale-105' : 'scale-100'}`}>
+                
+                {/* Pathway Header with Key Info */}
+                <div className="bg-white rounded-xl shadow-md p-5 mb-4 border-2 transition-all" style={{borderColor: selectedPath === pathway.id ? pathway.color : '#e5e7eb', backgroundColor: pathway.bgColor}}>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center text-3xl">
+                      {pathway.icon}
+                    </div>
+                    <div className="px-3 py-1 rounded-full text-xs font-bold" style={{backgroundColor: pathway.color, color: 'white'}}>
+                      {pathway.demandLevel}
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-3 text-center">{pathway.career}</h3>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="bg-white rounded-lg px-2 py-2 text-center">
+                      <p className="text-gray-500 font-semibold mb-0.5">Timeline</p>
+                      <p className="font-bold text-gray-900">{pathway.duration}</p>
+                    </div>
+                    <div className="bg-white rounded-lg px-2 py-2 text-center">
+                      <p className="text-gray-500 font-semibold mb-0.5">Salary</p>
+                      <p className="font-bold text-gray-900">{pathway.salaryRange}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Arrow Down */}
+                <div className="flex justify-center -my-2 relative z-10">
+                  <div className="w-0.5 h-4" style={{backgroundColor: selectedPath === pathway.id ? pathway.color : '#d1d5db'}}></div>
+                  <div className="absolute top-2" style={{color: selectedPath === pathway.id ? pathway.color : '#d1d5db'}}>
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Step 1: Education Foundation */}
+                <div className="bg-white rounded-xl shadow-md p-5 mb-4 border-2 hover:shadow-xl transition-all" style={{borderColor: selectedPath === pathway.id ? pathway.color : '#e5e7eb'}}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{backgroundColor: pathway.color}}>
+                      1
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-sm font-bold text-gray-900">{pathway.step1.title}</h4>
+                      <p className="text-xs text-gray-500">⏱ {pathway.step1.duration}</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-600 mb-3 italic leading-relaxed">{pathway.step1.description}</p>
+                  <div className="space-y-1.5">
+                    {pathway.step1.options.map((opt, idx) => (
+                      <div key={idx} className="rounded-lg p-2 text-xs" style={{backgroundColor: pathway.bgColor}}>
+                        <p className="font-semibold text-gray-900 leading-tight">{opt.name}</p>
+                        <p className="text-gray-600 text-xs">{opt.level}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Arrow Down */}
+                <div className="flex justify-center -my-2 relative z-10">
+                  <div className="w-0.5 h-4" style={{backgroundColor: selectedPath === pathway.id ? pathway.color : '#d1d5db'}}></div>
+                  <div className="absolute top-2" style={{color: selectedPath === pathway.id ? pathway.color : '#d1d5db'}}>
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Step 2: Skill Development */}
+                <div className="bg-white rounded-xl shadow-md p-5 mb-4 border-2 hover:shadow-xl transition-all" style={{borderColor: selectedPath === pathway.id ? pathway.color : '#e5e7eb'}}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{backgroundColor: pathway.color}}>
+                      2
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-sm font-bold text-gray-900">{pathway.step2.title}</h4>
+                      <p className="text-xs text-gray-500">⏱ {pathway.step2.duration}</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-600 mb-3 italic leading-relaxed">{pathway.step2.description}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {pathway.step2.skills.map((skill, idx) => (
+                      <div key={idx} className="group relative">
+                        <span className="px-2 py-1 rounded-md text-xs font-semibold block" style={{backgroundColor: pathway.bgColor, color: pathway.color}}>
+                          {skill.name}
+                        </span>
+                        <span className="absolute hidden group-hover:block bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-gray-900 text-white text-xs rounded whitespace-nowrap z-20">
+                          {skill.category}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Arrow Down */}
+                <div className="flex justify-center -my-2 relative z-10">
+                  <div className="w-0.5 h-4" style={{backgroundColor: selectedPath === pathway.id ? pathway.color : '#d1d5db'}}></div>
+                  <div className="absolute top-2" style={{color: selectedPath === pathway.id ? pathway.color : '#d1d5db'}}>
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Step 3: Career Launch */}
+                <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg p-5 border-2 hover:shadow-2xl transition-all" style={{borderColor: selectedPath === pathway.id ? pathway.color : '#e5e7eb', boxShadow: selectedPath === pathway.id ? `0 10px 40px ${pathway.color}40` : undefined}}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{backgroundColor: pathway.color}}>
+                      3
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-sm font-bold text-gray-900">{pathway.step3.title}</h4>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-600 mb-3 italic leading-relaxed">{pathway.step3.description}</p>
+                  
+                  <div className="space-y-3 mb-4">
+                    <div>
+                      <p className="text-xs font-bold text-gray-500 mb-1.5">Entry Roles:</p>
+                      <div className="flex flex-wrap gap-1">
+                        {pathway.step3.roles.slice(0, 3).map((role, idx) => (
+                          <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium">
+                            {role}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-gray-500 mb-1">Career Path:</p>
+                      <p className="text-xs font-semibold text-gray-900">{pathway.step3.growth}</p>
+                    </div>
+                  </div>
+
+                  <Link
+                    href={pathway.qualLink}
+                    className="block text-center px-4 py-2.5 rounded-lg text-white font-semibold text-sm hover:opacity-90 transition-all hover:scale-105 shadow-md"
+                    style={{backgroundColor: pathway.color}}
+                  >
+                    View Qualifications →
+                  </Link>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-12 text-center">
+          <p className="text-gray-600 mb-4">Not sure which path is right for you?</p>
+          <div className="flex gap-4 justify-center">
+            <Link href="/careers" className="px-6 py-3 rounded-lg bg-white border-2 font-semibold hover:shadow-lg transition-all" style={{borderColor: '#00b2e3', color: '#00b2e3'}}>
+              Explore All Careers
+            </Link>
+            <Link href="/qualifications" className="px-6 py-3 rounded-lg text-white font-semibold hover:opacity-90 transition-all" style={{backgroundColor: '#00b2e3'}}>
+              Browse Qualifications
+            </Link>
+          </div>
+        </div>
       </div>
-    </section>
-  );
-}
-
-function StatCard({ value, label, suffix, isVisible, delay }: { value: number; label: string; suffix: string; isVisible: boolean; delay: number }) {
-  const { count, setHasAnimated } = useCountUp(value);
-
-  React.useEffect(() => {
-    if (isVisible) {
-      setTimeout(() => setHasAnimated(true), delay);
-    }
-  }, [isVisible, delay, setHasAnimated]);
-
-  return (
-    <div className="hover:scale-110 transition-transform duration-300">
-      <div className="text-4xl md:text-5xl font-bold mb-2" style={{color: '#00b2e3'}}>
-        {count}{suffix}
-      </div>
-      <div className="text-white">{label}</div>
     </div>
   );
 }

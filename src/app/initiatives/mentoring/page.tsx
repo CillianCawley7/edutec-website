@@ -56,20 +56,31 @@ export default function MentoringPage() {
             </div>
           </div>
 
-          {/* Podcast CTA */}
-          <div className="bg-blue-50 rounded-xl p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          {/* Get Involved CTA */}
+          <div className="bg-blue-50 rounded-xl p-6 md:p-8">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">Want to hear more?</h3>
-              <p className="text-gray-800 mt-1">
-                Check out the itag Podcast, where Fiona Neary (University of Galway) and Maureen Kelly-Hardiman (DXC Technology) chat about their experience with Mentoring for Success and how it’s shaping the future of tech talent in the West of Ireland.
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Ready to Get Started?</h3>
+              <p className="text-gray-800 mb-6 leading-relaxed">
+                Whether you're looking for a mentor to guide your career or want to become a mentor and share your expertise, 
+                the itag Mentoring for Success programme is here to help you grow.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="mailto:info@itag.ie?subject=Mentoring%20Programme%20-%20Mentee%20Application"
+                  className="inline-block text-white hover:opacity-90 transition px-6 py-3 rounded-lg font-semibold text-center"
+                  style={{backgroundColor: '#00b2e3'}}
+                >
+                  Apply as Mentee
+                </a>
+                <a
+                  href="mailto:info@itag.ie?subject=Mentoring%20Programme%20-%20Mentor%20Application"
+                  className="inline-block border-2 hover:opacity-90 transition px-6 py-3 rounded-lg font-semibold text-center"
+                  style={{borderColor: '#00b2e3', color: '#00b2e3'}}
+                >
+                  Become a Mentor
+                </a>
+              </div>
             </div>
-            <a
-              href="#" /* TODO: Insert real podcast link */
-              className="inline-block text-white bg-blue-600 hover:bg-blue-700 transition px-5 py-3 rounded font-medium self-start md:self-auto"
-            >
-              Listen Now
-            </a>
           </div>
         </section>
       </main>

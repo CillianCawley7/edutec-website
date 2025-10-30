@@ -14,8 +14,8 @@ export default function Footer() {
         <div className="flex-1 min-w-[250px]">
           <div className="flex items-center mb-4">
             <Image
-              src="/edutec_logo_white.png"
-              alt="EduTec Careers Logo"
+              src="/logos/EdUTec_Logo_White.png"
+              alt="EdUTec Careers Logo"
               width={140}
               height={40}
               className="object-contain"

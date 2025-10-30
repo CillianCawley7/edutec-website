@@ -189,7 +189,7 @@ export default function AboutPage() {
                   A Forum of itag
                 </h2>
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  <strong>EdUTec</strong> is proudly run as a forum of <strong>itag</strong> (Irish Technology Association Galway), 
+                  <strong>EdUTec</strong> is proudly run as a forum of <strong>itag</strong> (Innovation Technology AtlanTec Gateway), 
                   the West of Ireland's leading technology industry association representing over <strong>150 member companies</strong>.
                 </p>
                 <p className="text-lg text-gray-400 leading-relaxed mb-6">
