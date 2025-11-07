@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Navbar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import LogoBar from '../../components/LogoBar';
 
 export default function MentoringPage() {
   return (
@@ -84,6 +85,7 @@ export default function MentoringPage() {
           </div>
         </section>
       </main>
+      <LogoBar />
       <Footer />
     </>
   );

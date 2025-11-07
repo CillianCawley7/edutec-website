@@ -4,6 +4,7 @@ import * as React from 'react';
 import Head from 'next/head';
 import Navbar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import LogoBar from '../../components/LogoBar';
 
 export default function AdoptASchoolPage() {
   // Structured data for SEO (JSON-LD)
@@ -464,6 +465,7 @@ export default function AdoptASchoolPage() {
           </div>
         </section>
       </main>
+      <LogoBar />
       <Footer />
     </>
   );

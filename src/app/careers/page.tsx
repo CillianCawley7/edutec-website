@@ -6,6 +6,7 @@ import { careerData } from './careerdata';
 import CareerCard from '../components/CareerCard';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+import LogoBar from '../components/LogoBar';
 
 export default function CareersPage() {
   const [searchTerm, setSearchTerm] = React.useState('');
@@ -204,6 +205,7 @@ export default function CareersPage() {
         </section>
 
       </main>
+      <LogoBar />
       <Footer />
 
       {/* Add custom CSS for animations */}

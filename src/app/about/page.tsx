@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+import LogoBar from '../components/LogoBar';
 
 export default function AboutPage() {
   return (
@@ -269,6 +270,7 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
+      <LogoBar />
       <Footer />
     </>
   );

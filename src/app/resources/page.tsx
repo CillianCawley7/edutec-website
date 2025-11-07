@@ -2,6 +2,7 @@
 
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+import LogoBar from '../components/LogoBar';
 import Link from 'next/link';
 import * as React from 'react';
 
@@ -150,6 +151,7 @@ export default function ResourcesPage() {
           </div>
         </section>
       </main>
+      <LogoBar />
       <Footer />
     </>
   );

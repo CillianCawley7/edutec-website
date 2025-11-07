@@ -4,6 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+import LogoBar from '../components/LogoBar';
 import EventCalendar from '../components/EventCalendar';
 import { type Event, getUpcomingEvents } from './eventData';
 
@@ -75,6 +76,7 @@ export default function EventsPage() {
         </section>
 
       </main>
+      <LogoBar />
       <Footer />
     </>
   );

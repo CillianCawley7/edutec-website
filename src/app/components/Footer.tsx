@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="flex-1 min-w-[200px]">
           <h4 className="text-lg font-semibold mb-4 text-white">Our Partners</h4>
           <p className="text-sm leading-relaxed max-w-xs" style={{color: '#ccc'}}>
-            In collaboration with <strong>ATU</strong>, <strong>TUS</strong>, <strong>UL</strong>, <strong>University of Galway</strong>, and <strong>Skillnet Ireland</strong>.
+            In collaboration with <strong>ATU</strong> and <strong>University of Galway</strong>.
           </p>
         </div>
 
@@ -61,47 +61,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Supported by itag & Skillnet Section */}
-      <div className="border-t" style={{borderColor: '#3a403a'}}>
-        <div className="max-w-7xl mx-auto py-8 px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            {/* Supported by itag */}
-            <div className="flex flex-col items-center md:items-start gap-3">
-              <p className="text-sm text-gray-400">Proudly supported by</p>
-              <Image
-                src="/itag/itag logo.png"
-                alt="itag - Irish Technology Association Galway"
-                width={140}
-                height={50}
-                className="object-contain"
-              />
-            </div>
-
-            {/* 25 Years Celebration */}
-            <div className="flex items-center">
-              <Image
-                src="/itag/Itag 25 Years Logo Rgb (1).png"
-                alt="itag 25 Years Celebration"
-                width={200}
-                height={80}
-                className="object-contain"
-              />
-            </div>
-
-            {/* Skillnet Partnership */}
-            <div className="flex flex-col items-center md:items-end gap-3">
-              <p className="text-sm text-gray-400">In partnership with</p>
-              <Image
-                src="/itag/Itag-25-years.png"
-                alt="itag Skillnet Ireland"
-                width={180}
-                height={50}
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Bottom Bar */}
       <div className="text-center text-xs py-4 border-t" style={{color: '#999', borderColor: '#3a403a'}}>

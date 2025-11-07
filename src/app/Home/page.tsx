@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+import LogoBar from '../components/LogoBar';
 import * as React from 'react';
 
 export default function Home() {
@@ -17,15 +18,15 @@ export default function Home() {
           {/* Image Background */}
           <div className="absolute inset-0 w-full h-full overflow-hidden" aria-hidden="true">
             <Image
-              src="/potential_hero_backround.jpg"
+              src="/homepage_hero_2.jpeg"
               alt=""
               fill
-              className="object-cover opacity-15"
+              className="object-cover opacity-35"
               priority
               quality={90}
             />
             {/* Gradient overlay for better text readability */}
-            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 249, 255, 0.9) 100%)'}}></div>
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(230, 247, 255, 0.75) 100%)'}}></div>
           </div>
           
           <div className="max-w-6xl mx-auto relative z-10 px-4">
@@ -220,6 +221,7 @@ export default function Home() {
         </section>
 
       </main>
+      <LogoBar />
       <Footer />
 
       {/* Add custom CSS for animations */}

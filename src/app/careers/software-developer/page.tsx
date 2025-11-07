@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Navbar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import LogoBar from '../../components/LogoBar';
 import Link from 'next/link';
 
 export default function SoftwareDeveloperPage() {
@@ -239,7 +240,7 @@ export default function SoftwareDeveloperPage() {
           </div>
         </section>
       </main>
-
+      <LogoBar />
       <Footer />
     </>
   );

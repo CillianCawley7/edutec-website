@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Navbar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import LogoBar from '../../components/LogoBar';
 import { qualifications } from '../data';
 
 export default function QualificationDetailPage() {
@@ -85,6 +86,7 @@ export default function QualificationDetailPage() {
           </aside>
         </section>
       </main>
+      <LogoBar />
       <Footer />
     </>
   );

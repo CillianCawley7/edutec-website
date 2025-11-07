@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Navbar from '../components/NavBar';
 import QualificationCard from '../components/QualificationCard';
 import Footer from '../components/Footer';
+import LogoBar from '../components/LogoBar';
 import { qualifications, type Qualification } from './data';
 
 type Filters = {
@@ -319,6 +320,7 @@ export default function QualificationsPage() {
         </section>
 
     </main>
+      <LogoBar />
       <Footer />
 
       {/* Add custom CSS for animations */}
