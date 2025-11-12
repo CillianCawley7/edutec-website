@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaFacebook, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -40,27 +40,50 @@ export default function Footer() {
             <a href="mailto:info@edutec.ie" className="text-sm hover:text-white transition-colors" style={{color: '#ccc'}}>
               info@edutec.ie
             </a>
-            <div className="flex space-x-4 text-xl">
-              <a 
-                href="https://www.linkedin.com/company/itag-skillnet-ireland/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn" 
-                className="hover:opacity-70 transition-opacity" 
-                style={{color: '#00b2e3'}}
-              >
-                <FaLinkedin />
-              </a>
-              <a 
-                href="https://twitter.com/itagskillnet" 
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter" 
-                className="hover:opacity-70 transition-opacity" 
-                style={{color: '#00b2e3'}}
-              >
-                <FaTwitter />
-              </a>
+            <div className="flex flex-col items-center md:items-end gap-2">
+              <span className="text-xs" style={{color: '#999'}}>Follow itag</span>
+              <div className="flex space-x-3 text-xl">
+                <a 
+                  href="https://www.linkedin.com/company/itag-skillnet/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="itag LinkedIn" 
+                  className="hover:opacity-70 transition-opacity" 
+                  style={{color: '#00b2e3'}}
+                >
+                  <FaLinkedin />
+                </a>
+                <a 
+                  href="http://x.com/itag_DigitalWF" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="itag Twitter" 
+                  className="hover:opacity-70 transition-opacity" 
+                  style={{color: '#00b2e3'}}
+                >
+                  <FaTwitter />
+                </a>
+                <a 
+                  href="https://www.facebook.com/www.itag.ie/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="itag Facebook" 
+                  className="hover:opacity-70 transition-opacity" 
+                  style={{color: '#00b2e3'}}
+                >
+                  <FaFacebook />
+                </a>
+                <a 
+                  href="https://www.youtube.com/channel/UCyKV_LpDFdZvovT2Q5-uZ4w" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="itag YouTube" 
+                  className="hover:opacity-70 transition-opacity" 
+                  style={{color: '#00b2e3'}}
+                >
+                  <FaYoutube />
+                </a>
+              </div>
             </div>
           </div>
         </div>
