@@ -91,9 +91,9 @@ export default function Home() {
               />
               <OfferingCard
                 icon={CalendarDaysIcon}
-                title="Industry Events"
-                description="Workshops, career fairs, and networking opportunities featuring leading tech professionals."
-                link="/events"
+                title="Pathways Program"
+                description="Annual tech career event connecting students with universities and employers. Thanks to all who joined Pathways 2025!"
+                link="/initiatives/pathways"
                 color="#00b2e3"
               />
               <OfferingCard
