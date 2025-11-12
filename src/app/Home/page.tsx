@@ -6,6 +6,14 @@ import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 import LogoBar from '../components/LogoBar';
 import * as React from 'react';
+import { 
+  BriefcaseIcon, 
+  BuildingLibraryIcon, 
+  CalendarDaysIcon, 
+  BookOpenIcon,
+  ClockIcon,
+  MapPinIcon
+} from '@heroicons/react/24/outline';
 
 export default function Home() {
   return (
@@ -57,35 +65,42 @@ export default function Home() {
           </svg>
         </div>
 
-        {/* Featured Initiatives with hover effects */}
-        <section className="py-24 px-6 bg-gray-50 relative" aria-labelledby="initiatives-heading">
-          <div className="max-w-6xl mx-auto">
-            <h2 id="initiatives-heading" className="heading-2 mb-6 text-center" style={{color: '#212721'}}>
-              Empowering Through Action
+        {/* What We Offer Section */}
+        <section className="py-24 px-6 bg-gray-50 relative" aria-labelledby="offerings-heading">
+          <div className="max-w-7xl mx-auto">
+            <h2 id="offerings-heading" className="heading-2 mb-6 text-center" style={{color: '#212721'}}>
+              What We Offer
             </h2>
-            <p className="body-large text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-              Discover our innovative programmes designed to connect students with industry and build real tech careers
+            <p className="body-large text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+              Comprehensive resources and programs connecting students, educators, and industry professionals to build Ireland's tech future
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <InitiativeCard
-                icon="🎓"
-                title="Pathways 2025"
-                description="Join us on November 6th in Galway for Ireland's premier tech career event. Meet universities, employers, and discover your future."
-                link="/initiatives/pathways"
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <OfferingCard
+                icon={BriefcaseIcon}
+                title="Career Pathways"
+                description="Explore diverse tech career routes with detailed guides, salary insights, and skill requirements."
+                link="/careers"
                 color="#00b2e3"
               />
-              <InitiativeCard
-                icon="🏫"
-                title="Adopt a School"
-                description="Tech companies partner with schools to provide equipment, mentorship, and real-world learning experiences."
+              <OfferingCard
+                icon={BuildingLibraryIcon}
+                title="School Partnerships"
+                description="Adopt a School program connecting tech companies with schools for real-world learning experiences."
                 link="/initiatives/adopt-a-school"
                 color="#00b2e3"
               />
-              <InitiativeCard
-                icon="🤝"
-                title="Mentoring for Success"
-                description="Free structured mentoring programme connecting tech professionals with emerging talent for career growth."
-                link="/initiatives/mentoring"
+              <OfferingCard
+                icon={CalendarDaysIcon}
+                title="Industry Events"
+                description="Workshops, career fairs, and networking opportunities featuring leading tech professionals."
+                link="/events"
+                color="#00b2e3"
+              />
+              <OfferingCard
+                icon={BookOpenIcon}
+                title="Qualifications Guide"
+                description="Comprehensive database of tech courses, degrees, and certifications from Irish institutions."
+                link="/qualifications"
                 color="#00b2e3"
               />
             </div>
@@ -265,7 +280,7 @@ function MiniCalendarPreview() {
       try {
         const { getUpcomingEvents } = await import('../events/eventData');
         const upcomingEvents = await getUpcomingEvents();
-        setEvents(upcomingEvents.slice(0, 6)); // Show next 6 events
+        setEvents(upcomingEvents.slice(0, 4)); // Show next 4 events
       } catch (error) {
         console.error('Error loading events:', error);
       } finally {
@@ -277,25 +292,28 @@ function MiniCalendarPreview() {
 
   if (loading) {
     return (
-      <section className="py-24 px-6 bg-gray-50 relative" aria-label="Loading upcoming events">
+      <section className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white relative" aria-label="Loading upcoming events">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="skeleton h-10 w-64 mx-auto mb-4 rounded"></div>
             <div className="skeleton h-6 w-96 mx-auto rounded"></div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                <div className="flex gap-4 mb-4">
-                  <div className="skeleton w-16 h-16 rounded-lg"></div>
-                  <div className="flex-1">
-                    <div className="skeleton h-6 w-full mb-2 rounded"></div>
-                    <div className="skeleton h-4 w-20 rounded"></div>
+          <div className="space-y-4 mb-12">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                <div className="flex flex-col md:flex-row">
+                  <div className="flex-shrink-0 bg-blue-50 p-6 flex items-center justify-center md:w-32 border-b md:border-b-0 md:border-r border-gray-200">
+                    <div className="skeleton w-16 h-20 rounded"></div>
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="skeleton h-4 w-full rounded"></div>
-                  <div className="skeleton h-4 w-3/4 rounded"></div>
+                  <div className="flex-1 p-6">
+                    <div className="skeleton h-6 w-3/4 mb-3 rounded"></div>
+                    <div className="flex gap-4 mb-3">
+                      <div className="skeleton h-4 w-24 rounded"></div>
+                      <div className="skeleton h-4 w-32 rounded"></div>
+                    </div>
+                    <div className="skeleton h-4 w-full rounded"></div>
+                    <div className="skeleton h-4 w-2/3 mt-2 rounded"></div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -306,60 +324,76 @@ function MiniCalendarPreview() {
   }
 
   return (
-    <section className="py-24 px-6 bg-gray-50 relative" aria-labelledby="events-preview-heading">
-      {/* Decorative corner accents */}
-      <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 rounded-tl-2xl opacity-20" style={{borderColor: '#00b2e3'}}></div>
-      <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 rounded-tr-2xl opacity-20" style={{borderColor: '#00b2e3'}}></div>
+    <section className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white relative" aria-labelledby="events-preview-heading">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 id="events-preview-heading" className="heading-2 mb-6 text-gray-900">
+        <div className="text-center mb-12">
+          <h2 id="events-preview-heading" className="heading-2 mb-4 text-gray-900">
             Upcoming Events
           </h2>
-          <p className="body-large text-gray-600 max-w-3xl mx-auto">
+          <p className="body-large text-gray-600 max-w-2xl mx-auto">
             Join us for workshops, career fairs, and networking opportunities
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="space-y-4 mb-12">
           {events.map((event, index) => {
             const eventDate = new Date(event.date);
             const day = eventDate.getDate();
             const month = eventDate.toLocaleString('en-US', { month: 'short' });
+            const weekday = eventDate.toLocaleString('en-US', { weekday: 'short' });
             
             return (
               <article
                 key={event.id}
-                className="card-hover bg-white rounded-xl shadow-md p-6 border border-gray-100"
+                className="group bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-all duration-300 overflow-hidden hover:shadow-lg"
               >
-                <div className="flex gap-4 mb-4">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-lg flex flex-col items-center justify-center text-white" style={{backgroundColor: '#00b2e3'}}>
-                    <div className="text-xs font-semibold">{month}</div>
-                    <div className="text-2xl font-bold">{day}</div>
+                <div className="flex flex-col md:flex-row">
+                  {/* Date Section */}
+                  <div className="flex-shrink-0 bg-gradient-to-br from-blue-50 to-blue-100 p-6 flex items-center justify-center md:w-32 border-b md:border-b-0 md:border-r border-gray-200">
+                    <div className="text-center">
+                      <div className="text-xs font-semibold uppercase tracking-wider mb-1" style={{color: '#00b2e3'}}>
+                        {weekday}
+                      </div>
+                      <div className="text-3xl font-bold text-gray-900">{day}</div>
+                      <div className="text-sm font-medium text-gray-600 uppercase">{month}</div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="heading-3 text-base text-gray-900 line-clamp-2 mb-2">
-                      {event.title}
-                    </h3>
-                    {event.source === 'itag' && (
-                      <span className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">
-                        itag Event
-                      </span>
-                    )}
+
+                  {/* Content Section */}
+                  <div className="flex-1 p-6">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                          {event.title}
+                        </h3>
+                        
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                          <div className="flex items-center gap-1.5">
+                            <ClockIcon className="w-4 h-4" style={{color: '#00b2e3'}} />
+                            <span>{event.time}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <MapPinIcon className="w-4 h-4" style={{color: '#00b2e3'}} />
+                            <span className="line-clamp-1">{event.location}</span>
+                          </div>
+                        </div>
+
+                        <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
+                          {event.description}
+                        </p>
+                      </div>
+
+                      {/* Badge and CTA */}
+                      <div className="flex md:flex-col items-start gap-3">
+                        {event.source === 'itag' && (
+                          <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700 border border-blue-200">
+                            itag Event
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="space-y-2 body-normal text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <span role="img" aria-label="Time">🕐</span>
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span role="img" aria-label="Location">📍</span>
-                    <span>{event.location}</span>
-                  </div>
-                </div>
-                <p className="body-normal text-gray-700 mt-4 line-clamp-2">
-                  {event.description}
-                </p>
               </article>
             );
           })}
@@ -368,19 +402,15 @@ function MiniCalendarPreview() {
         <div className="text-center">
           <Link
             href="/events"
-            className="btn-primary text-lg"
+            className="inline-flex items-center gap-2 btn-primary text-lg group"
             aria-label="View full events calendar"
           >
-            View Full Calendar →
+            <span>View Full Calendar</span>
+            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </Link>
         </div>
-      </div>
-
-      {/* Smooth wave to CTA */}
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden" style={{height: '100px'}}>
-        <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0 L0,80 Q300,100 600,80 T1200,80 L1200,0 Z" fill="white" opacity="0.1"></path>
-        </svg>
       </div>
     </section>
   );
@@ -821,7 +851,7 @@ function CareerPathwaysDiagram() {
   );
 }
 
-// Initiative Card Component
+// Initiative Card Component (kept for backwards compatibility)
 function InitiativeCard({ icon, title, description, link, color }: { icon: string; title: string; description: string; link: string; color: string }) {
   return (
     <article className="card-hover bg-white rounded-xl shadow-md p-8 group border border-gray-100">
@@ -849,5 +879,38 @@ function InitiativeCard({ icon, title, description, link, color }: { icon: strin
         </svg>
       </Link>
     </article>
+  );
+}
+
+// Offering Card Component
+function OfferingCard({ icon: Icon, title, description, link, color }: { icon: React.ComponentType<{ className?: string }>; title: string; description: string; link: string; color: string }) {
+  return (
+    <Link href={link} className="group">
+      <article className="card-hover bg-white rounded-xl shadow-md p-6 border border-gray-200 h-full flex flex-col transition-all duration-300 hover:border-blue-300">
+        <div className="flex items-start gap-4 mb-4">
+          <div 
+            className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-md" 
+            style={{backgroundColor: '#e6f7ff', color: color}}
+            aria-hidden="true"
+          >
+            <Icon className="w-7 h-7" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-lg font-bold mb-2 transition-colors duration-200 group-hover:text-blue-600" style={{color: '#212721'}}>
+              {title}
+            </h3>
+          </div>
+        </div>
+        <p className="text-sm text-gray-600 leading-relaxed flex-grow">
+          {description}
+        </p>
+        <div className="mt-4 flex items-center gap-2 text-sm font-semibold transition-all duration-200 group-hover:gap-3" style={{color: color}}>
+          <span>Learn more</span>
+          <svg className="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </article>
+    </Link>
   );
 }

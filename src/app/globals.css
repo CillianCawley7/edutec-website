@@ -53,7 +53,7 @@
   
   /* Font families */
   --font-orgon: 'Orgon', sans-serif;
-  --font-exo: var(--font-exo), sans-serif;
+  --font-exo: 'Exo', sans-serif;
   
   /* Spacing System - 8px base */
   --spacing-xs: 0.5rem;   /* 8px */
@@ -109,7 +109,7 @@
 body {
   background: #ffffff;
   color: var(--foreground);
-  font-family: var(--font-exo), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: var(--font-exo), 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: var(--line-height-normal);

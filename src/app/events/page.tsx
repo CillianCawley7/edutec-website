@@ -33,8 +33,23 @@ export default function EventsPage() {
       <main className="pt-0 min-h-screen bg-gray-50">
         
         {/* Hero Section */}
-        <section className="text-white py-16 relative" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
-          <div className="max-w-7xl mx-auto px-6">
+        <section 
+          className="text-white py-16 relative bg-cover bg-center" 
+          style={{
+            backgroundImage: 'url(/events-image-2.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          {/* Blue gradient overlay */}
+          <div 
+            className="absolute inset-0" 
+            style={{
+              background: 'linear-gradient(135deg, rgba(0, 178, 227, 0.9) 0%, rgba(0, 153, 199, 0.9) 100%)'
+            }}
+          />
+          
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-3">
               Events Calendar
             </h1>

@@ -18,10 +18,9 @@ export default function InitiativesPage() {
           </div>
         </section>
         <section className="max-w-6xl mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <Link href="/initiatives/pathways" className="p-6 bg-gray-50 rounded-lg hover:shadow">Pathways</Link>
             <Link href="/initiatives/adopt-a-school" className="p-6 bg-gray-50 rounded-lg hover:shadow">Adopt a School</Link>
-            <Link href="/initiatives/mentoring" className="p-6 bg-gray-50 rounded-lg hover:shadow">Mentoring</Link>
           </div>
         </section>
       </main>

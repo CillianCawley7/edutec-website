@@ -13,11 +13,21 @@ export default function AboutPage() {
       <Navbar />
       <main className="pt-0 min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="relative text-white py-24 overflow-hidden" style={{background: 'linear-gradient(135deg, #00b2e3 0%, #0099c7 100%)'}}>
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          </div>
+        <section 
+          className="relative text-white py-24 overflow-hidden bg-cover bg-center" 
+          style={{
+            backgroundImage: 'url(/about-hero-backround.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          {/* Blue gradient overlay */}
+          <div 
+            className="absolute inset-0" 
+            style={{
+              background: 'linear-gradient(135deg, rgba(0, 178, 227, 0.9) 0%, rgba(0, 153, 199, 0.9) 100%)'
+            }}
+          />
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
@@ -113,7 +123,7 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-500 font-bold">•</span>
-                    <span>Mentoring programmes</span>
+                    <span>Professional development programmes</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-500 font-bold">•</span>
@@ -165,7 +175,7 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-500 font-bold">•</span>
-                    <span>School visits & mentoring</span>
+                    <span>School visits & career guidance</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-500 font-bold">•</span>
