@@ -11,8 +11,23 @@ export default function PathwaysPage() {
       <Navbar />
       <main className="pt-0 min-h-screen bg-white text-gray-800">
         {/* Hero */}
-        <section className="text-white py-16 md:py-20" style={{background: 'linear-gradient(to right, #00b2e3, #0099c7)'}}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section 
+          className="text-white py-16 md:py-20 relative bg-cover bg-center" 
+          style={{
+            backgroundImage: 'url(/pathways-hero-image.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          {/* Blue gradient overlay */}
+          <div 
+            className="absolute inset-0" 
+            style={{
+              background: 'linear-gradient(135deg, rgba(0, 178, 227, 0.9) 0%, rgba(0, 153, 199, 0.9) 100%)'
+            }}
+          />
+          
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">Pathways 2025 - Thank You!</h1>
             <p className="text-xl md:text-2xl font-semibold mb-3">A Resounding Success</p>
             <p className="text-blue-100 text-lg md:text-xl max-w-3xl mx-auto">
