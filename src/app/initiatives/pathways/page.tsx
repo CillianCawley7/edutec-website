@@ -13,36 +13,42 @@ export default function PathwaysPage() {
         {/* Hero */}
         <section className="text-white py-16 md:py-20" style={{background: 'linear-gradient(to right, #00b2e3, #0099c7)'}}>
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">Pathways</h1>
-            <p className="text-xl md:text-2xl font-semibold mb-3">Careers & Higher Education Conference</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">Pathways 2025 - Thank You!</h1>
+            <p className="text-xl md:text-2xl font-semibold mb-3">A Resounding Success</p>
             <p className="text-blue-100 text-lg md:text-xl max-w-3xl mx-auto">
-              Explore routes into tech and education: meet with experts from Third Level colleges, Universities, ETBs, and leading employers in the West of Ireland.
+              Thank you to everyone who made Pathways 2025 an incredible event on November 6th at the Galmont Hotel, Galway.
             </p>
           </div>
         </section>
 
-        {/* Pathways 2025 - Event Overview */}
+        {/* Thank You Message */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="bg-white rounded-xl shadow-lg p-6 md:p-10 border-l-4" style={{borderColor: '#00b2e3'}}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#00b2e3'}}>
-              Calling all 5th Year and Leaving Cert Students
+            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{color: '#00b2e3'}}>
+              A Huge Thank You
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-4">
-              Join us on the <strong>6th of November 2025</strong> at the <strong>Galmont Hotel, Galway</strong>, before making any final decisions on your future
-              education, training and employment options.
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-700">
-              Pathways 2025, hosted by <strong>The Galway Advertiser</strong> in partnership with <strong>iTAG</strong> and <strong>iTAG Skillnet</strong>, gives you a chance to meet with experts from Third Level colleges, Universities,
-              ETBs, and some of the largest employers in the West of Ireland — all under one roof.
-            </p>
+            <div className="space-y-4 text-lg md:text-xl leading-relaxed text-gray-700">
+              <p>
+                A huge thank you to the <strong>students</strong>, <strong>teachers</strong>, <strong>parents</strong>, and all the <strong>exhibitors</strong> and <strong>speakers</strong> who joined us on the 6th of November in the Galmont Hotel, Galway, for Pathways 2025.
+              </p>
+              <p>
+                Pathways 2025 offered students the opportunity to meet with and attend talks from experts across both the education and industry sectors.
+              </p>
+              <p>
+                This year's exhibitors included <strong>University of Galway</strong>, <strong>University of Limerick</strong>, <strong>ATU</strong>, <strong>Mary Immaculate College</strong>, <strong>Imperial College London</strong>, <strong>Scotland's Rural College</strong>, <strong>University of Nicosia</strong>, <strong>An Garda Síochána</strong>, the <strong>Defence Forces</strong>, <strong>Nursing and Midwifery Board of Ireland</strong>, <strong>National Learning Network</strong>, and many more.
+              </p>
+              <p>
+                With the comprehensive range of exhibitors, and expert advice from speakers, Pathways 2025 proved to be a resounding success. We are looking forward to emulating this success in our 2026 event, details of which will be announced shortly.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* What to Expect */}
+        {/* What Pathways Offers */}
         <section className="bg-gray-50 py-12 md:py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#00b2e3'}}>What to Expect</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#00b2e3'}}>What Pathways Offers</h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                 Pathways connects students with real-world career guidance, industry insights, and educational opportunities.
               </p>
@@ -153,104 +159,30 @@ export default function PathwaysPage() {
           </div>
         </section>
 
-        {/* Pathways 2025 Details */}
+        {/* Pathways 2026 - Coming Soon */}
         <section className="bg-gray-50 py-12 md:py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-
-            {/* Exhibitors */}
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-              <h3 className="text-2xl font-bold mb-4" style={{color: '#00b2e3'}}>Pathways 2025 Exhibitors</h3>
-              <p className="text-gray-700 mb-4">This year's exhibitors include:</p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  'University of Galway',
-                  'University of Limerick',
-                  'Maynooth University',
-                  'Mary Immaculate College',
-                  'Imperial College London',
-                  "Scotland's Rural College",
-                  'An Garda Síochána',
-                  'NMBI',
-                  'Romero Games',
-                  'NLN',
-                  'and many more',
-                ].map((name) => (
-                  <span key={name} className="px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-700 text-sm md:text-base hover:bg-gray-200 transition-colors">{name}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Speakers & Planning */}
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-              <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3" style={{backgroundColor: '#00b2e3'}}>
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900">Industry Speakers</h3>
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  The <strong>Galway Advertiser</strong>, in partnership with <strong>iTAG</strong>, is lining up exciting speakers from both the education and industry
-                  sectors, including career guidance advice from <strong>Brian Mooney</strong>.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  <strong>This year</strong>, member company employees from <strong style={{color: '#00b2e3'}}>Fidelity Investments</strong> will be speaking at the conference, sharing their insights and career journeys with students.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3" style={{backgroundColor: '#00b2e3'}}>
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900">Plan Your Day</h3>
-                </div>
-                <p className="text-gray-700 leading-relaxed">
-                  An extensive <strong>Careers and Colleges Supplement</strong> will be published to help you plan your day in advance. Pick up your copy on
-                  <strong> 30th October 2025</strong> in your local store, or read it online at
-                  {" "}
-                  <a href="https://www.advertiser.ie" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline transition-all" style={{color: '#00b2e3'}}>www.advertiser.ie</a>
-                  {" "}(epaper).
-                </p>
-              </div>
-            </div>
-
-            {/* Registration & Contact */}
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-10 text-center border-2" style={{borderColor: '#00b2e3'}}>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{color: '#00b2e3'}}>Register for Pathways 2025</h3>
-              <p className="text-lg md:text-xl text-gray-700 mb-6">
-                Interested in attending? <strong>Tickets €5</strong> per student.
+              <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{color: '#00b2e3'}}>Looking Ahead to Pathways 2026</h3>
+              <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed">
+                Following the success of Pathways 2025, we're excited to announce that planning is underway for Pathways 2026. Details will be announced shortly.
               </p>
-              <div className="space-y-3 text-gray-800">
-                <p className="text-lg">
-                  Contact <strong>Shannon</strong> or <strong>Máire</strong>
+              <div className="space-y-4 text-gray-800 mb-8">
+                <p className="text-lg font-semibold">
+                  To book an exhibition space at Pathways 2026:
                 </p>
-                <p className="text-xl">
-                  <a href="tel:+35391530951" className="font-semibold hover:underline transition-all" style={{color: '#00b2e3'}}>091 530 951</a>
-                </p>
-                <p className="text-xl">
-                  <a href="mailto:pathways@advertiser.ie" className="font-semibold hover:underline transition-all" style={{color: '#00b2e3'}}>pathways@advertiser.ie</a>
-                </p>
+                <div className="space-y-2">
+                  <p className="text-lg">
+                    Contact <strong>Máire</strong>
+                  </p>
+                  <p className="text-xl">
+                    <a href="tel:+35391530951" className="font-semibold hover:underline transition-all" style={{color: '#00b2e3'}}>091 530 951</a>
+                  </p>
+                  <p className="text-xl">
+                    <a href="mailto:mmccarthy@galwayadvertiser.ie" className="font-semibold hover:underline transition-all" style={{color: '#00b2e3'}}>mmccarthy@galwayadvertiser.ie</a>
+                  </p>
+                </div>
               </div>
-            </div>
-
-            {/* Past Events */}
-            <div className="bg-gray-100 rounded-xl p-6 md:p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Previous Events</h3>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                Want to see what Pathways is all about? Learn more about our previous successful events and what to expect.
-              </p>
-              <a 
-                href="mailto:pathways@advertiser.ie?subject=Pathways%20Event%20Information" 
-                className="inline-block px-6 py-3 rounded-lg text-white font-semibold hover:opacity-90 transition-opacity"
-                style={{backgroundColor: '#00b2e3'}}
-              >
-                Get Event Information
-              </a>
             </div>
           </div>
         </section>
