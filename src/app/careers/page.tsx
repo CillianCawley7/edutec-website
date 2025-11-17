@@ -180,7 +180,7 @@ export default function CareersPage() {
             </h2>
             <p className="body-large mb-12 text-gray-300 max-w-3xl mx-auto">
               Explore our qualifications to find the educational pathway that's right for you, 
-              or join us at Pathways 2025 to meet employers and universities in person.
+              or learn about our Pathways program connecting students with universities and employers.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-10">
               <Link
@@ -193,9 +193,9 @@ export default function CareersPage() {
               <Link
                 href="/initiatives/pathways"
                 className="inline-block border-2 border-white text-white px-10 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-800 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg"
-                aria-label="Learn about Pathways 2025 event"
+                aria-label="Learn about Pathways program"
               >
-                Attend Pathways 2025
+                Learn About Pathways
               </Link>
             </div>
             <p className="body-normal text-gray-400 mt-8">
