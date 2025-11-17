@@ -38,7 +38,7 @@ export default function WebDeveloperPage() {
           
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Web developers design, build, and maintain websites and web applications. They work on both the visual elements users see (front-end) and the server-side logic and databases (back-end) that power modern web experiences. Web developers transform design mockups into functional, interactive websites using HTML, CSS, JavaScript, and various frameworks.
               </p>
@@ -51,7 +51,7 @@ export default function WebDeveloperPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do web developers do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do web developers do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Most web developers work standard full-time hours, though deadlines and project launches may require additional time. Many Irish companies offer flexible working arrangements and remote work options.
               </p>
@@ -78,7 +78,7 @@ export default function WebDeveloperPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Core Web Technologies</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Core Web Technologies</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• HTML5 and semantic markup</li>
                   <li>• CSS3, Flexbox, and Grid</li>
@@ -89,7 +89,7 @@ export default function WebDeveloperPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Frameworks & Tools</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Frameworks & Tools</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• React, Vue.js, or Angular</li>
                   <li>• Node.js and Express</li>
@@ -100,7 +100,7 @@ export default function WebDeveloperPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Problem-solving and debugging</li>
                   <li>• Attention to detail</li>
@@ -136,7 +136,7 @@ export default function WebDeveloperPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Ireland's digital economy continues to expand rapidly, with strong demand for web developers across all sectors. The National Skills Bulletin identifies web development as a high-demand skill area with shortages in qualified candidates.
                 </p>
@@ -146,7 +146,7 @@ export default function WebDeveloperPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Ireland's position as a European tech hub</li>
                   <li>• Growing e-commerce and digital services</li>
@@ -166,7 +166,7 @@ export default function WebDeveloperPage() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Level 8 Honours Degree</h4>
@@ -192,7 +192,7 @@ export default function WebDeveloperPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Course Topics</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Course Topics</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• HTML5, CSS3, and JavaScript fundamentals</li>
@@ -212,7 +212,7 @@ export default function WebDeveloperPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Start Your Web Development Journey?</h2>
             <p className="text-xl mb-8 text-blue-100">
@@ -221,13 +221,13 @@ export default function WebDeveloperPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/qualifications" 
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+                className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}
               >
                 View Qualifications
               </Link>
               <Link 
                 href="/events" 
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition"
               >
                 Upcoming Events
               </Link>

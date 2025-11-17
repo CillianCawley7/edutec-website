@@ -38,7 +38,7 @@ export default function SoftwareEngineerPage() {
           
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Software engineers apply systematic engineering approaches to software development. They design and build large-scale systems that are reliable, efficient, and maintainable. Unlike general developers, software engineers focus heavily on system architecture, scalability, and engineering best practices.
               </p>
@@ -51,7 +51,7 @@ export default function SoftwareEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do software engineers do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do software engineers do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Software engineers typically work full-time with flexible arrangements. Irish tech companies increasingly offer hybrid working, with 2-3 office days typical.
               </p>
@@ -79,7 +79,7 @@ export default function SoftwareEngineerPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Engineering Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Engineering Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• System design and architecture</li>
                   <li>• Data structures and algorithms</li>
@@ -90,7 +90,7 @@ export default function SoftwareEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Stack</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Stack</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Multiple programming languages</li>
                   <li>• Databases (SQL, NoSQL)</li>
@@ -101,7 +101,7 @@ export default function SoftwareEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Leadership and mentorship</li>
                   <li>• Technical communication</li>
@@ -137,7 +137,7 @@ export default function SoftwareEngineerPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Software engineering is identified as a critical skills shortage area in Ireland, with over 2,500 positions advertised annually. The Expert Group on Future Skills Needs consistently highlights software engineering in demand forecasts.
                 </p>
@@ -147,7 +147,7 @@ export default function SoftwareEngineerPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Digital transformation across all industries</li>
                   <li>• Cloud computing adoption acceleration</li>
@@ -167,7 +167,7 @@ export default function SoftwareEngineerPage() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Level 8 Honours Degree (Standard)</h4>
@@ -193,7 +193,7 @@ export default function SoftwareEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Knowledge Areas</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Knowledge Areas</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Data structures and algorithms</li>
@@ -213,7 +213,7 @@ export default function SoftwareEngineerPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Advance Your Engineering Career?</h2>
             <p className="text-xl mb-8 text-blue-100">
@@ -222,13 +222,13 @@ export default function SoftwareEngineerPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/qualifications" 
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+                className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}
               >
                 View Qualifications
               </Link>
               <Link 
                 href="/events" 
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition"
               >
                 Upcoming Events
               </Link>

@@ -42,15 +42,24 @@ export default function CareerCard({ title, description, imagePlaceholder, id, i
   }, []);
 
   return (
-    <div 
-      ref={cardRef}
-      className={`bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-      style={{ 
-        transitionDelay: `${index * 50}ms`,
-      }}
-    >
+    <>
+      <style jsx>{`
+        .career-card-title {
+          color: #212721;
+        }
+        .group:hover .career-card-title {
+          color: #00b2e3;
+        }
+      `}</style>
+      <div 
+        ref={cardRef}
+        className={`bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+        style={{ 
+          transitionDelay: `${index * 50}ms`,
+        }}
+      >
       <div className="h-48 w-full overflow-hidden relative">
         <img
           src={imagePlaceholder}
@@ -61,7 +70,7 @@ export default function CareerCard({ title, description, imagePlaceholder, id, i
         <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       <div className="p-6">
-        <h2 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors duration-300">
+        <h2 className="text-xl font-semibold mb-3 transition-colors duration-300 career-card-title">
           {title}
         </h2>
         <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed">
@@ -79,5 +88,6 @@ export default function CareerCard({ title, description, imagePlaceholder, id, i
         </Link>
       </div>
     </div>
+    </>
   );
 }

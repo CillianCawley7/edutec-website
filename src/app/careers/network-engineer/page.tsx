@@ -31,7 +31,7 @@ export default function NetworkEngineerPage() {
           <h2 className="text-4xl font-bold mb-16 text-center text-gray-800">What you need to know</h2>
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Network Engineers design and manage the networks that connect computers, systems, and devices. They configure routers and switches, troubleshoot connectivity issues, optimize network performance, and ensure reliable communications. With cloud computing and hybrid work, network engineering skills are more critical than ever.
               </p>
@@ -41,7 +41,7 @@ export default function NetworkEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Key responsibilities</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Key responsibilities</h3>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
                 <li>Design network architecture and topologies</li>
                 <li>Configure routers, switches, and network devices</li>
@@ -63,7 +63,7 @@ export default function NetworkEngineerPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What skills are needed?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Networking</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Networking</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• TCP/IP protocols</li>
                   <li>• Routing (OSPF, BGP, EIGRP)</li>
@@ -74,7 +74,7 @@ export default function NetworkEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technologies</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technologies</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Cisco/Juniper equipment</li>
                   <li>• Cloud networking (AWS, Azure)</li>
@@ -85,7 +85,7 @@ export default function NetworkEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Problem-solving</li>
                   <li>• Analytical thinking</li>
@@ -117,14 +117,14 @@ export default function NetworkEngineerPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What is the career outlook?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Consistent demand for network engineers in Ireland with over 800 positions advertised annually. Cloud and hybrid work create new networking challenges and opportunities.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Cloud networking adoption</li>
                   <li>• Remote work infrastructure</li>
@@ -142,7 +142,7 @@ export default function NetworkEngineerPage() {
           <h2 className="text-3xl font-bold mb-8 text-center">What education is required?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Network Engineering Degree</h4>
@@ -166,7 +166,7 @@ export default function NetworkEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Skills</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• TCP/IP and OSI model</li>
@@ -185,17 +185,17 @@ export default function NetworkEngineerPage() {
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Build Networks?</h2>
             <p className="text-xl mb-8 text-blue-100">
               Explore resources for network engineering careers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/qualifications" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              <Link href="/qualifications" className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}>
                 View Qualifications
               </Link>
-              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition">
                 Upcoming Events
               </Link>
             </div>

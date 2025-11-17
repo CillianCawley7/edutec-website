@@ -38,7 +38,7 @@ export default function DataScientistPage() {
           
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Data scientists combine statistical expertise, programming skills, and domain knowledge to extract meaningful insights from data. They build predictive models, identify trends, and help organizations make data-driven decisions. Data science sits at the intersection of mathematics, computer science, and business understanding.
               </p>
@@ -51,7 +51,7 @@ export default function DataScientistPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do data scientists do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do data scientists do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Data scientists typically work standard full-time hours with flexibility for remote work. Irish companies increasingly offer hybrid working arrangements.
               </p>
@@ -79,7 +79,7 @@ export default function DataScientistPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Programming & Tools</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Programming & Tools</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Python (pandas, NumPy, scikit-learn)</li>
                   <li>• R programming language</li>
@@ -90,7 +90,7 @@ export default function DataScientistPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Statistics & ML</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Statistics & ML</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Statistical analysis and hypothesis testing</li>
                   <li>• Machine learning algorithms</li>
@@ -101,7 +101,7 @@ export default function DataScientistPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Business Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Business Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Communication and storytelling</li>
                   <li>• Data visualization (Tableau, matplotlib)</li>
@@ -137,7 +137,7 @@ export default function DataScientistPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Data science is consistently ranked among Ireland's top 5 most in-demand roles. Over 1,000 data scientist positions are advertised annually, with demand far exceeding qualified candidate supply.
                 </p>
@@ -147,7 +147,7 @@ export default function DataScientistPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Explosion of available data</li>
                   <li>• AI and ML adoption across industries</li>
@@ -167,7 +167,7 @@ export default function DataScientistPage() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Master's Degree (Most Common)</h4>
@@ -193,7 +193,7 @@ export default function DataScientistPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Course Topics</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Course Topics</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Statistics and probability</li>
@@ -213,7 +213,7 @@ export default function DataScientistPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Start Your Data Science Journey?</h2>
             <p className="text-xl mb-8 text-blue-100">
@@ -222,13 +222,13 @@ export default function DataScientistPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/qualifications" 
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+                className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}
               >
                 View Qualifications
               </Link>
               <Link 
                 href="/events" 
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition"
               >
                 Upcoming Events
               </Link>

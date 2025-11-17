@@ -31,7 +31,7 @@ export default function AIResearcherPage() {
           <h2 className="text-4xl font-bold mb-16 text-center text-gray-800">What you need to know</h2>
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 AI researchers push the boundaries of what's possible in artificial intelligence. They investigate fundamental questions, develop novel algorithms, and publish findings in top conferences. Working at universities, research labs, or tech companies, they advance AI capabilities through rigorous scientific inquiry.
               </p>
@@ -44,7 +44,7 @@ export default function AIResearcherPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do AI researchers do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do AI researchers do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Researchers work full-time with flexibility typical in academia and research labs. Industry research roles often include conference travel and collaboration opportunities.
               </p>
@@ -70,7 +70,7 @@ export default function AIResearcherPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What skills are needed?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Research Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Research Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Research methodology</li>
                   <li>• Experimental design</li>
@@ -81,7 +81,7 @@ export default function AIResearcherPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Expertise</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Expertise</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Deep learning theory</li>
                   <li>• Advanced mathematics</li>
@@ -92,7 +92,7 @@ export default function AIResearcherPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Academic writing</li>
                   <li>• Presentation skills</li>
@@ -124,7 +124,7 @@ export default function AIResearcherPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What is the career outlook?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Research Opportunities in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Research Opportunities in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Ireland offers excellent AI research opportunities with Science Foundation Ireland funding competitive research positions. Both academic institutions and industry labs actively recruit AI researchers.
                 </p>
@@ -134,7 +134,7 @@ export default function AIResearcherPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why pursue AI research?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why pursue AI research?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Fundamental contributions to AI advancement</li>
                   <li>• Intellectual freedom and creativity</li>
@@ -152,7 +152,7 @@ export default function AIResearcherPage() {
           <h2 className="text-3xl font-bold mb-8 text-center">What education is required?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">PhD (Essential)</h4>
@@ -176,7 +176,7 @@ export default function AIResearcherPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Research Areas</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Research Areas</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Deep learning theory and architectures</li>
@@ -195,17 +195,17 @@ export default function AIResearcherPage() {
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Pursue AI Research?</h2>
             <p className="text-xl mb-8 text-blue-100">
               Explore PhD programs and research opportunities in Ireland.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/qualifications" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              <Link href="/qualifications" className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}>
                 View Qualifications
               </Link>
-              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition">
                 Upcoming Events
               </Link>
             </div>

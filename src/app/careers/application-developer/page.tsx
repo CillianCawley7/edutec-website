@@ -38,7 +38,7 @@ export default function ApplicationDeveloperPage() {
           
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Application developers design, build, and maintain software applications for various platforms. They create mobile apps for iOS and Android, desktop applications for Windows and Mac, and web-based applications. Unlike general software developers, application developers typically specialize in specific platforms or types of applications.
               </p>
@@ -51,7 +51,7 @@ export default function ApplicationDeveloperPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do application developers do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do application developers do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Application developers typically work full-time, with flexibility for remote work increasingly common in Ireland. Project deadlines and app releases may require additional hours.
               </p>
@@ -78,7 +78,7 @@ export default function ApplicationDeveloperPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Development Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Development Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Mobile: Swift (iOS), Kotlin (Android)</li>
                   <li>• Cross-platform: React Native, Flutter</li>
@@ -89,7 +89,7 @@ export default function ApplicationDeveloperPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Knowledge</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Knowledge</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Database management (SQLite, Core Data)</li>
                   <li>• Version control (Git, GitHub)</li>
@@ -100,7 +100,7 @@ export default function ApplicationDeveloperPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Problem-solving and creativity</li>
                   <li>• Attention to detail</li>
@@ -136,7 +136,7 @@ export default function ApplicationDeveloperPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   The Irish mobile and application development sector continues strong growth, with over 1,200 application developer positions advertised annually. The Department of Enterprise identifies app development as a critical skills area.
                 </p>
@@ -146,7 +146,7 @@ export default function ApplicationDeveloperPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Smartphone usage at all-time high</li>
                   <li>• Digital transformation across all sectors</li>
@@ -166,7 +166,7 @@ export default function ApplicationDeveloperPage() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Level 8 Honours Degree</h4>
@@ -192,7 +192,7 @@ export default function ApplicationDeveloperPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Course Topics</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Course Topics</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Mobile app development (iOS/Android)</li>
@@ -212,7 +212,7 @@ export default function ApplicationDeveloperPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Start Your Application Development Journey?</h2>
             <p className="text-xl mb-8 text-blue-100">
@@ -221,13 +221,13 @@ export default function ApplicationDeveloperPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/qualifications" 
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+                className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}
               >
                 View Qualifications
               </Link>
               <Link 
                 href="/events" 
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition"
               >
                 Upcoming Events
               </Link>

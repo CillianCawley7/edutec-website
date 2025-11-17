@@ -30,7 +30,7 @@ export default function ITManagerPage() {
           <h2 className="text-4xl font-bold mb-16 text-center text-gray-800">What you need to know</h2>
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 IT Managers lead technology departments, overseeing IT operations, staff, and strategic direction. They manage budgets, develop IT strategy, ensure business-technology alignment, and lead teams delivering technology services. This senior role requires both technical expertise and strong leadership capabilities.
               </p>
@@ -40,7 +40,7 @@ export default function ITManagerPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Key responsibilities</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Key responsibilities</h3>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
                 <li>Lead and develop IT teams</li>
                 <li>Develop IT strategy</li>
@@ -62,7 +62,7 @@ export default function ITManagerPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What skills are needed?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Leadership</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Leadership</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Team management and development</li>
                   <li>• Strategic thinking</li>
@@ -73,7 +73,7 @@ export default function ITManagerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Knowledge</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Knowledge</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• IT infrastructure</li>
                   <li>• System architecture</li>
@@ -84,7 +84,7 @@ export default function ITManagerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Business Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Business Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Budget management</li>
                   <li>• Vendor negotiation</li>
@@ -116,14 +116,14 @@ export default function ITManagerPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What is the career outlook?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Consistent demand for experienced IT managers. Approximately 400-500 IT management positions advertised annually in Ireland. Senior role with stable employment.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Growing IT complexity</li>
                   <li>• Digital transformation leadership needs</li>
@@ -141,7 +141,7 @@ export default function ITManagerPage() {
           <h2 className="text-3xl font-bold mb-8 text-center">What education is required?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Technical Degree + Experience</h4>
@@ -165,7 +165,7 @@ export default function ITManagerPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Competencies</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Competencies</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Strategic IT planning</li>
@@ -184,17 +184,17 @@ export default function ITManagerPage() {
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Lead IT Operations?</h2>
             <p className="text-xl mb-8 text-blue-100">
               Explore resources for IT management careers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/qualifications" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              <Link href="/qualifications" className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}>
                 View Qualifications
               </Link>
-              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition">
                 Upcoming Events
               </Link>
             </div>

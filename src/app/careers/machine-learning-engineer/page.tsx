@@ -31,7 +31,7 @@ export default function MachineLearningEngineerPage() {
           <h2 className="text-4xl font-bold mb-16 text-center text-gray-800">What you need to know</h2>
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Machine Learning Engineers bridge data science and software engineering, taking ML models from research to production. They build scalable systems that train, deploy, and monitor ML models serving millions of users. This role requires strong engineering skills combined with ML expertise.
               </p>
@@ -44,7 +44,7 @@ export default function MachineLearningEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do ML engineers do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do ML engineers do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 ML engineers work full-time with strong remote/hybrid flexibility in Irish companies.
               </p>
@@ -70,7 +70,7 @@ export default function MachineLearningEngineerPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What skills are needed?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">ML & Engineering</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">ML & Engineering</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Python (advanced)</li>
                   <li>• TensorFlow, PyTorch</li>
@@ -81,7 +81,7 @@ export default function MachineLearningEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Production & Scale</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Production & Scale</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• MLOps tools (MLflow, Kubeflow)</li>
                   <li>• Docker & Kubernetes</li>
@@ -92,7 +92,7 @@ export default function MachineLearningEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Software engineering best practices</li>
                   <li>• System design</li>
@@ -124,7 +124,7 @@ export default function MachineLearningEngineerPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What is the career outlook?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   ML engineering is among Ireland's most in-demand roles with severe skills shortage. Over 600 positions advertised annually with competition for candidates driving premium salaries and benefits.
                 </p>
@@ -134,7 +134,7 @@ export default function MachineLearningEngineerPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• ML adoption accelerating across industries</li>
                   <li>• Need for production ML expertise</li>
@@ -152,7 +152,7 @@ export default function MachineLearningEngineerPage() {
           <h2 className="text-3xl font-bold mb-8 text-center">What education is required?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">CS Degree + ML Experience</h4>
@@ -170,7 +170,7 @@ export default function MachineLearningEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Skills to Master</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Skills to Master</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• ML algorithms and frameworks</li>
@@ -189,17 +189,17 @@ export default function MachineLearningEngineerPage() {
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Become an ML Engineer?</h2>
             <p className="text-xl mb-8 text-blue-100">
               Explore resources and discover how to launch your ML engineering career.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/qualifications" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              <Link href="/qualifications" className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}>
                 View Qualifications
               </Link>
-              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition">
                 Upcoming Events
               </Link>
             </div>

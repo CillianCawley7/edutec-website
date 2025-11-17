@@ -30,7 +30,7 @@ export default function SystemsAdministratorPage() {
           <h2 className="text-4xl font-bold mb-16 text-center text-gray-800">What you need to know</h2>
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Systems Administrators are the backbone of IT operations, maintaining servers, networks, and systems that organizations depend on daily. They install and configure systems, manage user accounts, perform backups, monitor performance, and troubleshoot issues. This hands-on role is critical to business continuity.
               </p>
@@ -40,7 +40,7 @@ export default function SystemsAdministratorPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Key responsibilities</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Key responsibilities</h3>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
                 <li>Install and configure servers and systems</li>
                 <li>Manage user accounts and permissions</li>
@@ -62,7 +62,7 @@ export default function SystemsAdministratorPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What skills are needed?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">System Administration</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">System Administration</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Linux/Unix administration</li>
                   <li>• Windows Server</li>
@@ -73,7 +73,7 @@ export default function SystemsAdministratorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Scripting (Bash, PowerShell, Python)</li>
                   <li>• Networking fundamentals</li>
@@ -84,7 +84,7 @@ export default function SystemsAdministratorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Problem-solving</li>
                   <li>• Attention to detail</li>
@@ -116,14 +116,14 @@ export default function SystemsAdministratorPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What is the career outlook?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Consistent demand across all sectors in Ireland. Over 800 systems administrator positions advertised annually. Essential role ensures stable employment.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Growing IT infrastructure needs</li>
                   <li>• Hybrid cloud environments</li>
@@ -141,7 +141,7 @@ export default function SystemsAdministratorPage() {
           <h2 className="text-3xl font-bold mb-8 text-center">What education is required?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Level 6/7 IT Qualification</h4>
@@ -165,7 +165,7 @@ export default function SystemsAdministratorPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Skills to Master</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Skills to Master</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Linux/Windows Server administration</li>
@@ -184,17 +184,17 @@ export default function SystemsAdministratorPage() {
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Manage IT Systems?</h2>
             <p className="text-xl mb-8 text-blue-100">
               Explore resources for systems administration careers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/qualifications" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              <Link href="/qualifications" className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}>
                 View Qualifications
               </Link>
-              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition">
                 Upcoming Events
               </Link>
             </div>

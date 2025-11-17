@@ -38,7 +38,7 @@ export default function JuniorDeveloperPage() {
           
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Junior developers are entry-level software developers beginning their professional careers in technology. They work under the guidance of senior developers and team leads, contributing to projects while continuously developing their programming skills. This role is the starting point for most software development careers.
               </p>
@@ -51,7 +51,7 @@ export default function JuniorDeveloperPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do junior developers do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do junior developers do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Junior developers work standard full-time hours, typically 9am-5:30pm, with many Irish tech companies offering flexible start times and hybrid working arrangements.
               </p>
@@ -79,7 +79,7 @@ export default function JuniorDeveloperPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Basic Programming</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Basic Programming</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• At least one programming language (Python, JavaScript, Java)</li>
                   <li>• Understanding of data structures</li>
@@ -90,7 +90,7 @@ export default function JuniorDeveloperPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Development Tools</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Development Tools</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Git version control basics</li>
                   <li>• Code editors (VS Code, IntelliJ)</li>
@@ -101,7 +101,7 @@ export default function JuniorDeveloperPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Soft Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Soft Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Willingness to learn</li>
                   <li>• Problem-solving mindset</li>
@@ -137,7 +137,7 @@ export default function JuniorDeveloperPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Ireland actively seeks junior developers, with over 1,000 graduate and junior developer positions advertised annually. The ICT Skills Action Plan targets increasing graduates in computing and IT to meet industry demand.
                 </p>
@@ -147,7 +147,7 @@ export default function JuniorDeveloperPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the opportunity?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the opportunity?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Strong demand exceeds supply of developers</li>
                   <li>• Tech companies actively hiring graduates</li>
@@ -167,7 +167,7 @@ export default function JuniorDeveloperPage() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Level 8 Degree (Preferred)</h4>
@@ -193,7 +193,7 @@ export default function JuniorDeveloperPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Skills to Develop</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Skills to Develop</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Core programming language proficiency</li>
@@ -213,7 +213,7 @@ export default function JuniorDeveloperPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Start Your Development Career?</h2>
             <p className="text-xl mb-8 text-blue-100">
@@ -222,13 +222,13 @@ export default function JuniorDeveloperPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/qualifications" 
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+                className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}
               >
                 View Qualifications
               </Link>
               <Link 
                 href="/events" 
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition"
               >
                 Upcoming Events
               </Link>

@@ -31,7 +31,7 @@ export default function NetworkSecurityEngineerPage() {
           <h2 className="text-4xl font-bold mb-16 text-center text-gray-800">What you need to know</h2>
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Network Security Engineers protect organizational networks from intrusions, attacks, and unauthorized access. They design and implement network security architectures, configure firewalls and VPNs, monitor network traffic for threats, and ensure secure communications. This role requires deep understanding of both networking and security principles.
               </p>
@@ -41,7 +41,7 @@ export default function NetworkSecurityEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Key responsibilities</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Key responsibilities</h3>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
                 <li>Design secure network architectures</li>
                 <li>Configure and maintain firewalls</li>
@@ -63,7 +63,7 @@ export default function NetworkSecurityEngineerPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What skills are needed?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Network Security</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Network Security</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Firewalls (Palo Alto, Cisco ASA)</li>
                   <li>• VPN technologies</li>
@@ -74,7 +74,7 @@ export default function NetworkSecurityEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Networking</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Networking</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• TCP/IP protocols</li>
                   <li>• Routing and switching</li>
@@ -85,7 +85,7 @@ export default function NetworkSecurityEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Problem-solving</li>
                   <li>• Analytical thinking</li>
@@ -117,14 +117,14 @@ export default function NetworkSecurityEngineerPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What is the career outlook?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Strong demand for network security engineers in Ireland with over 500 positions advertised annually. Hybrid work and cloud adoption drive need for secure network access solutions.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Remote work security needs</li>
                   <li>• Cloud network security</li>
@@ -142,7 +142,7 @@ export default function NetworkSecurityEngineerPage() {
           <h2 className="text-3xl font-bold mb-8 text-center">What education is required?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Network + Security Background</h4>
@@ -160,7 +160,7 @@ export default function NetworkSecurityEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Skills</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Network protocols (TCP/IP)</li>
@@ -179,17 +179,17 @@ export default function NetworkSecurityEngineerPage() {
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Secure Networks?</h2>
             <p className="text-xl mb-8 text-blue-100">
               Explore resources and discover network security engineering.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/qualifications" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              <Link href="/qualifications" className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}>
                 View Qualifications
               </Link>
-              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition">
                 Upcoming Events
               </Link>
             </div>

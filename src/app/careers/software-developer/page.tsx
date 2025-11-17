@@ -38,7 +38,7 @@ export default function SoftwareDeveloperPage() {
           
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Software developers are the creative minds behind computer programs. They design, develop, test, and maintain software applications that power everything from mobile apps to enterprise systems. Software developers work in teams to create solutions that solve real-world problems and improve how we work, learn, and communicate.
               </p>
@@ -51,7 +51,7 @@ export default function SoftwareDeveloperPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do software developers do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do software developers do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Most software developers work full time. Some work more than 40 hours per week, especially when approaching project deadlines.
               </p>
@@ -77,7 +77,7 @@ export default function SoftwareDeveloperPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Programming languages (JavaScript, Python, Java, C#, etc.)</li>
                   <li>• Web technologies (HTML, CSS, React, Angular, Vue)</li>
@@ -88,7 +88,7 @@ export default function SoftwareDeveloperPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Problem-Solving</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Problem-Solving</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Analytical thinking and logical reasoning</li>
                   <li>• Attention to detail and precision</li>
@@ -99,7 +99,7 @@ export default function SoftwareDeveloperPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Soft Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Soft Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Communication and collaboration</li>
                   <li>• Time management and organization</li>
@@ -137,7 +137,7 @@ export default function SoftwareDeveloperPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   About 2,000 new job openings for software developers are projected each year in Ireland, 
                   with strong growth expected across all sectors.
@@ -149,7 +149,7 @@ export default function SoftwareDeveloperPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Increasing demand for mobile applications and software</li>
                   <li>• Growing need for cybersecurity solutions</li>
@@ -168,7 +168,7 @@ export default function SoftwareDeveloperPage() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Bachelor's Degree (Most Common)</h4>
@@ -197,7 +197,7 @@ export default function SoftwareDeveloperPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Course Topics</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Course Topics</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Programming Fundamentals (JavaScript, Python, Java)</li>
@@ -217,7 +217,7 @@ export default function SoftwareDeveloperPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Start Your Software Development Journey?</h2>
             <p className="text-xl mb-8 text-blue-100">
@@ -226,13 +226,13 @@ export default function SoftwareDeveloperPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/qualifications" 
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+                className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}
               >
                 View Qualifications
               </Link>
               <Link 
                 href="/resources" 
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition"
               >
                 Explore Resources
               </Link>

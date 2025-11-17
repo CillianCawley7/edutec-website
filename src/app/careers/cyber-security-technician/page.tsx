@@ -31,7 +31,7 @@ export default function CyberSecurityTechnicianPage() {
           <h2 className="text-4xl font-bold mb-16 text-center text-gray-800">What you need to know</h2>
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Cyber Security Technicians provide hands-on technical support for security operations. They monitor security systems, assist with implementations, maintain security tools, and support incident response. This entry to mid-level role offers excellent pathway into cyber security careers with structured learning and mentorship opportunities.
               </p>
@@ -41,7 +41,7 @@ export default function CyberSecurityTechnicianPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Key responsibilities</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Key responsibilities</h3>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
                 <li>Monitor security dashboards and alerts</li>
                 <li>Assist with security tool deployment</li>
@@ -63,7 +63,7 @@ export default function CyberSecurityTechnicianPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What skills are needed?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Basic networking knowledge</li>
                   <li>• Operating systems (Windows, Linux)</li>
@@ -74,7 +74,7 @@ export default function CyberSecurityTechnicianPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Security Knowledge</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Security Knowledge</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Security fundamentals</li>
                   <li>• Threat awareness</li>
@@ -85,7 +85,7 @@ export default function CyberSecurityTechnicianPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Attention to detail</li>
                   <li>• Willingness to learn</li>
@@ -117,14 +117,14 @@ export default function CyberSecurityTechnicianPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What is the career outlook?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Strong entry-level demand as organizations build security teams. Over 400 technician positions advertised annually in Ireland. Excellent career progression opportunities to analyst, engineer, or specialist roles within 2-4 years.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why good entry point?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why good entry point?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Accessible entry requirements</li>
                   <li>• Structured learning environment</li>
@@ -142,7 +142,7 @@ export default function CyberSecurityTechnicianPage() {
           <h2 className="text-3xl font-bold mb-8 text-center">What education is required?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Level 6/7 Qualification</h4>
@@ -166,7 +166,7 @@ export default function CyberSecurityTechnicianPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Skills to Develop</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Skills to Develop</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Basic networking (TCP/IP, DNS, DHCP)</li>
@@ -185,17 +185,17 @@ export default function CyberSecurityTechnicianPage() {
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Start in Cyber Security?</h2>
             <p className="text-xl mb-8 text-blue-100">
               Explore resources and discover security technician opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/qualifications" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              <Link href="/qualifications" className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}>
                 View Qualifications
               </Link>
-              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition">
                 Upcoming Events
               </Link>
             </div>

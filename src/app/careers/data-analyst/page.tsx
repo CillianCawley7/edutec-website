@@ -38,7 +38,7 @@ export default function DataAnalystPage() {
           
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Data analysts transform raw data into meaningful insights that drive business decisions. They work with databases, spreadsheets, and visualization tools to identify trends, patterns, and opportunities. Data analysts bridge the gap between data and decision-makers, making complex information accessible and actionable.
               </p>
@@ -51,7 +51,7 @@ export default function DataAnalystPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do data analysts do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do data analysts do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Data analysts typically work standard office hours with growing flexibility for hybrid/remote work in Irish companies.
               </p>
@@ -79,7 +79,7 @@ export default function DataAnalystPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• SQL for database queries</li>
                   <li>• Microsoft Excel (advanced functions, pivot tables)</li>
@@ -90,7 +90,7 @@ export default function DataAnalystPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Visualization Tools</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Visualization Tools</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Tableau or Power BI</li>
                   <li>• Data visualization best practices</li>
@@ -101,7 +101,7 @@ export default function DataAnalystPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Soft Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Soft Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Communication and storytelling</li>
                   <li>• Business acumen</li>
@@ -137,7 +137,7 @@ export default function DataAnalystPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Data analyst roles are among Ireland's fastest-growing positions, with over 1,200 openings advertised annually. The role offers excellent entry into data careers with strong progression opportunities.
                 </p>
@@ -147,7 +147,7 @@ export default function DataAnalystPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Data-driven decision making now standard</li>
                   <li>• Digital transformation across industries</li>
@@ -167,7 +167,7 @@ export default function DataAnalystPage() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Level 7/8 Degree</h4>
@@ -193,7 +193,7 @@ export default function DataAnalystPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Skills to Develop</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Skills to Develop</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• SQL fundamentals</li>
@@ -213,7 +213,7 @@ export default function DataAnalystPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Start Your Data Analytics Journey?</h2>
             <p className="text-xl mb-8 text-blue-100">
@@ -222,13 +222,13 @@ export default function DataAnalystPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/qualifications" 
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+                className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}
               >
                 View Qualifications
               </Link>
               <Link 
                 href="/events" 
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition"
               >
                 Upcoming Events
               </Link>

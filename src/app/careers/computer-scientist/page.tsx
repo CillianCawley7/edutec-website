@@ -30,7 +30,7 @@ export default function ComputerScientistPage() {
           <h2 className="text-4xl font-bold mb-16 text-center text-gray-800">What you need to know</h2>
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Computer Scientists conduct research into computational theory, develop new algorithms, design programming languages, and advance the fundamental science of computing. They work in academia, research labs, and tech companies pushing the boundaries of what computers can do.
               </p>
@@ -40,7 +40,7 @@ export default function ComputerScientistPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Key responsibilities</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Key responsibilities</h3>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
                 <li>Conduct computational research</li>
                 <li>Develop new algorithms</li>
@@ -62,7 +62,7 @@ export default function ComputerScientistPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What skills are needed?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Research Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Research Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Research methodology</li>
                   <li>• Academic writing</li>
@@ -73,7 +73,7 @@ export default function ComputerScientistPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Expertise</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Expertise</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Advanced mathematics</li>
                   <li>• Algorithms and complexity</li>
@@ -84,7 +84,7 @@ export default function ComputerScientistPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Innovation and creativity</li>
                   <li>• Collaboration</li>
@@ -116,14 +116,14 @@ export default function ComputerScientistPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">What is the career outlook?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Research Opportunities</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Research Opportunities</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Growing research opportunities in Ireland with Science Foundation Ireland funding competitive positions. Both academic and industry research labs actively recruit.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why pursue computer science research?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why pursue computer science research?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Fundamental contributions to computing</li>
                   <li>• Intellectual challenge</li>
@@ -141,7 +141,7 @@ export default function ComputerScientistPage() {
           <h2 className="text-3xl font-bold mb-8 text-center">What education is required?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">PhD (Essential)</h4>
@@ -165,7 +165,7 @@ export default function ComputerScientistPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Research Areas</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Research Areas</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Algorithms and complexity theory</li>
@@ -184,17 +184,17 @@ export default function ComputerScientistPage() {
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Advance Computing Science?</h2>
             <p className="text-xl mb-8 text-blue-100">
               Explore PhD programs and research opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/qualifications" className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              <Link href="/qualifications" className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}>
                 View Qualifications
               </Link>
-              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link href="/events" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition">
                 Upcoming Events
               </Link>
             </div>

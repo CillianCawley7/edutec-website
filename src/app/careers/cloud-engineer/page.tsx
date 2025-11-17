@@ -38,7 +38,7 @@ export default function CloudEngineerPage() {
           
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">Overview</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>Overview</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Cloud engineers design, build, and maintain cloud infrastructure and services. They help organizations migrate from on-premise systems to cloud platforms, optimize cloud costs, ensure security and compliance, and architect scalable solutions. Cloud engineers are critical as businesses increasingly adopt cloud-first strategies.
               </p>
@@ -51,7 +51,7 @@ export default function CloudEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-blue-600">What do cloud engineers do?</h3>
+              <h3 className="text-3xl font-semibold mb-6" style={{color: '#00b2e3'}}>What do cloud engineers do?</h3>
               <p className="text-lg text-gray-700 mb-6">
                 Cloud engineers typically work full-time with flexibility for remote work. Many Irish positions offer hybrid arrangements, and the role's digital nature enables international opportunities.
               </p>
@@ -79,7 +79,7 @@ export default function CloudEngineerPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Cloud Platforms</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Cloud Platforms</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• AWS (EC2, S3, RDS, Lambda, VPC)</li>
                   <li>• Microsoft Azure (VMs, Storage, App Services)</li>
@@ -90,7 +90,7 @@ export default function CloudEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Technical Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technical Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Infrastructure as Code (Terraform, CloudFormation)</li>
                   <li>• Containerization (Docker, Kubernetes)</li>
@@ -101,7 +101,7 @@ export default function CloudEngineerPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-blue-700">Professional Skills</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Professional Skills</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Cost optimization mindset</li>
                   <li>• Problem-solving abilities</li>
@@ -137,7 +137,7 @@ export default function CloudEngineerPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Job Growth in Ireland</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Job Growth in Ireland</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Cloud engineering is among Ireland's fastest-growing tech roles, with over 1,800 positions advertised annually. Skillnet Ireland and IDA Ireland identify cloud skills as critical for Ireland's continued success as a tech hub.
                 </p>
@@ -147,7 +147,7 @@ export default function CloudEngineerPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Why the growth?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why the growth?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Accelerated cloud adoption across all sectors</li>
                   <li>• Cost savings and scalability benefits</li>
@@ -167,7 +167,7 @@ export default function CloudEngineerPage() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Educational Pathways</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Educational Pathways</h3>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h4 className="text-xl font-semibold text-gray-800">Degree + Certifications</h4>
@@ -193,7 +193,7 @@ export default function CloudEngineerPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Key Knowledge Areas</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Knowledge Areas</h3>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <ul className="space-y-3 text-gray-700">
                   <li>• Cloud service models (IaaS, PaaS, SaaS)</li>
@@ -213,7 +213,7 @@ export default function CloudEngineerPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-6 bg-blue-600 text-white text-center">
+        <section className="py-16 px-6 text-white text-center" style={{backgroundColor: '#00b2e3'}}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Launch Your Cloud Engineering Career?</h2>
             <p className="text-xl mb-8 text-blue-100">
@@ -222,13 +222,13 @@ export default function CloudEngineerPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/qualifications" 
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+                className="bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition" style={{color: '#00b2e3'}}
               >
                 View Qualifications
               </Link>
               <Link 
                 href="/events" 
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:opacity-90 transition"
               >
                 Upcoming Events
               </Link>
