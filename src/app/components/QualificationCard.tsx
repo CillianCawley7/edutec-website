@@ -58,11 +58,11 @@ export default function QualificationCard({ qualification, index = 0 }: Props) {
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
-            <h3 className="text-blue-700 font-semibold text-lg group-hover:text-blue-900 transition-colors">
+            <h3 className="font-semibold text-lg transition-colors" style={{color: '#212721'}}>
               {title}
             </h3>
             {caoCode && (
-              <span className="px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
+              <span className="px-2 py-1 rounded-full text-xs font-bold" style={{backgroundColor: '#e6f7ff', color: '#00b2e3'}}>
                 {caoCode}
               </span>
             )}
@@ -81,7 +81,7 @@ export default function QualificationCard({ qualification, index = 0 }: Props) {
 
       <div className="flex flex-wrap gap-2 text-xs">
         {nfqLevel && (
-          <span className="px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 font-semibold hover:bg-blue-100 transition-colors">
+          <span className="px-3 py-1.5 rounded-full font-semibold hover:bg-blue-100 transition-colors" style={{backgroundColor: '#e6f7ff', color: '#00b2e3'}}>
             NFQ {nfqLevel}
           </span>
         )}
@@ -106,7 +106,7 @@ export default function QualificationCard({ qualification, index = 0 }: Props) {
           <span className="font-semibold text-gray-700">Career Paths:</span>
           <div className="mt-1 flex flex-wrap gap-1">
             {outcomes.slice(0, 3).map((outcome, i) => (
-              <span key={i} className="text-blue-600">
+              <span key={i} style={{color: '#00b2e3'}}>
                 {outcome}{i < Math.min(outcomes.length, 3) - 1 ? ' •' : ''}
               </span>
             ))}

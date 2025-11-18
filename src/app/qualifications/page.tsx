@@ -310,7 +310,7 @@ export default function QualificationsPage() {
                 href="/initiatives/pathways"
                 className="inline-block border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-800 transition text-lg"
               >
-                Attend Pathways 2025
+                Learn About Pathways
               </Link>
             </div>
             <p className="text-sm text-gray-400 mt-6">
