@@ -10,30 +10,6 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Top Announcement Bar - itag style */}
-      <div className="bg-[#212721] text-white text-sm py-2 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-[#00b2e3]">EdUTec Careers</span>
-            <span className="text-gray-300">— Explore Your Future in Tech</span>
-          </div>
-          <div className="hidden md:flex items-center gap-4">
-            <Link href="/events" className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span>Events</span>
-            </Link>
-            <Link 
-              href="/about" 
-              className="bg-[#00b2e3] hover:bg-[#0099c7] text-white px-4 py-1 rounded font-semibold transition-colors"
-            >
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation - itag style with white background */}
       <nav className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4">
