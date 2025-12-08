@@ -37,16 +37,16 @@ export default function Navbar() {
       {/* Main Navigation - itag style with white background */}
       <nav className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <Link href="/" className="flex items-center shrink-0">
               <Image 
                 src="/logos/EdUTec_Logo.jpg" 
                 alt="EdUTec Careers logo" 
-                width={120} 
-                height={50} 
+                width={200} 
+                height={80} 
                 priority 
-                className="h-12 w-auto"
+                className="h-20 w-auto"
               />
             </Link>
 
