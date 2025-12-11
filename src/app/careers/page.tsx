@@ -163,7 +163,13 @@ export default function CareersPage() {
                 ))
               ) : (
                 <div className="col-span-full text-center py-12">
-                  <div className="text-gray-400 text-6xl mb-4">🔍</div>
+                  <div className="flex justify-center mb-4">
+                    <div className="w-24 h-24 rounded-full flex items-center justify-center" style={{backgroundColor: '#f3f4f6'}}>
+                      <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
+                  </div>
                   <h3 className="text-xl font-semibold text-gray-600 mb-2">No careers found</h3>
                   <p className="text-gray-500">Try adjusting your search criteria or browse all careers.</p>
                 </div>

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 import LogoBar from '../components/LogoBar';
+import { LightBulbIcon } from '@heroicons/react/24/outline';
 
 export default function AboutPage() {
   return (
@@ -74,8 +75,8 @@ export default function AboutPage() {
             {/* Making CS Engaging */}
             <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl" style={{backgroundColor: '#00b2e3'}}>
-                  💡
+                <div className="w-16 h-16 rounded-full flex items-center justify-center text-white" style={{backgroundColor: '#00b2e3'}}>
+                  <LightBulbIcon className="w-8 h-8" />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900">
                   Inspiring Young Minds

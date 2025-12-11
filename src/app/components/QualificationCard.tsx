@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import type { Qualification } from '../qualifications/data';
+import { MapPinIcon } from '@heroicons/react/24/outline';
 
 type Props = {
   qualification: Qualification;
@@ -95,8 +96,9 @@ export default function QualificationCard({ qualification, index = 0 }: Props) {
           {duration}
         </span>
         {location && (
-          <span className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors">
-            📍 {location}
+          <span className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors flex items-center gap-1">
+            <MapPinIcon className="w-4 h-4" />
+            {location}
           </span>
         )}
       </div>

@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { type Event } from '../events/eventData';
+import { MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 type CalendarProps = {
   events: Event[];
@@ -523,7 +524,9 @@ function EventModal({ event, onClose }: { event: Event; onClose: () => void }) {
             </div>
             
             <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-xl">
-              <span className="text-2xl">📍</span>
+              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{backgroundColor: '#e6f7ff'}}>
+                <MapPinIcon className="w-5 h-5" style={{color: '#00b2e3'}} />
+              </div>
               <div>
                 <div className="text-xs text-gray-600">Location</div>
                 <div className="font-semibold">{event.location}</div>
